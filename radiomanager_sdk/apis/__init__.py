@@ -11,6 +11,7 @@ from .item_api import ItemApi
 from .model_type_api import ModelTypeApi
 from .presenter_api import PresenterApi
 from .program_api import ProgramApi
+from .story_api import StoryApi
 from .string_api import StringApi
 from .tag_api import TagApi
 from .user_api import UserApi

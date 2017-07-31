@@ -1,5 +1,5 @@
 # Pluxbox RadioManager Client
-Pluxbox RadioManager gives you the power, flexibility and speed you always wanted in a lightweight and easy-to-use web-based radio solution. With Pluxbox RadioManager you can organise your radio workflow and automate your omnichannel communication with your listeners. We offer wide range specialised services for the radio and connections like Hybrid Radio, Visual Radio, your website and social media without losing focus on your broadcast. For more information visit https://pluxbox.com
+RadioManager
 
 - API version: 2.0
 For more information, please visit [https://pluxbox.com](https://pluxbox.com)
@@ -105,6 +105,11 @@ Class | Method | HTTP request | Description
 *ProgramApi* | [**get_program_by_id**](docs/ProgramApi.md#get_program_by_id) | **GET** /programs/{id} | Get program by id
 *ProgramApi* | [**list_programs**](docs/ProgramApi.md#list_programs) | **GET** /programs | Get all programs.
 *ProgramApi* | [**update_program_by_id**](docs/ProgramApi.md#update_program_by_id) | **PATCH** /programs/{id} | Update program by id
+*StoryApi* | [**create_story**](docs/StoryApi.md#create_story) | **POST** /stories | Create story.
+*StoryApi* | [**delete_story_by_id**](docs/StoryApi.md#delete_story_by_id) | **DELETE** /stories/{id} | Delete story by id
+*StoryApi* | [**get_story_by_id**](docs/StoryApi.md#get_story_by_id) | **GET** /stories/{id} | Get story by id
+*StoryApi* | [**list_stories**](docs/StoryApi.md#list_stories) | **GET** /stories | Get all stories.
+*StoryApi* | [**update_story_by_id**](docs/StoryApi.md#update_story_by_id) | **PATCH** /stories/{id} | Update story by id
 *StringApi* | [**get_strings_by_name**](docs/StringApi.md#get_strings_by_name) | **GET** /strings/{name} | Get Strings (formatted)
 *TagApi* | [**create_tag**](docs/TagApi.md#create_tag) | **POST** /tags | Create tag.
 *TagApi* | [**delete_tag_by_id**](docs/TagApi.md#delete_tag_by_id) | **DELETE** /tags/{id} | Delete tag by id
@@ -115,7 +120,6 @@ Class | Method | HTTP request | Description
 *UserApi* | [**get_user_by_id**](docs/UserApi.md#get_user_by_id) | **GET** /users/{id} | Get user by id
 *UserApi* | [**invite_user_by_mail**](docs/UserApi.md#invite_user_by_mail) | **POST** /users/invite | Invite user by mail
 *UserApi* | [**list_users**](docs/UserApi.md#list_users) | **GET** /users | Get all users.
-*VisualSlideApi* | [**download_visual_slide**](docs/VisualSlideApi.md#download_visual_slide) | **GET** /visual/image | Get Visual Slide Image as JPEG
 *VisualSlideApi* | [**get_visual_slide**](docs/VisualSlideApi.md#get_visual_slide) | **GET** /visual | Get Visual Slide Image as Base64
 
 
@@ -219,6 +223,13 @@ Class | Method | HTTP request | Description
  - [ProgramResults](docs/ProgramResults.md)
  - [ReadOnly](docs/ReadOnly.md)
  - [RelationsPlaceholder](docs/RelationsPlaceholder.md)
+ - [Story](docs/Story.md)
+ - [StoryOutputOnly](docs/StoryOutputOnly.md)
+ - [StoryRelations](docs/StoryRelations.md)
+ - [StoryRelationsItems](docs/StoryRelationsItems.md)
+ - [StoryRelationsTags](docs/StoryRelationsTags.md)
+ - [StoryRelationsTagsParams](docs/StoryRelationsTagsParams.md)
+ - [StoryResults](docs/StoryResults.md)
  - [Success](docs/Success.md)
  - [Tag](docs/Tag.md)
  - [TagOutputOnly](docs/TagOutputOnly.md)
@@ -251,6 +262,8 @@ Class | Method | HTTP request | Description
  - [PresenterResult](docs/PresenterResult.md)
  - [ProgramDataInput](docs/ProgramDataInput.md)
  - [ProgramResult](docs/ProgramResult.md)
+ - [StoryDataInput](docs/StoryDataInput.md)
+ - [StoryResult](docs/StoryResult.md)
  - [TagDataInput](docs/TagDataInput.md)
  - [TagResult](docs/TagResult.md)
 

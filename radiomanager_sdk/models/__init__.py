@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Pluxbox Radiomanager Client
+    RadioManager
 
-    Pluxbox RadioManager gives you the power, flexibility and speed you always wanted in a lightweight and easy-to-use web-based radio solution. With Pluxbox RadioManager you can organise your radio workflow and automate your omnichannel communication with your listeners. We offer wide range specialised services for the radio and connections like Hybrid Radio, Visual Radio, your website and social media without losing focus on your broadcast. For more information visit https://pluxbox.com
+    RadioManager
 
     OpenAPI spec version: 2.0
     Contact: support@pluxbox.com
@@ -112,6 +112,13 @@ from .program_relations_tags import ProgramRelationsTags
 from .program_results import ProgramResults
 from .read_only import ReadOnly
 from .relations_placeholder import RelationsPlaceholder
+from .story import Story
+from .story_output_only import StoryOutputOnly
+from .story_relations import StoryRelations
+from .story_relations_items import StoryRelationsItems
+from .story_relations_tags import StoryRelationsTags
+from .story_relations_tags_params import StoryRelationsTagsParams
+from .story_results import StoryResults
 from .success import Success
 from .tag import Tag
 from .tag_output_only import TagOutputOnly
@@ -144,5 +151,7 @@ from .presenter_data_input import PresenterDataInput
 from .presenter_result import PresenterResult
 from .program_data_input import ProgramDataInput
 from .program_result import ProgramResult
+from .story_data_input import StoryDataInput
+from .story_result import StoryResult
 from .tag_data_input import TagDataInput
 from .tag_result import TagResult
