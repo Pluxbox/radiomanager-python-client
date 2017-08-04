@@ -34,7 +34,7 @@ class Configuration(object):
         Constructor
         """
         # Default Base url
-        self.host = "http://radiomanager.pb/api/v2"
+        self.host = "https://staging.radiomanager.pluxbox.com/api/v2"
         # Temp file folder for downloading files
         self.temp_folder_path = None
 
