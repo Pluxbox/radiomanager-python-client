@@ -50,6 +50,7 @@ class PresenterRelations(object):
         self._programs = None
         self._broadcasts = None
         self._model_type = None
+        self.discriminator = None
 
         if programs is not None:
           self.programs = programs

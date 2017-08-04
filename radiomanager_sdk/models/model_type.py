@@ -65,6 +65,7 @@ class ModelType(object):
         self._options = None
         self._order = None
         self._deleted_at = None
+        self.discriminator = None
 
         self.id = id
         if name is not None:

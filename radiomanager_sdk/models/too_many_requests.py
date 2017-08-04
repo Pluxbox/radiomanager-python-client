@@ -44,6 +44,7 @@ class TooManyRequests(object):
         """
 
         self._message = None
+        self.discriminator = None
 
         self.message = message
 

@@ -20,7 +20,6 @@ import re
 # python 2 and python 3 compatibility library
 from six import iteritems
 
-from ..configuration import Configuration
 from ..api_client import ApiClient
 
 
@@ -32,35 +31,27 @@ class TagApi(object):
     """
 
     def __init__(self, api_client=None):
-        config = Configuration()
-        if api_client:
-            self.api_client = api_client
-        else:
-            if not config.api_client:
-                config.api_client = ApiClient()
-            self.api_client = config.api_client
+        if api_client is None:
+            api_client = ApiClient()
+        self.api_client = api_client
 
     def create_tag(self, data, **kwargs):
         """
         Create tag.
         Create tag.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.create_tag(data, callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.create_tag(data, async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param TagDataInput data: Data **(Required)** (required)
         :return: PostSuccess
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
+        if kwargs.get('async'):
             return self.create_tag_with_http_info(data, **kwargs)
         else:
             (data) = self.create_tag_with_http_info(data, **kwargs)
@@ -71,15 +62,11 @@ class TagApi(object):
         Create tag.
         Create tag.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.create_tag_with_http_info(data, callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.create_tag_with_http_info(data, async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param TagDataInput data: Data **(Required)** (required)
         :return: PostSuccess
                  If the method is called asynchronously,
@@ -87,7 +74,7 @@ class TagApi(object):
         """
 
         all_params = ['data']
-        all_params.append('callback')
+        all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -140,7 +127,7 @@ class TagApi(object):
                                         files=local_var_files,
                                         response_type='PostSuccess',
                                         auth_settings=auth_settings,
-                                        callback=params.get('callback'),
+                                        async=params.get('async'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -151,22 +138,18 @@ class TagApi(object):
         Delete tag by id
         Delete tag by id
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_tag_by_id(id, callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.delete_tag_by_id(id, async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param int id: ID of Tag **(Required)** (required)
         :return: Success
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
+        if kwargs.get('async'):
             return self.delete_tag_by_id_with_http_info(id, **kwargs)
         else:
             (data) = self.delete_tag_by_id_with_http_info(id, **kwargs)
@@ -177,15 +160,11 @@ class TagApi(object):
         Delete tag by id
         Delete tag by id
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_tag_by_id_with_http_info(id, callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.delete_tag_by_id_with_http_info(id, async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param int id: ID of Tag **(Required)** (required)
         :return: Success
                  If the method is called asynchronously,
@@ -193,7 +172,7 @@ class TagApi(object):
         """
 
         all_params = ['id']
-        all_params.append('callback')
+        all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -248,7 +227,7 @@ class TagApi(object):
                                         files=local_var_files,
                                         response_type='Success',
                                         auth_settings=auth_settings,
-                                        callback=params.get('callback'),
+                                        async=params.get('async'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -259,15 +238,11 @@ class TagApi(object):
         Get tags by id
         Get tags by id
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_tag_by_id(id, callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.get_tag_by_id(id, async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param int id: ID of Tag **(Required)** (required)
         :param int external_station_id: Query on a different (content providing) station *(Optional)*
         :return: TagResult
@@ -275,7 +250,7 @@ class TagApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
+        if kwargs.get('async'):
             return self.get_tag_by_id_with_http_info(id, **kwargs)
         else:
             (data) = self.get_tag_by_id_with_http_info(id, **kwargs)
@@ -286,15 +261,11 @@ class TagApi(object):
         Get tags by id
         Get tags by id
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_tag_by_id_with_http_info(id, callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.get_tag_by_id_with_http_info(id, async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param int id: ID of Tag **(Required)** (required)
         :param int external_station_id: Query on a different (content providing) station *(Optional)*
         :return: TagResult
@@ -303,7 +274,7 @@ class TagApi(object):
         """
 
         all_params = ['id', 'external_station_id']
-        all_params.append('callback')
+        all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -360,7 +331,7 @@ class TagApi(object):
                                         files=local_var_files,
                                         response_type='TagResult',
                                         auth_settings=auth_settings,
-                                        callback=params.get('callback'),
+                                        async=params.get('async'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -371,15 +342,11 @@ class TagApi(object):
         Get a list of all the tags currently in your station.
         Get a list of all the tags currently in your station. This feature supports pagination and will give a maximum results of 50 tags back.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.list_tags(callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.list_tags(async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param int page: Current page *(Optional)*
         :param int program_id: Search on Program ID *(Optional)* `(Relation)`
         :param int item_id: Search on Item ID *(Optional)* `(Relation)`
@@ -391,7 +358,7 @@ class TagApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
+        if kwargs.get('async'):
             return self.list_tags_with_http_info(**kwargs)
         else:
             (data) = self.list_tags_with_http_info(**kwargs)
@@ -402,15 +369,11 @@ class TagApi(object):
         Get a list of all the tags currently in your station.
         Get a list of all the tags currently in your station. This feature supports pagination and will give a maximum results of 50 tags back.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.list_tags_with_http_info(callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.list_tags_with_http_info(async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param int page: Current page *(Optional)*
         :param int program_id: Search on Program ID *(Optional)* `(Relation)`
         :param int item_id: Search on Item ID *(Optional)* `(Relation)`
@@ -423,7 +386,7 @@ class TagApi(object):
         """
 
         all_params = ['page', 'program_id', 'item_id', 'broadcast_id', 'contact_id', 'external_station_id']
-        all_params.append('callback')
+        all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -485,7 +448,7 @@ class TagApi(object):
                                         files=local_var_files,
                                         response_type='TagResults',
                                         auth_settings=auth_settings,
-                                        callback=params.get('callback'),
+                                        async=params.get('async'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -496,15 +459,11 @@ class TagApi(object):
         Update tag by id
         Update tag by id
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.update_tag_by_id(id, callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.update_tag_by_id(id, async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param int id: ID of Tag **(Required)** (required)
         :param TagDataInput data: Data *(Optional)*
         :return: Success
@@ -512,7 +471,7 @@ class TagApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
+        if kwargs.get('async'):
             return self.update_tag_by_id_with_http_info(id, **kwargs)
         else:
             (data) = self.update_tag_by_id_with_http_info(id, **kwargs)
@@ -523,15 +482,11 @@ class TagApi(object):
         Update tag by id
         Update tag by id
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.update_tag_by_id_with_http_info(id, callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.update_tag_by_id_with_http_info(id, async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param int id: ID of Tag **(Required)** (required)
         :param TagDataInput data: Data *(Optional)*
         :return: Success
@@ -540,7 +495,7 @@ class TagApi(object):
         """
 
         all_params = ['id', 'data']
-        all_params.append('callback')
+        all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -597,7 +552,7 @@ class TagApi(object):
                                         files=local_var_files,
                                         response_type='Success',
                                         auth_settings=auth_settings,
-                                        callback=params.get('callback'),
+                                        async=params.get('async'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),

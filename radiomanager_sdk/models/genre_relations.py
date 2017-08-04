@@ -47,6 +47,7 @@ class GenreRelations(object):
 
         self._broadcasts = None
         self._programs = None
+        self.discriminator = None
 
         if broadcasts is not None:
           self.broadcasts = broadcasts

@@ -51,7 +51,7 @@ class Broadcast(object):
         'repetition_type': 'str',
         'repetition_end': 'datetime',
         'repetition_start': 'datetime',
-        'repetition_days': 'list[bool]',
+        'repetition_days': 'str',
         'pty_code_id': 'int'
     }
 
@@ -107,6 +107,7 @@ class Broadcast(object):
         self._repetition_start = None
         self._repetition_days = None
         self._pty_code_id = None
+        self.discriminator = None
 
         if program_id is not None:
           self.program_id = program_id
@@ -585,7 +586,7 @@ class Broadcast(object):
         Gets the repetition_days of this Broadcast.
 
         :return: The repetition_days of this Broadcast.
-        :rtype: list[bool]
+        :rtype: str
         """
         return self._repetition_days
 
@@ -595,7 +596,7 @@ class Broadcast(object):
         Sets the repetition_days of this Broadcast.
 
         :param repetition_days: The repetition_days of this Broadcast.
-        :type: list[bool]
+        :type: str
         """
 
         self._repetition_days = repetition_days

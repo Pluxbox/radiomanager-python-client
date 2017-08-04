@@ -44,6 +44,7 @@ class CampaignRelationsItemsParams(object):
         """
 
         self._campaign_id = None
+        self.discriminator = None
 
         if campaign_id is not None:
           self.campaign_id = campaign_id

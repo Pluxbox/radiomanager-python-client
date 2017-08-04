@@ -47,6 +47,7 @@ class InviteUserData(object):
 
         self._email = None
         self._role_id = None
+        self.discriminator = None
 
         self.email = email
         self.role_id = role_id

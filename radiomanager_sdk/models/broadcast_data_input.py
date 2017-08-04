@@ -51,7 +51,7 @@ class BroadcastDataInput(object):
         'repetition_type': 'str',
         'repetition_end': 'datetime',
         'repetition_start': 'datetime',
-        'repetition_days': 'list[bool]',
+        'repetition_days': 'str',
         'pty_code_id': 'int',
         'tags': 'list[int]',
         'presenters': 'list[int]'
@@ -113,6 +113,7 @@ class BroadcastDataInput(object):
         self._pty_code_id = None
         self._tags = None
         self._presenters = None
+        self.discriminator = None
 
         if program_id is not None:
           self.program_id = program_id
@@ -595,7 +596,7 @@ class BroadcastDataInput(object):
         Gets the repetition_days of this BroadcastDataInput.
 
         :return: The repetition_days of this BroadcastDataInput.
-        :rtype: list[bool]
+        :rtype: str
         """
         return self._repetition_days
 
@@ -605,7 +606,7 @@ class BroadcastDataInput(object):
         Sets the repetition_days of this BroadcastDataInput.
 
         :param repetition_days: The repetition_days of this BroadcastDataInput.
-        :type: list[bool]
+        :type: str
         """
 
         self._repetition_days = repetition_days

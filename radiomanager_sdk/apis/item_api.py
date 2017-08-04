@@ -20,7 +20,6 @@ import re
 # python 2 and python 3 compatibility library
 from six import iteritems
 
-from ..configuration import Configuration
 from ..api_client import ApiClient
 
 
@@ -32,35 +31,27 @@ class ItemApi(object):
     """
 
     def __init__(self, api_client=None):
-        config = Configuration()
-        if api_client:
-            self.api_client = api_client
-        else:
-            if not config.api_client:
-                config.api_client = ApiClient()
-            self.api_client = config.api_client
+        if api_client is None:
+            api_client = ApiClient()
+        self.api_client = api_client
 
     def create_item(self, **kwargs):
         """
         Create an new item.
         Create item.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.create_item(callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.create_item(async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param ItemDataInput data: Data *(Optional)*
         :return: PostSuccess
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
+        if kwargs.get('async'):
             return self.create_item_with_http_info(**kwargs)
         else:
             (data) = self.create_item_with_http_info(**kwargs)
@@ -71,15 +62,11 @@ class ItemApi(object):
         Create an new item.
         Create item.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.create_item_with_http_info(callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.create_item_with_http_info(async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param ItemDataInput data: Data *(Optional)*
         :return: PostSuccess
                  If the method is called asynchronously,
@@ -87,7 +74,7 @@ class ItemApi(object):
         """
 
         all_params = ['data']
-        all_params.append('callback')
+        all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -137,7 +124,7 @@ class ItemApi(object):
                                         files=local_var_files,
                                         response_type='PostSuccess',
                                         auth_settings=auth_settings,
-                                        callback=params.get('callback'),
+                                        async=params.get('async'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -148,22 +135,18 @@ class ItemApi(object):
         Post a current playing item, keep structure
         Post a current playing item, keep structure
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.current_item_post_structure(callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.current_item_post_structure(async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param ImportItem data: Data *(Optional)*
         :return: Success
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
+        if kwargs.get('async'):
             return self.current_item_post_structure_with_http_info(**kwargs)
         else:
             (data) = self.current_item_post_structure_with_http_info(**kwargs)
@@ -174,15 +157,11 @@ class ItemApi(object):
         Post a current playing item, keep structure
         Post a current playing item, keep structure
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.current_item_post_structure_with_http_info(callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.current_item_post_structure_with_http_info(async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param ImportItem data: Data *(Optional)*
         :return: Success
                  If the method is called asynchronously,
@@ -190,7 +169,7 @@ class ItemApi(object):
         """
 
         all_params = ['data']
-        all_params.append('callback')
+        all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -240,7 +219,7 @@ class ItemApi(object):
                                         files=local_var_files,
                                         response_type='Success',
                                         auth_settings=auth_settings,
-                                        callback=params.get('callback'),
+                                        async=params.get('async'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -251,22 +230,18 @@ class ItemApi(object):
         Post a current playing item
         Post a current playing item
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.current_item_post_timing(callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.current_item_post_timing(async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param ImportItem data: Data *(Optional)*
         :return: Success
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
+        if kwargs.get('async'):
             return self.current_item_post_timing_with_http_info(**kwargs)
         else:
             (data) = self.current_item_post_timing_with_http_info(**kwargs)
@@ -277,15 +252,11 @@ class ItemApi(object):
         Post a current playing item
         Post a current playing item
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.current_item_post_timing_with_http_info(callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.current_item_post_timing_with_http_info(async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param ImportItem data: Data *(Optional)*
         :return: Success
                  If the method is called asynchronously,
@@ -293,7 +264,7 @@ class ItemApi(object):
         """
 
         all_params = ['data']
-        all_params.append('callback')
+        all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -343,7 +314,7 @@ class ItemApi(object):
                                         files=local_var_files,
                                         response_type='Success',
                                         auth_settings=auth_settings,
-                                        callback=params.get('callback'),
+                                        async=params.get('async'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -354,22 +325,18 @@ class ItemApi(object):
         Delete item by ID.
         Delete item by id.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_item_by_id(id, callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.delete_item_by_id(id, async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param int id: ID of Item **(Required)** (required)
         :return: Success
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
+        if kwargs.get('async'):
             return self.delete_item_by_id_with_http_info(id, **kwargs)
         else:
             (data) = self.delete_item_by_id_with_http_info(id, **kwargs)
@@ -380,15 +347,11 @@ class ItemApi(object):
         Delete item by ID.
         Delete item by id.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.delete_item_by_id_with_http_info(id, callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.delete_item_by_id_with_http_info(id, async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param int id: ID of Item **(Required)** (required)
         :return: Success
                  If the method is called asynchronously,
@@ -396,7 +359,7 @@ class ItemApi(object):
         """
 
         all_params = ['id']
-        all_params.append('callback')
+        all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -451,7 +414,7 @@ class ItemApi(object):
                                         files=local_var_files,
                                         response_type='Success',
                                         auth_settings=auth_settings,
-                                        callback=params.get('callback'),
+                                        async=params.get('async'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -462,15 +425,11 @@ class ItemApi(object):
         Get extended item details by ID.
         Read item by id.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_item_by_id(id, callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.get_item_by_id(id, async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param int id: ID of Item **(Required)** (required)
         :param int external_station_id: Query on a different (content providing) station *(Optional)*
         :return: ItemResult
@@ -478,7 +437,7 @@ class ItemApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
+        if kwargs.get('async'):
             return self.get_item_by_id_with_http_info(id, **kwargs)
         else:
             (data) = self.get_item_by_id_with_http_info(id, **kwargs)
@@ -489,15 +448,11 @@ class ItemApi(object):
         Get extended item details by ID.
         Read item by id.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.get_item_by_id_with_http_info(id, callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.get_item_by_id_with_http_info(id, async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param int id: ID of Item **(Required)** (required)
         :param int external_station_id: Query on a different (content providing) station *(Optional)*
         :return: ItemResult
@@ -506,7 +461,7 @@ class ItemApi(object):
         """
 
         all_params = ['id', 'external_station_id']
-        all_params.append('callback')
+        all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -563,7 +518,7 @@ class ItemApi(object):
                                         files=local_var_files,
                                         response_type='ItemResult',
                                         auth_settings=auth_settings,
-                                        callback=params.get('callback'),
+                                        async=params.get('async'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -574,15 +529,11 @@ class ItemApi(object):
         Get a list of all the items currently in your station.
         Get a list of all the items currently in your station. This feature supports pagination and will give a maximum results of 50 items back.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.list_items(callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.list_items(async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param int page: Current page *(Optional)*
         :param str order_by: Field to order the results *(Optional)*
         :param str order_direction: Direction of ordering *(Optional)*
@@ -607,7 +558,7 @@ class ItemApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
+        if kwargs.get('async'):
             return self.list_items_with_http_info(**kwargs)
         else:
             (data) = self.list_items_with_http_info(**kwargs)
@@ -618,15 +569,11 @@ class ItemApi(object):
         Get a list of all the items currently in your station.
         Get a list of all the items currently in your station. This feature supports pagination and will give a maximum results of 50 items back.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.list_items_with_http_info(callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.list_items_with_http_info(async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param int page: Current page *(Optional)*
         :param str order_by: Field to order the results *(Optional)*
         :param str order_direction: Direction of ordering *(Optional)*
@@ -652,7 +599,7 @@ class ItemApi(object):
         """
 
         all_params = ['page', 'order_by', 'order_direction', 'start_min', 'start_max', 'duration_min', 'duration_max', 'status', 'model_type_id', 'program_draft_id', 'user_draft_id', 'station_draft_id', 'block_id', 'broadcast_id', 'campaign_id', 'contact_id', 'program_id', 'tag_id', 'external_station_id']
-        all_params.append('callback')
+        all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -740,7 +687,7 @@ class ItemApi(object):
                                         files=local_var_files,
                                         response_type='ItemResults',
                                         auth_settings=auth_settings,
-                                        callback=params.get('callback'),
+                                        async=params.get('async'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -751,22 +698,18 @@ class ItemApi(object):
         Post a playlist, keep current structure
         Post a playlist, keep current structure
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.playlist_post_structure(callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.playlist_post_structure(async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param Data1 data: Data *(Optional)*
         :return: InlineResponse202
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
+        if kwargs.get('async'):
             return self.playlist_post_structure_with_http_info(**kwargs)
         else:
             (data) = self.playlist_post_structure_with_http_info(**kwargs)
@@ -777,15 +720,11 @@ class ItemApi(object):
         Post a playlist, keep current structure
         Post a playlist, keep current structure
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.playlist_post_structure_with_http_info(callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.playlist_post_structure_with_http_info(async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param Data1 data: Data *(Optional)*
         :return: InlineResponse202
                  If the method is called asynchronously,
@@ -793,7 +732,7 @@ class ItemApi(object):
         """
 
         all_params = ['data']
-        all_params.append('callback')
+        all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -843,7 +782,7 @@ class ItemApi(object):
                                         files=local_var_files,
                                         response_type='InlineResponse202',
                                         auth_settings=auth_settings,
-                                        callback=params.get('callback'),
+                                        async=params.get('async'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -854,22 +793,18 @@ class ItemApi(object):
         Post a playlist
         Post a playlist
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.playlist_post_timing(callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.playlist_post_timing(async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param Data data: Data *(Optional)*
         :return: InlineResponse202
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
+        if kwargs.get('async'):
             return self.playlist_post_timing_with_http_info(**kwargs)
         else:
             (data) = self.playlist_post_timing_with_http_info(**kwargs)
@@ -880,15 +815,11 @@ class ItemApi(object):
         Post a playlist
         Post a playlist
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.playlist_post_timing_with_http_info(callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.playlist_post_timing_with_http_info(async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param Data data: Data *(Optional)*
         :return: InlineResponse202
                  If the method is called asynchronously,
@@ -896,7 +827,7 @@ class ItemApi(object):
         """
 
         all_params = ['data']
-        all_params.append('callback')
+        all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -946,7 +877,7 @@ class ItemApi(object):
                                         files=local_var_files,
                                         response_type='InlineResponse202',
                                         auth_settings=auth_settings,
-                                        callback=params.get('callback'),
+                                        async=params.get('async'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -957,15 +888,11 @@ class ItemApi(object):
         Update extended item details by ID.
         Update item by id.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.update_item_by_id(id, callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.update_item_by_id(id, async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param int id: ID of Item **(Required)** (required)
         :param Item data: Data *(Optional)*
         :return: Success
@@ -973,7 +900,7 @@ class ItemApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('callback'):
+        if kwargs.get('async'):
             return self.update_item_by_id_with_http_info(id, **kwargs)
         else:
             (data) = self.update_item_by_id_with_http_info(id, **kwargs)
@@ -984,15 +911,11 @@ class ItemApi(object):
         Update extended item details by ID.
         Update item by id.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please define a `callback` function
-        to be invoked when receiving the response.
-        >>> def callback_function(response):
-        >>>     pprint(response)
-        >>>
-        >>> thread = api.update_item_by_id_with_http_info(id, callback=callback_function)
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.update_item_by_id_with_http_info(id, async=True)
+        >>> result = thread.get()
 
-        :param callback function: The callback function
-            for asynchronous request. (optional)
+        :param async bool
         :param int id: ID of Item **(Required)** (required)
         :param Item data: Data *(Optional)*
         :return: Success
@@ -1001,7 +924,7 @@ class ItemApi(object):
         """
 
         all_params = ['id', 'data']
-        all_params.append('callback')
+        all_params.append('async')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1058,7 +981,7 @@ class ItemApi(object):
                                         files=local_var_files,
                                         response_type='Success',
                                         auth_settings=auth_settings,
-                                        callback=params.get('callback'),
+                                        async=params.get('async'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),

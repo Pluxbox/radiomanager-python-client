@@ -44,6 +44,7 @@ class UnprocessableEntity(object):
         """
 
         self._errors = None
+        self.discriminator = None
 
         self.errors = errors
 

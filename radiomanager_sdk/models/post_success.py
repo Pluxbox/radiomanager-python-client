@@ -47,6 +47,7 @@ class PostSuccess(object):
 
         self._success = None
         self._id = None
+        self.discriminator = None
 
         self.success = success
         if id is not None:

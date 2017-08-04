@@ -44,6 +44,7 @@ class TagRelationsBroadcastsParams(object):
         """
 
         self._tag_id = None
+        self.discriminator = None
 
         if tag_id is not None:
           self.tag_id = tag_id

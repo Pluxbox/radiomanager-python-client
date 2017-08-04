@@ -71,6 +71,7 @@ class TagResult(object):
         self._programs = None
         self._contacts = None
         self._items = None
+        self.discriminator = None
 
         self.id = id
         if created_at is not None:

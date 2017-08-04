@@ -62,6 +62,7 @@ class ExternalMessageQueueData(object):
         self._sender_id = None
         self._avatar_url = None
         self._model_type_id = None
+        self.discriminator = None
 
         if message is not None:
           self.message = message

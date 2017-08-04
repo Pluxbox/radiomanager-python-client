@@ -50,6 +50,7 @@ class BlockRelations(object):
         self._items = None
         self._broadcast = None
         self._program = None
+        self.discriminator = None
 
         if items is not None:
           self.items = items

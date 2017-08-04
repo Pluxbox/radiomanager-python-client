@@ -62,6 +62,7 @@ class ItemRelations(object):
         self._tags = None
         self._campaign = None
         self._model_type = None
+        self.discriminator = None
 
         if block is not None:
           self.block = block

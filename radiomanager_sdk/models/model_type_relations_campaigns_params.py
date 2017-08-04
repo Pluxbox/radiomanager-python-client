@@ -44,6 +44,7 @@ class ModelTypeRelationsCampaignsParams(object):
         """
 
         self._model_type_id = None
+        self.discriminator = None
 
         if model_type_id is not None:
           self.model_type_id = model_type_id

@@ -47,6 +47,7 @@ class ReadOnly(object):
 
         self._error = None
         self._status_code = None
+        self.discriminator = None
 
         self.error = error
         self.status_code = status_code

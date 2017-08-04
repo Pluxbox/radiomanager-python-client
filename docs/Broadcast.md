@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **repetition_type** | **str** |  | [optional] 
 **repetition_end** | **datetime** |  | [optional] 
 **repetition_start** | **datetime** |  | [optional] 
-**repetition_days** | **list[bool]** |  | [optional] 
+**repetition_days** | **str** |  | [optional] 
 **pty_code_id** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -59,6 +59,7 @@ class Contact(object):
         self._firstname = None
         self._lastname = None
         self._phone = None
+        self.discriminator = None
 
         self.model_type_id = model_type_id
         if field_values is not None:

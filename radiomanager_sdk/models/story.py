@@ -56,6 +56,7 @@ class Story(object):
         self._field_values = None
         self._name = None
         self._description = None
+        self.discriminator = None
 
         self.model_type_id = model_type_id
         if recommended is not None:

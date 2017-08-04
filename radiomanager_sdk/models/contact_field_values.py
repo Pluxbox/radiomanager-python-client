@@ -44,6 +44,7 @@ class ContactFieldValues(object):
         """
 
         self._description = None
+        self.discriminator = None
 
         if description is not None:
           self.description = description

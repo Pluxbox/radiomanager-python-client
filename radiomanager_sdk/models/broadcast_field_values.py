@@ -44,6 +44,7 @@ class BroadcastFieldValues(object):
         """
 
         self._image = None
+        self.discriminator = None
 
         if image is not None:
           self.image = image

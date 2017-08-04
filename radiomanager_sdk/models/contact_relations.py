@@ -50,6 +50,7 @@ class ContactRelations(object):
         self._tags = None
         self._items = None
         self._model_type = None
+        self.discriminator = None
 
         if tags is not None:
           self.tags = tags

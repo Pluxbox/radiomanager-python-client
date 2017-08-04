@@ -44,6 +44,7 @@ class BroadcastRelationsItemsParams(object):
         """
 
         self._broadcast_id = None
+        self.discriminator = None
 
         if broadcast_id is not None:
           self.broadcast_id = broadcast_id

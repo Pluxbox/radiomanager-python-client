@@ -44,6 +44,7 @@ class GenreRelationsBroadcastsParams(object):
         """
 
         self._genre_id = None
+        self.discriminator = None
 
         if genre_id is not None:
           self.genre_id = genre_id

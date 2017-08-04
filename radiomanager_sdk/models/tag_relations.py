@@ -53,6 +53,7 @@ class TagRelations(object):
         self._programs = None
         self._contacts = None
         self._items = None
+        self.discriminator = None
 
         if broadcasts is not None:
           self.broadcasts = broadcasts

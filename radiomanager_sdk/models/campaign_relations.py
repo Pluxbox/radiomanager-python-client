@@ -47,6 +47,7 @@ class CampaignRelations(object):
 
         self._items = None
         self._model_type = None
+        self.discriminator = None
 
         if items is not None:
           self.items = items

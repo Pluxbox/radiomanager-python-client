@@ -35,7 +35,8 @@ class StoryDataInput(object):
         'recommended': 'bool',
         'field_values': 'object',
         'name': 'str',
-        'description': 'str'
+        'description': 'str',
+        'tags': 'list[int]'
     }
 
     attribute_map = {
@@ -43,10 +44,11 @@ class StoryDataInput(object):
         'recommended': 'recommended',
         'field_values': 'field_values',
         'name': 'name',
-        'description': 'description'
+        'description': 'description',
+        'tags': 'tags'
     }
 
-    def __init__(self, model_type_id=None, recommended=None, field_values=None, name=None, description=None):
+    def __init__(self, model_type_id=None, recommended=None, field_values=None, name=None, description=None, tags=None):
         """
         StoryDataInput - a model defined in Swagger
         """
@@ -56,6 +58,8 @@ class StoryDataInput(object):
         self._field_values = None
         self._name = None
         self._description = None
+        self._tags = None
+        self.discriminator = None
 
         self.model_type_id = model_type_id
         if recommended is not None:
@@ -65,6 +69,8 @@ class StoryDataInput(object):
         self.name = name
         if description is not None:
           self.description = description
+        if tags is not None:
+          self.tags = tags
 
     @property
     def model_type_id(self):
@@ -174,6 +180,27 @@ class StoryDataInput(object):
         """
 
         self._description = description
+
+    @property
+    def tags(self):
+        """
+        Gets the tags of this StoryDataInput.
+
+        :return: The tags of this StoryDataInput.
+        :rtype: list[int]
+        """
+        return self._tags
+
+    @tags.setter
+    def tags(self, tags):
+        """
+        Sets the tags of this StoryDataInput.
+
+        :param tags: The tags of this StoryDataInput.
+        :type: list[int]
+        """
+
+        self._tags = tags
 
     def to_dict(self):
         """

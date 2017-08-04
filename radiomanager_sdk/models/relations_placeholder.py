@@ -53,6 +53,7 @@ class RelationsPlaceholder(object):
         self._model = None
         self._operation = None
         self._params = None
+        self.discriminator = None
 
         self.href = href
         self.model = model

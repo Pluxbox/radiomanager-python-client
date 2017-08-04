@@ -137,6 +137,7 @@ class ItemResult(object):
         self._tags = None
         self._campaign = None
         self._model_type = None
+        self.discriminator = None
 
         if id is not None:
           self.id = id

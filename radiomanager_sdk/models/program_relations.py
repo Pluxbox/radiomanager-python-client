@@ -59,6 +59,7 @@ class ProgramRelations(object):
         self._presenters = None
         self._tags = None
         self._model_type = None
+        self.discriminator = None
 
         if items is not None:
           self.items = items

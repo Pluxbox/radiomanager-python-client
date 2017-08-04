@@ -113,6 +113,7 @@ class ProgramResult(object):
         self._presenters = None
         self._tags = None
         self._model_type = None
+        self.discriminator = None
 
         self.id = id
         self.updated_at = updated_at

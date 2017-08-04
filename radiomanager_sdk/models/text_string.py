@@ -56,6 +56,7 @@ class TextString(object):
         self._name = None
         self._created_at = None
         self._updated_at = None
+        self.discriminator = None
 
         self.id = id
         self.content = content

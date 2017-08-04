@@ -56,7 +56,7 @@ class BroadcastResult(object):
         'repetition_type': 'str',
         'repetition_end': 'datetime',
         'repetition_start': 'datetime',
-        'repetition_days': 'list[bool]',
+        'repetition_days': 'str',
         'pty_code_id': 'int',
         'items': 'BroadcastRelationsItems',
         'blocks': 'BroadcastRelationsBlocks',
@@ -140,6 +140,7 @@ class BroadcastResult(object):
         self._tags = None
         self._presenters = None
         self._model_type = None
+        self.discriminator = None
 
         self.id = id
         self.updated_at = updated_at
@@ -749,7 +750,7 @@ class BroadcastResult(object):
         Gets the repetition_days of this BroadcastResult.
 
         :return: The repetition_days of this BroadcastResult.
-        :rtype: list[bool]
+        :rtype: str
         """
         return self._repetition_days
 
@@ -759,7 +760,7 @@ class BroadcastResult(object):
         Sets the repetition_days of this BroadcastResult.
 
         :param repetition_days: The repetition_days of this BroadcastResult.
-        :type: list[bool]
+        :type: str
         """
 
         self._repetition_days = repetition_days

@@ -98,6 +98,7 @@ class ItemDataInput(object):
         self._previous_id = None
         self._contacts = None
         self._tags = None
+        self.discriminator = None
 
         self.model_type_id = model_type_id
         if block_id is not None:
