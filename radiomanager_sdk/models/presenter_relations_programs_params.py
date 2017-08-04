@@ -44,7 +44,6 @@ class PresenterRelationsProgramsParams(object):
         """
 
         self._presenter_id = None
-        self.discriminator = None
 
         if presenter_id is not None:
           self.presenter_id = presenter_id

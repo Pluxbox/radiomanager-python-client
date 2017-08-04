@@ -47,7 +47,6 @@ class BroadcastInputOnly(object):
 
         self._tags = None
         self._presenters = None
-        self.discriminator = None
 
         if tags is not None:
           self.tags = tags

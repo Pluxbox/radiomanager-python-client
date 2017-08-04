@@ -44,7 +44,6 @@ class BlockRelationsItemsParams(object):
         """
 
         self._block_id = None
-        self.discriminator = None
 
         if block_id is not None:
           self.block_id = block_id

@@ -47,7 +47,6 @@ class Data1(object):
 
         self._start = None
         self._items = None
-        self.discriminator = None
 
         if start is not None:
           self.start = start

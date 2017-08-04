@@ -44,7 +44,6 @@ class ContactRelationsTagsParams(object):
         """
 
         self._contact_id = None
-        self.discriminator = None
 
         if contact_id is not None:
           self.contact_id = contact_id

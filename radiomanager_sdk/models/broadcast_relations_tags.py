@@ -53,7 +53,6 @@ class BroadcastRelationsTags(object):
         self._model = None
         self._operation = None
         self._params = None
-        self.discriminator = None
 
         if href is not None:
           self.href = href

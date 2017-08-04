@@ -20,6 +20,7 @@ import re
 # python 2 and python 3 compatibility library
 from six import iteritems
 
+from ..configuration import Configuration
 from ..api_client import ApiClient
 
 
@@ -31,27 +32,35 @@ class BroadcastApi(object):
     """
 
     def __init__(self, api_client=None):
-        if api_client is None:
-            api_client = ApiClient()
-        self.api_client = api_client
+        config = Configuration()
+        if api_client:
+            self.api_client = api_client
+        else:
+            if not config.api_client:
+                config.api_client = ApiClient()
+            self.api_client = config.api_client
 
     def create_broadcast(self, data, **kwargs):
         """
         Create broadcast.
         Create broadcast.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_broadcast(data, async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.create_broadcast(data, callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param BroadcastDataInput data: Data **(Required)** (required)
         :return: PostSuccess
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('callback'):
             return self.create_broadcast_with_http_info(data, **kwargs)
         else:
             (data) = self.create_broadcast_with_http_info(data, **kwargs)
@@ -62,11 +71,15 @@ class BroadcastApi(object):
         Create broadcast.
         Create broadcast.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_broadcast_with_http_info(data, async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.create_broadcast_with_http_info(data, callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param BroadcastDataInput data: Data **(Required)** (required)
         :return: PostSuccess
                  If the method is called asynchronously,
@@ -74,7 +87,7 @@ class BroadcastApi(object):
         """
 
         all_params = ['data']
-        all_params.append('async')
+        all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -127,7 +140,7 @@ class BroadcastApi(object):
                                         files=local_var_files,
                                         response_type='PostSuccess',
                                         auth_settings=auth_settings,
-                                        async=params.get('async'),
+                                        callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -138,18 +151,22 @@ class BroadcastApi(object):
         Delete broadcast by id
         Delete broadcast by id
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_broadcast_by_id(id, async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_broadcast_by_id(id, callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param int id: ID of Broadcast **(Required)** (required)
         :return: Success
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('callback'):
             return self.delete_broadcast_by_id_with_http_info(id, **kwargs)
         else:
             (data) = self.delete_broadcast_by_id_with_http_info(id, **kwargs)
@@ -160,11 +177,15 @@ class BroadcastApi(object):
         Delete broadcast by id
         Delete broadcast by id
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_broadcast_by_id_with_http_info(id, async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_broadcast_by_id_with_http_info(id, callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param int id: ID of Broadcast **(Required)** (required)
         :return: Success
                  If the method is called asynchronously,
@@ -172,7 +193,7 @@ class BroadcastApi(object):
         """
 
         all_params = ['id']
-        all_params.append('async')
+        all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -227,7 +248,7 @@ class BroadcastApi(object):
                                         files=local_var_files,
                                         response_type='Success',
                                         auth_settings=auth_settings,
-                                        async=params.get('async'),
+                                        callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -238,11 +259,15 @@ class BroadcastApi(object):
         Get broadcast by id
         Get broadcast by id
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_broadcast_by_id(id, async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_broadcast_by_id(id, callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param int id: ID of Broadcast **(Required)** (required)
         :param int external_station_id: Query on a different (content providing) station *(Optional)*
         :return: BroadcastResult
@@ -250,7 +275,7 @@ class BroadcastApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('callback'):
             return self.get_broadcast_by_id_with_http_info(id, **kwargs)
         else:
             (data) = self.get_broadcast_by_id_with_http_info(id, **kwargs)
@@ -261,11 +286,15 @@ class BroadcastApi(object):
         Get broadcast by id
         Get broadcast by id
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_broadcast_by_id_with_http_info(id, async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_broadcast_by_id_with_http_info(id, callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param int id: ID of Broadcast **(Required)** (required)
         :param int external_station_id: Query on a different (content providing) station *(Optional)*
         :return: BroadcastResult
@@ -274,7 +303,7 @@ class BroadcastApi(object):
         """
 
         all_params = ['id', 'external_station_id']
-        all_params.append('async')
+        all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -331,7 +360,7 @@ class BroadcastApi(object):
                                         files=local_var_files,
                                         response_type='BroadcastResult',
                                         auth_settings=auth_settings,
-                                        async=params.get('async'),
+                                        callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -342,17 +371,21 @@ class BroadcastApi(object):
         Get current Broadcast
         Get current Broadcast
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_current_broadcast(async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_current_broadcast(callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :return: Broadcast
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('callback'):
             return self.get_current_broadcast_with_http_info(**kwargs)
         else:
             (data) = self.get_current_broadcast_with_http_info(**kwargs)
@@ -363,18 +396,22 @@ class BroadcastApi(object):
         Get current Broadcast
         Get current Broadcast
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_current_broadcast_with_http_info(async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_current_broadcast_with_http_info(callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :return: Broadcast
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         all_params = []
-        all_params.append('async')
+        all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -421,7 +458,7 @@ class BroadcastApi(object):
                                         files=local_var_files,
                                         response_type='Broadcast',
                                         auth_settings=auth_settings,
-                                        async=params.get('async'),
+                                        callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -432,18 +469,22 @@ class BroadcastApi(object):
         Get daily EPG
         Get current Broadcast
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_daily_epg(async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_daily_epg(callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param datetime date: Date *(Optional)*
         :return: EPGBroadcast
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('callback'):
             return self.get_daily_epg_with_http_info(**kwargs)
         else:
             (data) = self.get_daily_epg_with_http_info(**kwargs)
@@ -454,11 +495,15 @@ class BroadcastApi(object):
         Get daily EPG
         Get current Broadcast
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_daily_epg_with_http_info(async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_daily_epg_with_http_info(callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param datetime date: Date *(Optional)*
         :return: EPGBroadcast
                  If the method is called asynchronously,
@@ -466,7 +511,7 @@ class BroadcastApi(object):
         """
 
         all_params = ['date']
-        all_params.append('async')
+        all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -516,7 +561,7 @@ class BroadcastApi(object):
                                         files=local_var_files,
                                         response_type='EPGBroadcast',
                                         auth_settings=auth_settings,
-                                        async=params.get('async'),
+                                        callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -527,18 +572,22 @@ class BroadcastApi(object):
         Get EPG by date
         Get EPG by date
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_epg_by_date(async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_epg_by_date(callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param datetime date: Date *(Optional)*
         :return: EPGBroadcast
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('callback'):
             return self.get_epg_by_date_with_http_info(**kwargs)
         else:
             (data) = self.get_epg_by_date_with_http_info(**kwargs)
@@ -549,11 +598,15 @@ class BroadcastApi(object):
         Get EPG by date
         Get EPG by date
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_epg_by_date_with_http_info(async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_epg_by_date_with_http_info(callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param datetime date: Date *(Optional)*
         :return: EPGBroadcast
                  If the method is called asynchronously,
@@ -561,7 +614,7 @@ class BroadcastApi(object):
         """
 
         all_params = ['date']
-        all_params.append('async')
+        all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -611,7 +664,7 @@ class BroadcastApi(object):
                                         files=local_var_files,
                                         response_type='EPGBroadcast',
                                         auth_settings=auth_settings,
-                                        async=params.get('async'),
+                                        callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -622,17 +675,21 @@ class BroadcastApi(object):
         Get next Broadcast
         Get next Broadcast
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_next_broadcast(async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_next_broadcast(callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :return: Broadcast
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('callback'):
             return self.get_next_broadcast_with_http_info(**kwargs)
         else:
             (data) = self.get_next_broadcast_with_http_info(**kwargs)
@@ -643,18 +700,22 @@ class BroadcastApi(object):
         Get next Broadcast
         Get next Broadcast
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_next_broadcast_with_http_info(async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_next_broadcast_with_http_info(callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :return: Broadcast
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
         all_params = []
-        all_params.append('async')
+        all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -701,7 +762,7 @@ class BroadcastApi(object):
                                         files=local_var_files,
                                         response_type='Broadcast',
                                         auth_settings=auth_settings,
-                                        async=params.get('async'),
+                                        callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -712,18 +773,22 @@ class BroadcastApi(object):
         Get weekly EPG
         Get weekly EPG
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_weekly_epg(async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_weekly_epg(callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param str date: Date *(Optional)*
         :return: EPGBroadcast
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('callback'):
             return self.get_weekly_epg_with_http_info(**kwargs)
         else:
             (data) = self.get_weekly_epg_with_http_info(**kwargs)
@@ -734,11 +799,15 @@ class BroadcastApi(object):
         Get weekly EPG
         Get weekly EPG
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_weekly_epg_with_http_info(async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_weekly_epg_with_http_info(callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param str date: Date *(Optional)*
         :return: EPGBroadcast
                  If the method is called asynchronously,
@@ -746,7 +815,7 @@ class BroadcastApi(object):
         """
 
         all_params = ['date']
-        all_params.append('async')
+        all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -796,7 +865,7 @@ class BroadcastApi(object):
                                         files=local_var_files,
                                         response_type='EPGBroadcast',
                                         auth_settings=auth_settings,
-                                        async=params.get('async'),
+                                        callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -807,11 +876,15 @@ class BroadcastApi(object):
         Get all broadcasts.
         List all broadcasts.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_broadcasts(async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.list_broadcasts(callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param int page: Current page *(Optional)*
         :param datetime start_min: Minimum start date *(Optional)*
         :param datetime start_max: Maximum start date *(Optional)*
@@ -828,7 +901,7 @@ class BroadcastApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('callback'):
             return self.list_broadcasts_with_http_info(**kwargs)
         else:
             (data) = self.list_broadcasts_with_http_info(**kwargs)
@@ -839,11 +912,15 @@ class BroadcastApi(object):
         Get all broadcasts.
         List all broadcasts.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_broadcasts_with_http_info(async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.list_broadcasts_with_http_info(callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param int page: Current page *(Optional)*
         :param datetime start_min: Minimum start date *(Optional)*
         :param datetime start_max: Maximum start date *(Optional)*
@@ -861,7 +938,7 @@ class BroadcastApi(object):
         """
 
         all_params = ['page', 'start_min', 'start_max', 'model_type_id', 'tag_id', 'presenter_id', 'item_id', 'block_id', 'genre_id', 'program_id', 'external_station_id']
-        all_params.append('async')
+        all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -933,7 +1010,7 @@ class BroadcastApi(object):
                                         files=local_var_files,
                                         response_type='BroadcastResults',
                                         auth_settings=auth_settings,
-                                        async=params.get('async'),
+                                        callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -944,11 +1021,15 @@ class BroadcastApi(object):
         Print Broadcast by id
         Print Broadcast by id
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.print_broadcast_by_id(id, async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.print_broadcast_by_id(id, callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param int id: ID of Broadcast **(Required)** (required)
         :param int program_id: Search on Program ID *(Optional)* `(Relation)`
         :param int presenter_id: Search on Presenter ID *(Optional)* `(Relation)`
@@ -958,7 +1039,7 @@ class BroadcastApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('callback'):
             return self.print_broadcast_by_id_with_http_info(id, **kwargs)
         else:
             (data) = self.print_broadcast_by_id_with_http_info(id, **kwargs)
@@ -969,11 +1050,15 @@ class BroadcastApi(object):
         Print Broadcast by id
         Print Broadcast by id
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.print_broadcast_by_id_with_http_info(id, async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.print_broadcast_by_id_with_http_info(id, callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param int id: ID of Broadcast **(Required)** (required)
         :param int program_id: Search on Program ID *(Optional)* `(Relation)`
         :param int presenter_id: Search on Presenter ID *(Optional)* `(Relation)`
@@ -984,7 +1069,7 @@ class BroadcastApi(object):
         """
 
         all_params = ['id', 'program_id', 'presenter_id', 'tag_id']
-        all_params.append('async')
+        all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1045,7 +1130,7 @@ class BroadcastApi(object):
                                         files=local_var_files,
                                         response_type='EPGBroadcast',
                                         auth_settings=auth_settings,
-                                        async=params.get('async'),
+                                        callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -1056,11 +1141,15 @@ class BroadcastApi(object):
         Update broadcast by id
         Update broadcast by id
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_broadcast_by_id(id, async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.update_broadcast_by_id(id, callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param int id: ID of Broadcast **(Required)** (required)
         :param BroadcastDataInput data: Data *(Optional)*
         :return: Success
@@ -1068,7 +1157,7 @@ class BroadcastApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('callback'):
             return self.update_broadcast_by_id_with_http_info(id, **kwargs)
         else:
             (data) = self.update_broadcast_by_id_with_http_info(id, **kwargs)
@@ -1079,11 +1168,15 @@ class BroadcastApi(object):
         Update broadcast by id
         Update broadcast by id
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_broadcast_by_id_with_http_info(id, async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.update_broadcast_by_id_with_http_info(id, callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param int id: ID of Broadcast **(Required)** (required)
         :param BroadcastDataInput data: Data *(Optional)*
         :return: Success
@@ -1092,7 +1185,7 @@ class BroadcastApi(object):
         """
 
         all_params = ['id', 'data']
-        all_params.append('async')
+        all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -1149,7 +1242,7 @@ class BroadcastApi(object):
                                         files=local_var_files,
                                         response_type='Success',
                                         auth_settings=auth_settings,
-                                        async=params.get('async'),
+                                        callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),

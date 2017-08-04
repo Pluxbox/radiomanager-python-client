@@ -44,7 +44,6 @@ class StoryInputOnly(object):
         """
 
         self._tags = None
-        self.discriminator = None
 
         if tags is not None:
           self.tags = tags

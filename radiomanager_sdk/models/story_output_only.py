@@ -56,7 +56,6 @@ class StoryOutputOnly(object):
         self._updated_at = None
         self._deleted_at = None
         self._external_station_id = None
-        self.discriminator = None
 
         if id is not None:
           self.id = id

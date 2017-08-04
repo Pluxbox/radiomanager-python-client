@@ -68,7 +68,6 @@ class ItemOutputOnly(object):
         self._templateblock_id = None
         self._templateitem_id = None
         self._external_station_id = None
-        self.discriminator = None
 
         if id is not None:
           self.id = id

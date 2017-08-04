@@ -50,7 +50,6 @@ class ItemInputOnly(object):
         self._previous_id = None
         self._contacts = None
         self._tags = None
-        self.discriminator = None
 
         if previous_id is not None:
           self.previous_id = previous_id

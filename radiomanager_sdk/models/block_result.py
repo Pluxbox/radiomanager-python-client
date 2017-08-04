@@ -74,7 +74,6 @@ class BlockResult(object):
         self._items = None
         self._broadcast = None
         self._program = None
-        self.discriminator = None
 
         self.id = id
         self.broadcast_id = broadcast_id

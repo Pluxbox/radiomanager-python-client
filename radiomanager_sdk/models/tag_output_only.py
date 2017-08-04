@@ -56,7 +56,6 @@ class TagOutputOnly(object):
         self._updated_at = None
         self._deleted_at = None
         self._external_station_id = None
-        self.discriminator = None
 
         self.id = id
         if created_at is not None:

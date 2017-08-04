@@ -59,7 +59,6 @@ class ModelTypeRelations(object):
         self._contacts = None
         self._presenters = None
         self._items = None
-        self.discriminator = None
 
         if campaigns is not None:
           self.campaigns = campaigns

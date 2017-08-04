@@ -80,7 +80,6 @@ class Program(object):
         self._recommended = None
         self._language = None
         self._pty_code_id = None
-        self.discriminator = None
 
         self.model_type_id = model_type_id
         if field_values is not None:

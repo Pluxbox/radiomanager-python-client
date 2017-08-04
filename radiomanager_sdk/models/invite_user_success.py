@@ -44,7 +44,6 @@ class InviteUserSuccess(object):
         """
 
         self._success = None
-        self.discriminator = None
 
         if success is not None:
           self.success = success

@@ -178,3 +178,5 @@ from .apis.visual_slide_api import VisualSlideApi
 from .api_client import ApiClient
 
 from .configuration import Configuration
+
+configuration = Configuration()

@@ -113,7 +113,6 @@ class BroadcastDataInput(object):
         self._pty_code_id = None
         self._tags = None
         self._presenters = None
-        self.discriminator = None
 
         if program_id is not None:
           self.program_id = program_id

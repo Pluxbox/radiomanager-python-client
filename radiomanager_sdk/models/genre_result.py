@@ -62,7 +62,6 @@ class GenreResult(object):
         self._broadcasts = None
         self._programs = None
         self._external_station_id = None
-        self.discriminator = None
 
         self.id = id
         if urn is not None:

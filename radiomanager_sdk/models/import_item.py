@@ -74,7 +74,6 @@ class ImportItem(object):
         self._details = None
         self._contacts = None
         self._tags = None
-        self.discriminator = None
 
         self.model_type_id = model_type_id
         self.external_id = external_id

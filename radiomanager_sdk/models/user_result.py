@@ -77,7 +77,6 @@ class UserResult(object):
         self._language = None
         self._active_external_station_id = None
         self._role_id = None
-        self.discriminator = None
 
         self.id = id
         self.email = email

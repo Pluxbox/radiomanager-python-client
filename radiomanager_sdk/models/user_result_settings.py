@@ -59,7 +59,6 @@ class UserResultSettings(object):
         self._show_time_column = None
         self._show_speech_time = None
         self._zoom_factor = None
-        self.discriminator = None
 
         if show_side_bar is not None:
           self.show_side_bar = show_side_bar

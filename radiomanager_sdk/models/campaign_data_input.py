@@ -62,7 +62,6 @@ class CampaignDataInput(object):
         self._stop = None
         self._recommended = None
         self._description = None
-        self.discriminator = None
 
         self.model_type_id = model_type_id
         if field_values is not None:

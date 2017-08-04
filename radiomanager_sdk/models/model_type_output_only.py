@@ -44,7 +44,6 @@ class ModelTypeOutputOnly(object):
         """
 
         self._external_station_id = None
-        self.discriminator = None
 
         if external_station_id is not None:
           self.external_station_id = external_station_id

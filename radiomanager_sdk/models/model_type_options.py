@@ -44,7 +44,6 @@ class ModelTypeOptions(object):
         """
 
         self._color = None
-        self.discriminator = None
 
         if color is not None:
           self.color = color

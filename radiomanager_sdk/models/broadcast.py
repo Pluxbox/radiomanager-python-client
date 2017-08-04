@@ -107,7 +107,6 @@ class Broadcast(object):
         self._repetition_start = None
         self._repetition_days = None
         self._pty_code_id = None
-        self.discriminator = None
 
         if program_id is not None:
           self.program_id = program_id

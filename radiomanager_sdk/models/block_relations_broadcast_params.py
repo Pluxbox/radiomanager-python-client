@@ -44,7 +44,6 @@ class BlockRelationsBroadcastParams(object):
         """
 
         self._id = None
-        self.discriminator = None
 
         if id is not None:
           self.id = id

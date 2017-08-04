@@ -53,7 +53,6 @@ class Genre(object):
         self._urn = None
         self._parent_id = None
         self._name = None
-        self.discriminator = None
 
         self.id = id
         if urn is not None:

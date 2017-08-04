@@ -23,13 +23,12 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-configuration = radiomanager_sdk.Configuration()
-configuration.api_key['api-key'] = 'YOUR_API_KEY'
+radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['api-key'] = 'Bearer'
+# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.StringApi(radiomanager_sdk.ApiClient(configuration))
+api_instance = radiomanager_sdk.StringApi()
 name = 'name_example' # str | Name of Strings **(Required)**
 full_model = true # bool | Full model or content only **(Required)** (default to true)
 

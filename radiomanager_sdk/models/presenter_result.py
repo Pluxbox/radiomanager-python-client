@@ -83,7 +83,6 @@ class PresenterResult(object):
         self._programs = None
         self._broadcasts = None
         self._model_type = None
-        self.discriminator = None
 
         self.id = id
         self.updated_at = updated_at

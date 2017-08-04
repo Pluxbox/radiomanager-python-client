@@ -44,7 +44,6 @@ class TagDataInput(object):
         """
 
         self._name = None
-        self.discriminator = None
 
         self.name = name
 

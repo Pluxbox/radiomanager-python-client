@@ -50,7 +50,6 @@ class EPGBroadcast(object):
         self.__2016_01_11 = None
         self._next_page_url = None
         self._prev_page_url = None
-        self.discriminator = None
 
         self._2016_01_11 = _2016_01_11
         self.next_page_url = next_page_url

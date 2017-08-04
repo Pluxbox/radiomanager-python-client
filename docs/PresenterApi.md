@@ -27,13 +27,12 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-configuration = radiomanager_sdk.Configuration()
-configuration.api_key['api-key'] = 'YOUR_API_KEY'
+radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['api-key'] = 'Bearer'
+# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.PresenterApi(radiomanager_sdk.ApiClient(configuration))
+api_instance = radiomanager_sdk.PresenterApi()
 data = radiomanager_sdk.PresenterDataInput() # PresenterDataInput | Data **(Required)**
 
 try: 
@@ -81,13 +80,12 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-configuration = radiomanager_sdk.Configuration()
-configuration.api_key['api-key'] = 'YOUR_API_KEY'
+radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['api-key'] = 'Bearer'
+# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.PresenterApi(radiomanager_sdk.ApiClient(configuration))
+api_instance = radiomanager_sdk.PresenterApi()
 id = 789 # int | id of presenter
 
 try: 
@@ -135,13 +133,12 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-configuration = radiomanager_sdk.Configuration()
-configuration.api_key['api-key'] = 'YOUR_API_KEY'
+radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['api-key'] = 'Bearer'
+# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.PresenterApi(radiomanager_sdk.ApiClient(configuration))
+api_instance = radiomanager_sdk.PresenterApi()
 id = 789 # int | id of Presenter
 external_station_id = 789 # int | Query on a different (content providing) station *(Optional)* (optional)
 
@@ -191,13 +188,12 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-configuration = radiomanager_sdk.Configuration()
-configuration.api_key['api-key'] = 'YOUR_API_KEY'
+radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['api-key'] = 'Bearer'
+# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.PresenterApi(radiomanager_sdk.ApiClient(configuration))
+api_instance = radiomanager_sdk.PresenterApi()
 page = 789 # int | Current page *(Optional)* (optional)
 model_type_id = 789 # int | Search on ModelType ID (Optional) (optional)
 program_id = 789 # int | Search on Program ID *(Optional)* `(Relation)` (optional)
@@ -253,13 +249,12 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-configuration = radiomanager_sdk.Configuration()
-configuration.api_key['api-key'] = 'YOUR_API_KEY'
+radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# configuration.api_key_prefix['api-key'] = 'Bearer'
+# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.PresenterApi(radiomanager_sdk.ApiClient(configuration))
+api_instance = radiomanager_sdk.PresenterApi()
 id = 789 # int | id of Presenter
 data = radiomanager_sdk.PresenterDataInput() # PresenterDataInput | Data *(Optional)* (optional)
 

@@ -44,7 +44,6 @@ class ItemRelationsContactsParams(object):
         """
 
         self._item_id = None
-        self.discriminator = None
 
         if item_id is not None:
           self.item_id = item_id

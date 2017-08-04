@@ -56,7 +56,6 @@ class PresenterOutputOnly(object):
         self._created_at = None
         self._deleted_at = None
         self._external_station_id = None
-        self.discriminator = None
 
         self.id = id
         self.updated_at = updated_at

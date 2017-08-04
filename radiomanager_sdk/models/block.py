@@ -65,7 +65,6 @@ class Block(object):
         self._updated_at = None
         self._deleted_at = None
         self._external_station_id = None
-        self.discriminator = None
 
         self.id = id
         self.broadcast_id = broadcast_id

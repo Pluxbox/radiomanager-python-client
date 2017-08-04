@@ -20,6 +20,7 @@ import re
 # python 2 and python 3 compatibility library
 from six import iteritems
 
+from ..configuration import Configuration
 from ..api_client import ApiClient
 
 
@@ -31,20 +32,28 @@ class StringApi(object):
     """
 
     def __init__(self, api_client=None):
-        if api_client is None:
-            api_client = ApiClient()
-        self.api_client = api_client
+        config = Configuration()
+        if api_client:
+            self.api_client = api_client
+        else:
+            if not config.api_client:
+                config.api_client = ApiClient()
+            self.api_client = config.api_client
 
     def get_strings_by_name(self, name, full_model, **kwargs):
         """
         Get Strings (formatted)
         Get Strings (formatted)
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_strings_by_name(name, full_model, async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_strings_by_name(name, full_model, callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param str name: Name of Strings **(Required)** (required)
         :param bool full_model: Full model or content only **(Required)** (required)
         :return: TextString
@@ -52,7 +61,7 @@ class StringApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('callback'):
             return self.get_strings_by_name_with_http_info(name, full_model, **kwargs)
         else:
             (data) = self.get_strings_by_name_with_http_info(name, full_model, **kwargs)
@@ -63,11 +72,15 @@ class StringApi(object):
         Get Strings (formatted)
         Get Strings (formatted)
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_strings_by_name_with_http_info(name, full_model, async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_strings_by_name_with_http_info(name, full_model, callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param str name: Name of Strings **(Required)** (required)
         :param bool full_model: Full model or content only **(Required)** (required)
         :return: TextString
@@ -76,7 +89,7 @@ class StringApi(object):
         """
 
         all_params = ['name', 'full_model']
-        all_params.append('async')
+        all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -134,7 +147,7 @@ class StringApi(object):
                                         files=local_var_files,
                                         response_type='TextString',
                                         auth_settings=auth_settings,
-                                        async=params.get('async'),
+                                        callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),

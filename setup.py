@@ -15,7 +15,7 @@ import sys
 from setuptools import setup, find_packages
 
 NAME = "Pluxbox RadioManager Client"
-VERSION = "1.0.91"
+VERSION = "1.0.92"
 # To install the library, run the following
 #
 # python setup.py install

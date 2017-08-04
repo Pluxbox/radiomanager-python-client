@@ -20,6 +20,7 @@ import re
 # python 2 and python 3 compatibility library
 from six import iteritems
 
+from ..configuration import Configuration
 from ..api_client import ApiClient
 
 
@@ -31,27 +32,35 @@ class PresenterApi(object):
     """
 
     def __init__(self, api_client=None):
-        if api_client is None:
-            api_client = ApiClient()
-        self.api_client = api_client
+        config = Configuration()
+        if api_client:
+            self.api_client = api_client
+        else:
+            if not config.api_client:
+                config.api_client = ApiClient()
+            self.api_client = config.api_client
 
     def create_presenter(self, data, **kwargs):
         """
         Create presenter.
         Create presenter.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_presenter(data, async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.create_presenter(data, callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param PresenterDataInput data: Data **(Required)** (required)
         :return: PostSuccess
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('callback'):
             return self.create_presenter_with_http_info(data, **kwargs)
         else:
             (data) = self.create_presenter_with_http_info(data, **kwargs)
@@ -62,11 +71,15 @@ class PresenterApi(object):
         Create presenter.
         Create presenter.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.create_presenter_with_http_info(data, async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.create_presenter_with_http_info(data, callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param PresenterDataInput data: Data **(Required)** (required)
         :return: PostSuccess
                  If the method is called asynchronously,
@@ -74,7 +87,7 @@ class PresenterApi(object):
         """
 
         all_params = ['data']
-        all_params.append('async')
+        all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -127,7 +140,7 @@ class PresenterApi(object):
                                         files=local_var_files,
                                         response_type='PostSuccess',
                                         auth_settings=auth_settings,
-                                        async=params.get('async'),
+                                        callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -138,18 +151,22 @@ class PresenterApi(object):
         Delete presenter by id
         Delete presenter by id
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_presenter_by_id(id, async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_presenter_by_id(id, callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param int id: id of presenter (required)
         :return: Success
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('callback'):
             return self.delete_presenter_by_id_with_http_info(id, **kwargs)
         else:
             (data) = self.delete_presenter_by_id_with_http_info(id, **kwargs)
@@ -160,11 +177,15 @@ class PresenterApi(object):
         Delete presenter by id
         Delete presenter by id
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.delete_presenter_by_id_with_http_info(id, async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.delete_presenter_by_id_with_http_info(id, callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param int id: id of presenter (required)
         :return: Success
                  If the method is called asynchronously,
@@ -172,7 +193,7 @@ class PresenterApi(object):
         """
 
         all_params = ['id']
-        all_params.append('async')
+        all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -227,7 +248,7 @@ class PresenterApi(object):
                                         files=local_var_files,
                                         response_type='Success',
                                         auth_settings=auth_settings,
-                                        async=params.get('async'),
+                                        callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -238,11 +259,15 @@ class PresenterApi(object):
         Get presenter by id
         Get presenter by id
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_presenter_by_id(id, async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_presenter_by_id(id, callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param int id: id of Presenter (required)
         :param int external_station_id: Query on a different (content providing) station *(Optional)*
         :return: PresenterResult
@@ -250,7 +275,7 @@ class PresenterApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('callback'):
             return self.get_presenter_by_id_with_http_info(id, **kwargs)
         else:
             (data) = self.get_presenter_by_id_with_http_info(id, **kwargs)
@@ -261,11 +286,15 @@ class PresenterApi(object):
         Get presenter by id
         Get presenter by id
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.get_presenter_by_id_with_http_info(id, async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_presenter_by_id_with_http_info(id, callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param int id: id of Presenter (required)
         :param int external_station_id: Query on a different (content providing) station *(Optional)*
         :return: PresenterResult
@@ -274,7 +303,7 @@ class PresenterApi(object):
         """
 
         all_params = ['id', 'external_station_id']
-        all_params.append('async')
+        all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -331,7 +360,7 @@ class PresenterApi(object):
                                         files=local_var_files,
                                         response_type='PresenterResult',
                                         auth_settings=auth_settings,
-                                        async=params.get('async'),
+                                        callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -342,11 +371,15 @@ class PresenterApi(object):
         Get all presenters.
         List all presenters.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_presenters(async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.list_presenters(callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param int page: Current page *(Optional)*
         :param int model_type_id: Search on ModelType ID (Optional)
         :param int program_id: Search on Program ID *(Optional)* `(Relation)`
@@ -357,7 +390,7 @@ class PresenterApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('callback'):
             return self.list_presenters_with_http_info(**kwargs)
         else:
             (data) = self.list_presenters_with_http_info(**kwargs)
@@ -368,11 +401,15 @@ class PresenterApi(object):
         Get all presenters.
         List all presenters.
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.list_presenters_with_http_info(async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.list_presenters_with_http_info(callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param int page: Current page *(Optional)*
         :param int model_type_id: Search on ModelType ID (Optional)
         :param int program_id: Search on Program ID *(Optional)* `(Relation)`
@@ -384,7 +421,7 @@ class PresenterApi(object):
         """
 
         all_params = ['page', 'model_type_id', 'program_id', 'broadcast_id', 'external_station_id']
-        all_params.append('async')
+        all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -444,7 +481,7 @@ class PresenterApi(object):
                                         files=local_var_files,
                                         response_type='PresenterResults',
                                         auth_settings=auth_settings,
-                                        async=params.get('async'),
+                                        callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),
@@ -455,11 +492,15 @@ class PresenterApi(object):
         Update presenter by id
         Update presenter by id
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_presenter_by_id(id, async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.update_presenter_by_id(id, callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param int id: id of Presenter (required)
         :param PresenterDataInput data: Data *(Optional)*
         :return: Success
@@ -467,7 +508,7 @@ class PresenterApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        if kwargs.get('async'):
+        if kwargs.get('callback'):
             return self.update_presenter_by_id_with_http_info(id, **kwargs)
         else:
             (data) = self.update_presenter_by_id_with_http_info(id, **kwargs)
@@ -478,11 +519,15 @@ class PresenterApi(object):
         Update presenter by id
         Update presenter by id
         This method makes a synchronous HTTP request by default. To make an
-        asynchronous HTTP request, please pass async=True
-        >>> thread = api.update_presenter_by_id_with_http_info(id, async=True)
-        >>> result = thread.get()
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.update_presenter_by_id_with_http_info(id, callback=callback_function)
 
-        :param async bool
+        :param callback function: The callback function
+            for asynchronous request. (optional)
         :param int id: id of Presenter (required)
         :param PresenterDataInput data: Data *(Optional)*
         :return: Success
@@ -491,7 +536,7 @@ class PresenterApi(object):
         """
 
         all_params = ['id', 'data']
-        all_params.append('async')
+        all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
         all_params.append('_request_timeout')
@@ -548,7 +593,7 @@ class PresenterApi(object):
                                         files=local_var_files,
                                         response_type='Success',
                                         auth_settings=auth_settings,
-                                        async=params.get('async'),
+                                        callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
                                         _preload_content=params.get('_preload_content', True),
                                         _request_timeout=params.get('_request_timeout'),

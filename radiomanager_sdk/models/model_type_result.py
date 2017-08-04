@@ -86,7 +86,6 @@ class ModelTypeResult(object):
         self._presenters = None
         self._items = None
         self._external_station_id = None
-        self.discriminator = None
 
         self.id = id
         if name is not None:

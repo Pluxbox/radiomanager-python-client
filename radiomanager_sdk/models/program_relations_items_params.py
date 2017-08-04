@@ -44,7 +44,6 @@ class ProgramRelationsItemsParams(object):
         """
 
         self._program_id = None
-        self.discriminator = None
 
         if program_id is not None:
           self.program_id = program_id

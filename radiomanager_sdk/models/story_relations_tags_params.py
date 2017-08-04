@@ -44,7 +44,6 @@ class StoryRelationsTagsParams(object):
         """
 
         self._story_id = None
-        self.discriminator = None
 
         if story_id is not None:
           self.story_id = story_id

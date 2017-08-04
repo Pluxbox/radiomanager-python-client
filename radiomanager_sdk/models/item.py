@@ -89,7 +89,6 @@ class Item(object):
         self._user_draft_id = None
         self._static_start = None
         self._details = None
-        self.discriminator = None
 
         self.model_type_id = model_type_id
         if block_id is not None:

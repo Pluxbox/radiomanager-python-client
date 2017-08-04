@@ -44,7 +44,6 @@ class Success(object):
         """
 
         self._success = None
-        self.discriminator = None
 
         self.success = success
 

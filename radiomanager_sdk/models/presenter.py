@@ -59,7 +59,6 @@ class Presenter(object):
         self._lastname = None
         self._active = None
         self._name = None
-        self.discriminator = None
 
         self.model_type_id = model_type_id
         if field_values is not None:

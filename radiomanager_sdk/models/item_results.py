@@ -68,7 +68,6 @@ class ItemResults(object):
         self._to = None
         self._total = None
         self._results = None
-        self.discriminator = None
 
         if current_page is not None:
           self.current_page = current_page
