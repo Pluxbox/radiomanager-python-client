@@ -113,7 +113,6 @@ from .models.program_results import ProgramResults
 from .models.read_only import ReadOnly
 from .models.relations_placeholder import RelationsPlaceholder
 from .models.story import Story
-from .models.story_input_only import StoryInputOnly
 from .models.story_output_only import StoryOutputOnly
 from .models.story_relations import StoryRelations
 from .models.story_relations_items import StoryRelationsItems

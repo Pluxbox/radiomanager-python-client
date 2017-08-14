@@ -224,7 +224,6 @@ Class | Method | HTTP request | Description
  - [ReadOnly](docs/ReadOnly.md)
  - [RelationsPlaceholder](docs/RelationsPlaceholder.md)
  - [Story](docs/Story.md)
- - [StoryInputOnly](docs/StoryInputOnly.md)
  - [StoryOutputOnly](docs/StoryOutputOnly.md)
  - [StoryRelations](docs/StoryRelations.md)
  - [StoryRelationsItems](docs/StoryRelationsItems.md)
