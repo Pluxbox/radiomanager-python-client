@@ -37,7 +37,7 @@ class ItemInputOnly(object):
     }
 
     attribute_map = {
-        'previous_id': 'previous_id',
+        'previous_id': '_previous_id',
         'contacts': 'contacts',
         'tags': 'tags'
     }

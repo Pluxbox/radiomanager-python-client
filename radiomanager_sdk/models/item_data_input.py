@@ -69,7 +69,7 @@ class ItemDataInput(object):
         'user_draft_id': 'user_draft_id',
         'static_start': 'static_start',
         'details': 'details',
-        'previous_id': 'previous_id',
+        'previous_id': '_previous_id',
         'contacts': 'contacts',
         'tags': 'tags'
     }
