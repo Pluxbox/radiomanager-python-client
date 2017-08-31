@@ -33,7 +33,7 @@ class ItemDataInput(object):
     swagger_types = {
         'model_type_id': 'int',
         'block_id': 'int',
-        'external_id': 'int',
+        'external_id': 'str',
         'field_values': 'ImportItemFieldValues',
         'title': 'str',
         'duration': 'int',
@@ -102,7 +102,8 @@ class ItemDataInput(object):
         self.model_type_id = model_type_id
         if block_id is not None:
           self.block_id = block_id
-        self.external_id = external_id
+        if external_id is not None:
+          self.external_id = external_id
         if field_values is not None:
           self.field_values = field_values
         if title is not None:
@@ -186,7 +187,7 @@ class ItemDataInput(object):
         Gets the external_id of this ItemDataInput.
 
         :return: The external_id of this ItemDataInput.
-        :rtype: int
+        :rtype: str
         """
         return self._external_id
 
@@ -196,10 +197,8 @@ class ItemDataInput(object):
         Sets the external_id of this ItemDataInput.
 
         :param external_id: The external_id of this ItemDataInput.
-        :type: int
+        :type: str
         """
-        if external_id is None:
-            raise ValueError("Invalid value for `external_id`, must not be `None`")
 
         self._external_id = external_id
 

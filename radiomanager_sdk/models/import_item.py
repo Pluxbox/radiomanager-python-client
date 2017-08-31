@@ -32,7 +32,7 @@ class ImportItem(object):
     """
     swagger_types = {
         'model_type_id': 'int',
-        'external_id': 'int',
+        'external_id': 'str',
         'field_values': 'ImportItemFieldValues',
         'title': 'str',
         'duration': 'int',
@@ -125,7 +125,7 @@ class ImportItem(object):
         Gets the external_id of this ImportItem.
 
         :return: The external_id of this ImportItem.
-        :rtype: int
+        :rtype: str
         """
         return self._external_id
 
@@ -135,7 +135,7 @@ class ImportItem(object):
         Sets the external_id of this ImportItem.
 
         :param external_id: The external_id of this ImportItem.
-        :type: int
+        :type: str
         """
         if external_id is None:
             raise ValueError("Invalid value for `external_id`, must not be `None`")
