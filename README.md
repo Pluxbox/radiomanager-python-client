@@ -52,7 +52,7 @@ except ApiException as e:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://staging.radiomanager.pluxbox.com/api/v2*
+All URIs are relative to *https://radiomanager.pb/api/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -105,6 +105,7 @@ Class | Method | HTTP request | Description
 *ProgramApi* | [**get_program_by_id**](docs/ProgramApi.md#get_program_by_id) | **GET** /programs/{id} | Get program by id
 *ProgramApi* | [**list_programs**](docs/ProgramApi.md#list_programs) | **GET** /programs | Get all programs.
 *ProgramApi* | [**update_program_by_id**](docs/ProgramApi.md#update_program_by_id) | **PATCH** /programs/{id} | Update program by id
+*StationApi* | [**get_station**](docs/StationApi.md#get_station) | **GET** /station | Get own station only
 *StoryApi* | [**create_story**](docs/StoryApi.md#create_story) | **POST** /stories | Create story.
 *StoryApi* | [**delete_story_by_id**](docs/StoryApi.md#delete_story_by_id) | **DELETE** /stories/{id} | Delete story by id
 *StoryApi* | [**get_story_by_id**](docs/StoryApi.md#get_story_by_id) | **GET** /stories/{id} | Get story by id
@@ -223,7 +224,10 @@ Class | Method | HTTP request | Description
  - [ProgramResults](docs/ProgramResults.md)
  - [ReadOnly](docs/ReadOnly.md)
  - [RelationsPlaceholder](docs/RelationsPlaceholder.md)
+ - [StationResult](docs/StationResult.md)
+ - [StationResultStation](docs/StationResultStation.md)
  - [Story](docs/Story.md)
+ - [StoryInputOnly](docs/StoryInputOnly.md)
  - [StoryOutputOnly](docs/StoryOutputOnly.md)
  - [StoryRelations](docs/StoryRelations.md)
  - [StoryRelationsItems](docs/StoryRelationsItems.md)

@@ -1,6 +1,6 @@
 # radiomanager_sdk.BroadcastApi
 
-All URIs are relative to *https://staging.radiomanager.pluxbox.com/api/v2*
+All URIs are relative to *https://radiomanager.pb/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -228,7 +228,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_daily_epg**
-> EPGBroadcast get_daily_epg(date=date)
+> EPGBroadcast get_daily_epg(date=date, withunpublished=withunpublished)
 
 Get daily EPG
 
@@ -250,10 +250,11 @@ radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = radiomanager_sdk.BroadcastApi()
 date = '2013-10-20T19:20:30+01:00' # datetime | Date *(Optional)* (optional)
+withunpublished = true # bool | Show Unpublished *(Optional)* (optional)
 
 try: 
     # Get daily EPG
-    api_response = api_instance.get_daily_epg(date=date)
+    api_response = api_instance.get_daily_epg(date=date, withunpublished=withunpublished)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BroadcastApi->get_daily_epg: %s\n" % e)
@@ -264,6 +265,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **date** | **datetime**| Date *(Optional)* | [optional] 
+ **withunpublished** | **bool**| Show Unpublished *(Optional)* | [optional] 
 
 ### Return type
 
@@ -281,7 +283,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_epg_by_date**
-> EPGBroadcast get_epg_by_date(date=date)
+> EPGBroadcast get_epg_by_date(date=date, withunpublished=withunpublished)
 
 Get EPG by date
 
@@ -303,10 +305,11 @@ radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = radiomanager_sdk.BroadcastApi()
 date = '2013-10-20T19:20:30+01:00' # datetime | Date *(Optional)* (optional)
+withunpublished = true # bool | Show Unpublished *(Optional)* (optional)
 
 try: 
     # Get EPG by date
-    api_response = api_instance.get_epg_by_date(date=date)
+    api_response = api_instance.get_epg_by_date(date=date, withunpublished=withunpublished)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BroadcastApi->get_epg_by_date: %s\n" % e)
@@ -317,6 +320,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **date** | **datetime**| Date *(Optional)* | [optional] 
+ **withunpublished** | **bool**| Show Unpublished *(Optional)* | [optional] 
 
 ### Return type
 
@@ -383,7 +387,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_weekly_epg**
-> EPGBroadcast get_weekly_epg(date=date)
+> EPGBroadcast get_weekly_epg(date=date, withunpublished=withunpublished)
 
 Get weekly EPG
 
@@ -405,10 +409,11 @@ radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = radiomanager_sdk.BroadcastApi()
 date = 'date_example' # str | Date *(Optional)* (optional)
+withunpublished = true # bool | Show Unpublished *(Optional)* (optional)
 
 try: 
     # Get weekly EPG
-    api_response = api_instance.get_weekly_epg(date=date)
+    api_response = api_instance.get_weekly_epg(date=date, withunpublished=withunpublished)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BroadcastApi->get_weekly_epg: %s\n" % e)
@@ -419,6 +424,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **date** | **str**| Date *(Optional)* | [optional] 
+ **withunpublished** | **bool**| Show Unpublished *(Optional)* | [optional] 
 
 ### Return type
 
@@ -436,7 +442,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_broadcasts**
-> BroadcastResults list_broadcasts(page=page, start_min=start_min, start_max=start_max, model_type_id=model_type_id, tag_id=tag_id, presenter_id=presenter_id, item_id=item_id, block_id=block_id, genre_id=genre_id, program_id=program_id, external_station_id=external_station_id)
+> BroadcastResults list_broadcasts(page=page, program_id=program_id, block_id=block_id, model_type_id=model_type_id, tag_id=tag_id, presenter_id=presenter_id, genre_id=genre_id, item_id=item_id, start_min=start_min, start_max=start_max, limit=limit, order_by=order_by, order_direction=order_direction, external_station_id=external_station_id)
 
 Get all broadcasts.
 
@@ -458,20 +464,23 @@ radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = radiomanager_sdk.BroadcastApi()
 page = 1 # int | Current page *(Optional)* (optional) (default to 1)
-start_min = '2013-10-20T19:20:30+01:00' # datetime | Minimum start date *(Optional)* (optional)
-start_max = '2013-10-20T19:20:30+01:00' # datetime | Maximum start date *(Optional)* (optional)
-model_type_id = 789 # int | Search on ModelType ID *(Optional)* (optional)
+program_id = 789 # int | Search on Program ID *(Optional)* `(Relation)` (optional)
+block_id = 789 # int | Search on Block ID *(Optional)* `(Relation)` (optional)
+model_type_id = 789 # int | Search on ModelType ID *(Optional)* `(Relation)` (optional)
 tag_id = 789 # int | Search on Tag ID *(Optional)* `(Relation)` (optional)
 presenter_id = 789 # int | Search on Presenter ID *(Optional)* `(Relation)` (optional)
-item_id = 789 # int | Search on Item ID *(Optional)* `(Relation)` (optional)
-block_id = 789 # int | Search on Block ID *(Optional)* `(Relation)` (optional)
 genre_id = 789 # int | Search on Genre ID *(Optional)* `(Relation)` (optional)
-program_id = 789 # int | Search on Program ID *(Optional)* `(Relation)` (optional)
+item_id = 789 # int | Search on Item ID *(Optional)* `(Relation)` (optional)
+start_min = '2013-10-20T19:20:30+01:00' # datetime | Minimum start date *(Optional)* (optional)
+start_max = '2013-10-20T19:20:30+01:00' # datetime | Maximum start date *(Optional)* (optional)
+limit = 789 # int | Results per page *(Optional)* (optional)
+order_by = 'order_by_example' # str | Field to order the results *(Optional)* (optional)
+order_direction = 'order_direction_example' # str | Direction of ordering *(Optional)* (optional)
 external_station_id = 789 # int | Query on a different (content providing) station *(Optional)* (optional)
 
 try: 
     # Get all broadcasts.
-    api_response = api_instance.list_broadcasts(page=page, start_min=start_min, start_max=start_max, model_type_id=model_type_id, tag_id=tag_id, presenter_id=presenter_id, item_id=item_id, block_id=block_id, genre_id=genre_id, program_id=program_id, external_station_id=external_station_id)
+    api_response = api_instance.list_broadcasts(page=page, program_id=program_id, block_id=block_id, model_type_id=model_type_id, tag_id=tag_id, presenter_id=presenter_id, genre_id=genre_id, item_id=item_id, start_min=start_min, start_max=start_max, limit=limit, order_by=order_by, order_direction=order_direction, external_station_id=external_station_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BroadcastApi->list_broadcasts: %s\n" % e)
@@ -482,15 +491,18 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| Current page *(Optional)* | [optional] [default to 1]
- **start_min** | **datetime**| Minimum start date *(Optional)* | [optional] 
- **start_max** | **datetime**| Maximum start date *(Optional)* | [optional] 
- **model_type_id** | **int**| Search on ModelType ID *(Optional)* | [optional] 
+ **program_id** | **int**| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **block_id** | **int**| Search on Block ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **model_type_id** | **int**| Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **tag_id** | **int**| Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **presenter_id** | **int**| Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **item_id** | **int**| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **block_id** | **int**| Search on Block ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **genre_id** | **int**| Search on Genre ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **program_id** | **int**| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **item_id** | **int**| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **start_min** | **datetime**| Minimum start date *(Optional)* | [optional] 
+ **start_max** | **datetime**| Maximum start date *(Optional)* | [optional] 
+ **limit** | **int**| Results per page *(Optional)* | [optional] 
+ **order_by** | **str**| Field to order the results *(Optional)* | [optional] 
+ **order_direction** | **str**| Direction of ordering *(Optional)* | [optional] 
  **external_station_id** | **int**| Query on a different (content providing) station *(Optional)* | [optional] 
 
 ### Return type

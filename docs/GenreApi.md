@@ -1,6 +1,6 @@
 # radiomanager_sdk.GenreApi
 
-All URIs are relative to *https://staging.radiomanager.pluxbox.com/api/v2*
+All URIs are relative to *https://radiomanager.pb/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_genres**
-> GenreResults list_genres(page=page, parent_id=parent_id, program_id=program_id, broadcast_id=broadcast_id, external_station_id=external_station_id)
+> GenreResults list_genres(page=page, parent_id=parent_id, program_id=program_id, broadcast_id=broadcast_id, limit=limit, order_by=order_by, order_direction=order_direction, external_station_id=external_station_id)
 
 List all genres.
 
@@ -89,11 +89,14 @@ page = 789 # int | Current page *(Optional)* (optional)
 parent_id = 789 # int | Search on Parent ID of Genre *(Optional)* (optional)
 program_id = 789 # int | Search on Program ID *(Optional)* `(Relation)` (optional)
 broadcast_id = 789 # int | Search on Broadcast ID *(Optional)* `(Relation)` (optional)
+limit = 789 # int | Results per page *(Optional)* (optional)
+order_by = 'order_by_example' # str | Field to order the results *(Optional)* (optional)
+order_direction = 'order_direction_example' # str | Direction of ordering *(Optional)* (optional)
 external_station_id = 789 # int | Query on a different (content providing) station *(Optional)* (optional)
 
 try: 
     # List all genres.
-    api_response = api_instance.list_genres(page=page, parent_id=parent_id, program_id=program_id, broadcast_id=broadcast_id, external_station_id=external_station_id)
+    api_response = api_instance.list_genres(page=page, parent_id=parent_id, program_id=program_id, broadcast_id=broadcast_id, limit=limit, order_by=order_by, order_direction=order_direction, external_station_id=external_station_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling GenreApi->list_genres: %s\n" % e)
@@ -107,6 +110,9 @@ Name | Type | Description  | Notes
  **parent_id** | **int**| Search on Parent ID of Genre *(Optional)* | [optional] 
  **program_id** | **int**| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **broadcast_id** | **int**| Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **limit** | **int**| Results per page *(Optional)* | [optional] 
+ **order_by** | **str**| Field to order the results *(Optional)* | [optional] 
+ **order_direction** | **str**| Direction of ordering *(Optional)* | [optional] 
  **external_station_id** | **int**| Query on a different (content providing) station *(Optional)* | [optional] 
 
 ### Return type

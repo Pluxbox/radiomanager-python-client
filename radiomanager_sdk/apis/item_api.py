@@ -584,23 +584,24 @@ class ItemApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int page: Current page *(Optional)*
-        :param str order_by: Field to order the results *(Optional)*
-        :param str order_direction: Direction of ordering *(Optional)*
+        :param int block_id: Search on Block ID *(Optional)* `(Relation)`
+        :param int broadcast_id: Search on Broadcast ID *(Optional)* `(Relation)`
+        :param int model_type_id: Search on ModelType ID *(Optional)* `(Relation)`
+        :param int tag_id: Search on Tag ID *(Optional)* `(Relation)`
+        :param int campaign_id: Search on Campaign ID *(Optional)* `(Relation)`
+        :param int contact_id: Search on Contact ID *(Optional)* `(Relation)`
+        :param int program_draft_id: Search on Program Draft ID *(Optional)*
+        :param int user_draft_id: Search on User Draft ID *(Optional)*
+        :param int station_draft_id: Search on Station Draft ID *(Optional)*
+        :param int program_id: Search on Program ID *(Optional)* `(Relation)`
         :param datetime start_min: Minimum start date *(Optional)*
         :param datetime start_max: Maximum start date *(Optional)*
         :param int duration_min: Minimum duration (seconds) *(Optional)*
         :param int duration_max: Maximum duration (seconds) *(Optional)*
         :param str status: Play Status of item *(Optional)*
-        :param int model_type_id: Search on ModelType ID *(Optional)*
-        :param int program_draft_id: Search on Program Draft ID *(Optional)*
-        :param int user_draft_id: Search on User Draft ID *(Optional)*
-        :param int station_draft_id: Search on Station Draft ID *(Optional)*
-        :param int block_id: Search on Block ID *(Optional)* `(Relation)`
-        :param int broadcast_id: Search on Broadcast ID *(Optional)* `(Relation)`
-        :param int campaign_id: Search on Campaign ID *(Optional)* `(Relation)`
-        :param int contact_id: Search on Contact ID *(Optional)* `(Relation)`
-        :param int program_id: Search on Program ID *(Optional)* `(Relation)`
-        :param int tag_id: Search on Tag ID *(Optional)* `(Relation)`
+        :param int limit: Results per page *(Optional)*
+        :param str order_by: Field to order the results *(Optional)*
+        :param str order_direction: Direction of ordering *(Optional)*
         :param int external_station_id: Query on a different (content providing) station *(Optional)*
         :return: ItemResults
                  If the method is called asynchronously,
@@ -628,30 +629,31 @@ class ItemApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int page: Current page *(Optional)*
-        :param str order_by: Field to order the results *(Optional)*
-        :param str order_direction: Direction of ordering *(Optional)*
+        :param int block_id: Search on Block ID *(Optional)* `(Relation)`
+        :param int broadcast_id: Search on Broadcast ID *(Optional)* `(Relation)`
+        :param int model_type_id: Search on ModelType ID *(Optional)* `(Relation)`
+        :param int tag_id: Search on Tag ID *(Optional)* `(Relation)`
+        :param int campaign_id: Search on Campaign ID *(Optional)* `(Relation)`
+        :param int contact_id: Search on Contact ID *(Optional)* `(Relation)`
+        :param int program_draft_id: Search on Program Draft ID *(Optional)*
+        :param int user_draft_id: Search on User Draft ID *(Optional)*
+        :param int station_draft_id: Search on Station Draft ID *(Optional)*
+        :param int program_id: Search on Program ID *(Optional)* `(Relation)`
         :param datetime start_min: Minimum start date *(Optional)*
         :param datetime start_max: Maximum start date *(Optional)*
         :param int duration_min: Minimum duration (seconds) *(Optional)*
         :param int duration_max: Maximum duration (seconds) *(Optional)*
         :param str status: Play Status of item *(Optional)*
-        :param int model_type_id: Search on ModelType ID *(Optional)*
-        :param int program_draft_id: Search on Program Draft ID *(Optional)*
-        :param int user_draft_id: Search on User Draft ID *(Optional)*
-        :param int station_draft_id: Search on Station Draft ID *(Optional)*
-        :param int block_id: Search on Block ID *(Optional)* `(Relation)`
-        :param int broadcast_id: Search on Broadcast ID *(Optional)* `(Relation)`
-        :param int campaign_id: Search on Campaign ID *(Optional)* `(Relation)`
-        :param int contact_id: Search on Contact ID *(Optional)* `(Relation)`
-        :param int program_id: Search on Program ID *(Optional)* `(Relation)`
-        :param int tag_id: Search on Tag ID *(Optional)* `(Relation)`
+        :param int limit: Results per page *(Optional)*
+        :param str order_by: Field to order the results *(Optional)*
+        :param str order_direction: Direction of ordering *(Optional)*
         :param int external_station_id: Query on a different (content providing) station *(Optional)*
         :return: ItemResults
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'order_by', 'order_direction', 'start_min', 'start_max', 'duration_min', 'duration_max', 'status', 'model_type_id', 'program_draft_id', 'user_draft_id', 'station_draft_id', 'block_id', 'broadcast_id', 'campaign_id', 'contact_id', 'program_id', 'tag_id', 'external_station_id']
+        all_params = ['page', 'block_id', 'broadcast_id', 'model_type_id', 'tag_id', 'campaign_id', 'contact_id', 'program_draft_id', 'user_draft_id', 'station_draft_id', 'program_id', 'start_min', 'start_max', 'duration_min', 'duration_max', 'status', 'limit', 'order_by', 'order_direction', 'external_station_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -669,6 +671,10 @@ class ItemApi(object):
 
         if 'page' in params and params['page'] < 1:
             raise ValueError("Invalid value for parameter `page` when calling `list_items`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] > 50:
+            raise ValueError("Invalid value for parameter `limit` when calling `list_items`, must be a value less than or equal to `50`")
+        if 'limit' in params and params['limit'] < 1:
+            raise ValueError("Invalid value for parameter `limit` when calling `list_items`, must be a value greater than or equal to `1`")
 
         collection_formats = {}
 
@@ -677,10 +683,26 @@ class ItemApi(object):
         query_params = []
         if 'page' in params:
             query_params.append(('page', params['page']))
-        if 'order_by' in params:
-            query_params.append(('order-by', params['order_by']))
-        if 'order_direction' in params:
-            query_params.append(('order-direction', params['order_direction']))
+        if 'block_id' in params:
+            query_params.append(('block_id', params['block_id']))
+        if 'broadcast_id' in params:
+            query_params.append(('broadcast_id', params['broadcast_id']))
+        if 'model_type_id' in params:
+            query_params.append(('model_type_id', params['model_type_id']))
+        if 'tag_id' in params:
+            query_params.append(('tag_id', params['tag_id']))
+        if 'campaign_id' in params:
+            query_params.append(('campaign_id', params['campaign_id']))
+        if 'contact_id' in params:
+            query_params.append(('contact_id', params['contact_id']))
+        if 'program_draft_id' in params:
+            query_params.append(('program_draft_id', params['program_draft_id']))
+        if 'user_draft_id' in params:
+            query_params.append(('user_draft_id', params['user_draft_id']))
+        if 'station_draft_id' in params:
+            query_params.append(('station_draft_id', params['station_draft_id']))
+        if 'program_id' in params:
+            query_params.append(('program_id', params['program_id']))
         if 'start_min' in params:
             query_params.append(('start-min', params['start_min']))
         if 'start_max' in params:
@@ -691,26 +713,12 @@ class ItemApi(object):
             query_params.append(('duration-max', params['duration_max']))
         if 'status' in params:
             query_params.append(('status', params['status']))
-        if 'model_type_id' in params:
-            query_params.append(('model_type_id', params['model_type_id']))
-        if 'program_draft_id' in params:
-            query_params.append(('program_draft_id', params['program_draft_id']))
-        if 'user_draft_id' in params:
-            query_params.append(('user_draft_id', params['user_draft_id']))
-        if 'station_draft_id' in params:
-            query_params.append(('station_draft_id', params['station_draft_id']))
-        if 'block_id' in params:
-            query_params.append(('block_id', params['block_id']))
-        if 'broadcast_id' in params:
-            query_params.append(('broadcast_id', params['broadcast_id']))
-        if 'campaign_id' in params:
-            query_params.append(('campaign_id', params['campaign_id']))
-        if 'contact_id' in params:
-            query_params.append(('contact_id', params['contact_id']))
-        if 'program_id' in params:
-            query_params.append(('program_id', params['program_id']))
-        if 'tag_id' in params:
-            query_params.append(('tag_id', params['tag_id']))
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))
+        if 'order_by' in params:
+            query_params.append(('order-by', params['order_by']))
+        if 'order_direction' in params:
+            query_params.append(('order-direction', params['order_direction']))
         if 'external_station_id' in params:
             query_params.append(('_external_station_id', params['external_station_id']))
 

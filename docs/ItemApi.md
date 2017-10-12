@@ -1,6 +1,6 @@
 # radiomanager_sdk.ItemApi
 
-All URIs are relative to *https://staging.radiomanager.pluxbox.com/api/v2*
+All URIs are relative to *https://radiomanager.pb/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -283,7 +283,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_items**
-> ItemResults list_items(page=page, order_by=order_by, order_direction=order_direction, start_min=start_min, start_max=start_max, duration_min=duration_min, duration_max=duration_max, status=status, model_type_id=model_type_id, program_draft_id=program_draft_id, user_draft_id=user_draft_id, station_draft_id=station_draft_id, block_id=block_id, broadcast_id=broadcast_id, campaign_id=campaign_id, contact_id=contact_id, program_id=program_id, tag_id=tag_id, external_station_id=external_station_id)
+> ItemResults list_items(page=page, block_id=block_id, broadcast_id=broadcast_id, model_type_id=model_type_id, tag_id=tag_id, campaign_id=campaign_id, contact_id=contact_id, program_draft_id=program_draft_id, user_draft_id=user_draft_id, station_draft_id=station_draft_id, program_id=program_id, start_min=start_min, start_max=start_max, duration_min=duration_min, duration_max=duration_max, status=status, limit=limit, order_by=order_by, order_direction=order_direction, external_station_id=external_station_id)
 
 Get a list of all the items currently in your station.
 
@@ -305,28 +305,29 @@ radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = radiomanager_sdk.ItemApi()
 page = 789 # int | Current page *(Optional)* (optional)
-order_by = 'order_by_example' # str | Field to order the results *(Optional)* (optional)
-order_direction = 'order_direction_example' # str | Direction of ordering *(Optional)* (optional)
+block_id = 789 # int | Search on Block ID *(Optional)* `(Relation)` (optional)
+broadcast_id = 789 # int | Search on Broadcast ID *(Optional)* `(Relation)` (optional)
+model_type_id = 789 # int | Search on ModelType ID *(Optional)* `(Relation)` (optional)
+tag_id = 789 # int | Search on Tag ID *(Optional)* `(Relation)` (optional)
+campaign_id = 789 # int | Search on Campaign ID *(Optional)* `(Relation)` (optional)
+contact_id = 789 # int | Search on Contact ID *(Optional)* `(Relation)` (optional)
+program_draft_id = 789 # int | Search on Program Draft ID *(Optional)* (optional)
+user_draft_id = 789 # int | Search on User Draft ID *(Optional)* (optional)
+station_draft_id = 789 # int | Search on Station Draft ID *(Optional)* (optional)
+program_id = 789 # int | Search on Program ID *(Optional)* `(Relation)` (optional)
 start_min = '2013-10-20T19:20:30+01:00' # datetime | Minimum start date *(Optional)* (optional)
 start_max = '2013-10-20T19:20:30+01:00' # datetime | Maximum start date *(Optional)* (optional)
 duration_min = 56 # int | Minimum duration (seconds) *(Optional)* (optional)
 duration_max = 56 # int | Maximum duration (seconds) *(Optional)* (optional)
 status = 'status_example' # str | Play Status of item *(Optional)* (optional)
-model_type_id = 789 # int | Search on ModelType ID *(Optional)* (optional)
-program_draft_id = 789 # int | Search on Program Draft ID *(Optional)* (optional)
-user_draft_id = 789 # int | Search on User Draft ID *(Optional)* (optional)
-station_draft_id = 789 # int | Search on Station Draft ID *(Optional)* (optional)
-block_id = 789 # int | Search on Block ID *(Optional)* `(Relation)` (optional)
-broadcast_id = 789 # int | Search on Broadcast ID *(Optional)* `(Relation)` (optional)
-campaign_id = 789 # int | Search on Campaign ID *(Optional)* `(Relation)` (optional)
-contact_id = 789 # int | Search on Contact ID *(Optional)* `(Relation)` (optional)
-program_id = 789 # int | Search on Program ID *(Optional)* `(Relation)` (optional)
-tag_id = 789 # int | Search on Tag ID *(Optional)* `(Relation)` (optional)
+limit = 789 # int | Results per page *(Optional)* (optional)
+order_by = 'order_by_example' # str | Field to order the results *(Optional)* (optional)
+order_direction = 'order_direction_example' # str | Direction of ordering *(Optional)* (optional)
 external_station_id = 789 # int | Query on a different (content providing) station *(Optional)* (optional)
 
 try: 
     # Get a list of all the items currently in your station.
-    api_response = api_instance.list_items(page=page, order_by=order_by, order_direction=order_direction, start_min=start_min, start_max=start_max, duration_min=duration_min, duration_max=duration_max, status=status, model_type_id=model_type_id, program_draft_id=program_draft_id, user_draft_id=user_draft_id, station_draft_id=station_draft_id, block_id=block_id, broadcast_id=broadcast_id, campaign_id=campaign_id, contact_id=contact_id, program_id=program_id, tag_id=tag_id, external_station_id=external_station_id)
+    api_response = api_instance.list_items(page=page, block_id=block_id, broadcast_id=broadcast_id, model_type_id=model_type_id, tag_id=tag_id, campaign_id=campaign_id, contact_id=contact_id, program_draft_id=program_draft_id, user_draft_id=user_draft_id, station_draft_id=station_draft_id, program_id=program_id, start_min=start_min, start_max=start_max, duration_min=duration_min, duration_max=duration_max, status=status, limit=limit, order_by=order_by, order_direction=order_direction, external_station_id=external_station_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ItemApi->list_items: %s\n" % e)
@@ -337,23 +338,24 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| Current page *(Optional)* | [optional] 
- **order_by** | **str**| Field to order the results *(Optional)* | [optional] 
- **order_direction** | **str**| Direction of ordering *(Optional)* | [optional] 
+ **block_id** | **int**| Search on Block ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **broadcast_id** | **int**| Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **model_type_id** | **int**| Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **tag_id** | **int**| Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **campaign_id** | **int**| Search on Campaign ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **contact_id** | **int**| Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **program_draft_id** | **int**| Search on Program Draft ID *(Optional)* | [optional] 
+ **user_draft_id** | **int**| Search on User Draft ID *(Optional)* | [optional] 
+ **station_draft_id** | **int**| Search on Station Draft ID *(Optional)* | [optional] 
+ **program_id** | **int**| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **start_min** | **datetime**| Minimum start date *(Optional)* | [optional] 
  **start_max** | **datetime**| Maximum start date *(Optional)* | [optional] 
  **duration_min** | **int**| Minimum duration (seconds) *(Optional)* | [optional] 
  **duration_max** | **int**| Maximum duration (seconds) *(Optional)* | [optional] 
  **status** | **str**| Play Status of item *(Optional)* | [optional] 
- **model_type_id** | **int**| Search on ModelType ID *(Optional)* | [optional] 
- **program_draft_id** | **int**| Search on Program Draft ID *(Optional)* | [optional] 
- **user_draft_id** | **int**| Search on User Draft ID *(Optional)* | [optional] 
- **station_draft_id** | **int**| Search on Station Draft ID *(Optional)* | [optional] 
- **block_id** | **int**| Search on Block ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **broadcast_id** | **int**| Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **campaign_id** | **int**| Search on Campaign ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **contact_id** | **int**| Search on Contact ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **program_id** | **int**| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **tag_id** | **int**| Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **limit** | **int**| Results per page *(Optional)* | [optional] 
+ **order_by** | **str**| Field to order the results *(Optional)* | [optional] 
+ **order_direction** | **str**| Direction of ordering *(Optional)* | [optional] 
  **external_station_id** | **int**| Query on a different (content providing) station *(Optional)* | [optional] 
 
 ### Return type

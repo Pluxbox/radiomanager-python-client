@@ -1,6 +1,6 @@
 # radiomanager_sdk.ContactApi
 
-All URIs are relative to *https://staging.radiomanager.pluxbox.com/api/v2*
+All URIs are relative to *https://radiomanager.pb/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_contacts**
-> ContactResults list_contacts(page=page, model_type_id=model_type_id, tag_id=tag_id, item_id=item_id, external_station_id=external_station_id)
+> ContactResults list_contacts(page=page, item_id=item_id, model_type_id=model_type_id, tag_id=tag_id, limit=limit, order_by=order_by, order_direction=order_direction, external_station_id=external_station_id)
 
 Get all contacts.
 
@@ -195,14 +195,17 @@ radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = radiomanager_sdk.ContactApi()
 page = 1 # int | Current page *(Optional)* (optional) (default to 1)
-model_type_id = 789 # int | Search on ModelType ID *(Optional)* (optional)
-tag_id = 789 # int | Search on Tag ID *(Optional)* `(Relation)` (optional)
 item_id = 789 # int | Search on Item ID *(Optional)* `(Relation)` (optional)
+model_type_id = 789 # int | Search on ModelType ID *(Optional)* `(Relation)` (optional)
+tag_id = 789 # int | Search on Tag ID *(Optional)* `(Relation)` (optional)
+limit = 789 # int | Results per page *(Optional)* (optional)
+order_by = 'order_by_example' # str | Field to order the results *(Optional)* (optional)
+order_direction = 'order_direction_example' # str | Direction of ordering *(Optional)* (optional)
 external_station_id = 789 # int | Query on a different (content providing) station *(Optional)* (optional)
 
 try: 
     # Get all contacts.
-    api_response = api_instance.list_contacts(page=page, model_type_id=model_type_id, tag_id=tag_id, item_id=item_id, external_station_id=external_station_id)
+    api_response = api_instance.list_contacts(page=page, item_id=item_id, model_type_id=model_type_id, tag_id=tag_id, limit=limit, order_by=order_by, order_direction=order_direction, external_station_id=external_station_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ContactApi->list_contacts: %s\n" % e)
@@ -213,9 +216,12 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| Current page *(Optional)* | [optional] [default to 1]
- **model_type_id** | **int**| Search on ModelType ID *(Optional)* | [optional] 
- **tag_id** | **int**| Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **item_id** | **int**| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **model_type_id** | **int**| Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **tag_id** | **int**| Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **limit** | **int**| Results per page *(Optional)* | [optional] 
+ **order_by** | **str**| Field to order the results *(Optional)* | [optional] 
+ **order_direction** | **str**| Direction of ordering *(Optional)* | [optional] 
  **external_station_id** | **int**| Query on a different (content providing) station *(Optional)* | [optional] 
 
 ### Return type

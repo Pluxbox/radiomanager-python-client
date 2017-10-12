@@ -378,6 +378,9 @@ class UserApi(object):
             for asynchronous request. (optional)
         :param int page: Current page *(Optional)*
         :param int role_id: Search on Role ID *(Optional)*
+        :param int limit: Results per page *(Optional)*
+        :param str order_by: Field to order the results *(Optional)*
+        :param str order_direction: Direction of ordering *(Optional)*
         :return: UserResults
                  If the method is called asynchronously,
                  returns the request thread.
@@ -405,12 +408,15 @@ class UserApi(object):
             for asynchronous request. (optional)
         :param int page: Current page *(Optional)*
         :param int role_id: Search on Role ID *(Optional)*
+        :param int limit: Results per page *(Optional)*
+        :param str order_by: Field to order the results *(Optional)*
+        :param str order_direction: Direction of ordering *(Optional)*
         :return: UserResults
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'role_id']
+        all_params = ['page', 'role_id', 'limit', 'order_by', 'order_direction']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -428,6 +434,10 @@ class UserApi(object):
 
         if 'page' in params and params['page'] < 0:
             raise ValueError("Invalid value for parameter `page` when calling `list_users`, must be a value greater than or equal to `0`")
+        if 'limit' in params and params['limit'] > 50:
+            raise ValueError("Invalid value for parameter `limit` when calling `list_users`, must be a value less than or equal to `50`")
+        if 'limit' in params and params['limit'] < 1:
+            raise ValueError("Invalid value for parameter `limit` when calling `list_users`, must be a value greater than or equal to `1`")
 
         collection_formats = {}
 
@@ -438,6 +448,12 @@ class UserApi(object):
             query_params.append(('page', params['page']))
         if 'role_id' in params:
             query_params.append(('role_id', params['role_id']))
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))
+        if 'order_by' in params:
+            query_params.append(('order-by', params['order_by']))
+        if 'order_direction' in params:
+            query_params.append(('order-direction', params['order_direction']))
 
         header_params = {}
 

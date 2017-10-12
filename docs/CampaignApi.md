@@ -1,6 +1,6 @@
 # radiomanager_sdk.CampaignApi
 
-All URIs are relative to *https://staging.radiomanager.pluxbox.com/api/v2*
+All URIs are relative to *https://radiomanager.pb/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_campaigns**
-> CampaignResults list_campaigns(page=page, model_type_id=model_type_id, item_id=item_id, start_min=start_min, start_max=start_max, external_station_id=external_station_id)
+> CampaignResults list_campaigns(page=page, item_id=item_id, model_type_id=model_type_id, start_min=start_min, start_max=start_max, limit=limit, order_by=order_by, order_direction=order_direction, external_station_id=external_station_id)
 
 Get all campaigns.
 
@@ -195,15 +195,18 @@ radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = radiomanager_sdk.CampaignApi()
 page = 789 # int | Current page *(Optional)* (optional)
-model_type_id = 789 # int | Search on ModelType ID *(Optional)* (optional)
 item_id = 789 # int | Search on Item ID *(Optional)* `(Relation)` (optional)
+model_type_id = 789 # int | Search on ModelType ID *(Optional)* `(Relation)` (optional)
 start_min = '2013-10-20T19:20:30+01:00' # datetime | Minimum start date *(Optional)* (optional)
 start_max = '2013-10-20T19:20:30+01:00' # datetime | Maximum start date *(Optional)* (optional)
+limit = 789 # int | Results per page *(Optional)* (optional)
+order_by = 'order_by_example' # str | Field to order the results *(Optional)* (optional)
+order_direction = 'order_direction_example' # str | Direction of ordering *(Optional)* (optional)
 external_station_id = 789 # int | Query on a different (content providing) station *(Optional)* (optional)
 
 try: 
     # Get all campaigns.
-    api_response = api_instance.list_campaigns(page=page, model_type_id=model_type_id, item_id=item_id, start_min=start_min, start_max=start_max, external_station_id=external_station_id)
+    api_response = api_instance.list_campaigns(page=page, item_id=item_id, model_type_id=model_type_id, start_min=start_min, start_max=start_max, limit=limit, order_by=order_by, order_direction=order_direction, external_station_id=external_station_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling CampaignApi->list_campaigns: %s\n" % e)
@@ -214,10 +217,13 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| Current page *(Optional)* | [optional] 
- **model_type_id** | **int**| Search on ModelType ID *(Optional)* | [optional] 
  **item_id** | **int**| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **model_type_id** | **int**| Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **start_min** | **datetime**| Minimum start date *(Optional)* | [optional] 
  **start_max** | **datetime**| Maximum start date *(Optional)* | [optional] 
+ **limit** | **int**| Results per page *(Optional)* | [optional] 
+ **order_by** | **str**| Field to order the results *(Optional)* | [optional] 
+ **order_direction** | **str**| Direction of ordering *(Optional)* | [optional] 
  **external_station_id** | **int**| Query on a different (content providing) station *(Optional)* | [optional] 
 
 ### Return type

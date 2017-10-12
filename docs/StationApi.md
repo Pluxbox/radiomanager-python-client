@@ -1,18 +1,18 @@
-# radiomanager_sdk.StringApi
+# radiomanager_sdk.StationApi
 
 All URIs are relative to *https://radiomanager.pb/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_strings_by_name**](StringApi.md#get_strings_by_name) | **GET** /strings/{name} | Get Strings (formatted)
+[**get_station**](StationApi.md#get_station) | **GET** /station | Get own station only
 
 
-# **get_strings_by_name**
-> TextString get_strings_by_name(name, full_model)
+# **get_station**
+> StationResult get_station()
 
-Get Strings (formatted)
+Get own station only
 
-Get Strings (formatted)
+Get own station only
 
 ### Example 
 ```python
@@ -28,28 +28,22 @@ radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.StringApi()
-name = 'name_example' # str | Name of Strings **(Required)**
-full_model = true # bool | Full model or content only **(Required)** (default to true)
+api_instance = radiomanager_sdk.StationApi()
 
 try: 
-    # Get Strings (formatted)
-    api_response = api_instance.get_strings_by_name(name, full_model)
+    # Get own station only
+    api_response = api_instance.get_station()
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling StringApi->get_strings_by_name: %s\n" % e)
+    print("Exception when calling StationApi->get_station: %s\n" % e)
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **name** | **str**| Name of Strings **(Required)** | 
- **full_model** | **bool**| Full model or content only **(Required)** | [default to true]
+This endpoint does not need any parameter.
 
 ### Return type
 
-[**TextString**](TextString.md)
+[**StationResult**](StationResult.md)
 
 ### Authorization
 

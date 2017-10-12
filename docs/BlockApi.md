@@ -1,6 +1,6 @@
 # radiomanager_sdk.BlockApi
 
-All URIs are relative to *https://staging.radiomanager.pluxbox.com/api/v2*
+All URIs are relative to *https://radiomanager.pb/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -164,7 +164,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_blocks**
-> BlockResults list_blocks(page=page, start_min=start_min, start_max=start_max, broadcast_id=broadcast_id, program_id=program_id, item_id=item_id, external_station_id=external_station_id)
+> BlockResults list_blocks(page=page, broadcast_id=broadcast_id, item_id=item_id, program_id=program_id, start_min=start_min, start_max=start_max, limit=limit, order_by=order_by, order_direction=order_direction, external_station_id=external_station_id)
 
 Get a list of all blocks currently in your station.
 
@@ -186,16 +186,19 @@ radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = radiomanager_sdk.BlockApi()
 page = 1 # int | Current page *(Optional)* (optional) (default to 1)
+broadcast_id = 789 # int | Search on Broadcast ID *(Optional)* `(Relation)` (optional)
+item_id = 789 # int | Search on Item ID *(Optional)* `(Relation)` (optional)
+program_id = 789 # int | Search on Program ID *(Optional)* `(Relation)` (optional)
 start_min = '2013-10-20T19:20:30+01:00' # datetime | Minimum start date *(Optional)* (optional)
 start_max = '2013-10-20T19:20:30+01:00' # datetime | Maximum start date *(Optional)* (optional)
-broadcast_id = 789 # int | Search on Broadcast ID *(Optional)* `(Relation)` (optional)
-program_id = 789 # int | Search on Program ID *(Optional)* `(Relation)` (optional)
-item_id = 789 # int | Search on Item ID *(Optional)* `(Relation)` (optional)
+limit = 789 # int | Results per page *(Optional)* (optional)
+order_by = 'order_by_example' # str | Field to order the results *(Optional)* (optional)
+order_direction = 'order_direction_example' # str | Direction of ordering *(Optional)* (optional)
 external_station_id = 789 # int | Query on a different (content providing) station *(Optional)* (optional)
 
 try: 
     # Get a list of all blocks currently in your station.
-    api_response = api_instance.list_blocks(page=page, start_min=start_min, start_max=start_max, broadcast_id=broadcast_id, program_id=program_id, item_id=item_id, external_station_id=external_station_id)
+    api_response = api_instance.list_blocks(page=page, broadcast_id=broadcast_id, item_id=item_id, program_id=program_id, start_min=start_min, start_max=start_max, limit=limit, order_by=order_by, order_direction=order_direction, external_station_id=external_station_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BlockApi->list_blocks: %s\n" % e)
@@ -206,11 +209,14 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| Current page *(Optional)* | [optional] [default to 1]
+ **broadcast_id** | **int**| Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **item_id** | **int**| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **program_id** | **int**| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **start_min** | **datetime**| Minimum start date *(Optional)* | [optional] 
  **start_max** | **datetime**| Maximum start date *(Optional)* | [optional] 
- **broadcast_id** | **int**| Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **program_id** | **int**| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **item_id** | **int**| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **limit** | **int**| Results per page *(Optional)* | [optional] 
+ **order_by** | **str**| Field to order the results *(Optional)* | [optional] 
+ **order_direction** | **str**| Direction of ordering *(Optional)* | [optional] 
  **external_station_id** | **int**| Query on a different (content providing) station *(Optional)* | [optional] 
 
 ### Return type

@@ -385,6 +385,9 @@ class TagApi(object):
         :param int item_id: Search on Item ID *(Optional)* `(Relation)`
         :param int broadcast_id: Search on Broadcast ID *(Optional)* `(Relation)`
         :param int contact_id: Search on Contact ID *(Optional)* `(Relation)`
+        :param int limit: Results per page *(Optional)*
+        :param str order_by: Field to order the results *(Optional)*
+        :param str order_direction: Direction of ordering *(Optional)*
         :param int external_station_id: Query on a different (content providing) station *(Optional)*
         :return: TagResults
                  If the method is called asynchronously,
@@ -416,13 +419,16 @@ class TagApi(object):
         :param int item_id: Search on Item ID *(Optional)* `(Relation)`
         :param int broadcast_id: Search on Broadcast ID *(Optional)* `(Relation)`
         :param int contact_id: Search on Contact ID *(Optional)* `(Relation)`
+        :param int limit: Results per page *(Optional)*
+        :param str order_by: Field to order the results *(Optional)*
+        :param str order_direction: Direction of ordering *(Optional)*
         :param int external_station_id: Query on a different (content providing) station *(Optional)*
         :return: TagResults
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'program_id', 'item_id', 'broadcast_id', 'contact_id', 'external_station_id']
+        all_params = ['page', 'program_id', 'item_id', 'broadcast_id', 'contact_id', 'limit', 'order_by', 'order_direction', 'external_station_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -440,6 +446,10 @@ class TagApi(object):
 
         if 'page' in params and params['page'] < 1:
             raise ValueError("Invalid value for parameter `page` when calling `list_tags`, must be a value greater than or equal to `1`")
+        if 'limit' in params and params['limit'] > 50:
+            raise ValueError("Invalid value for parameter `limit` when calling `list_tags`, must be a value less than or equal to `50`")
+        if 'limit' in params and params['limit'] < 1:
+            raise ValueError("Invalid value for parameter `limit` when calling `list_tags`, must be a value greater than or equal to `1`")
 
         collection_formats = {}
 
@@ -456,6 +466,12 @@ class TagApi(object):
             query_params.append(('broadcast_id', params['broadcast_id']))
         if 'contact_id' in params:
             query_params.append(('contact_id', params['contact_id']))
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))
+        if 'order_by' in params:
+            query_params.append(('order-by', params['order_by']))
+        if 'order_direction' in params:
+            query_params.append(('order-direction', params['order_direction']))
         if 'external_station_id' in params:
             query_params.append(('_external_station_id', params['external_station_id']))
 

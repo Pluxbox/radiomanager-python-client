@@ -167,13 +167,16 @@ class ModelTypeApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int page: Current page *(Optional)*
-        :param str model:
         :param int program_id: Search on Program ID *(Optional)*
         :param int broadcast_id: Search on Broadcast ID *(Optional)*
         :param int item_id: Search on Item ID *(Optional)*
         :param int campaign_id: Search on Campaign ID *(Optional)*
         :param int presenter_id: Search on Presenter ID *(Optional)*
         :param int contact_id: Search on Contact ID *(Optional)*
+        :param str model: Search Modeltypes for certain Model *(Optional)*
+        :param int limit: Results per page *(Optional)*
+        :param str order_by: Field to order the results *(Optional)*
+        :param str order_direction: Direction of ordering *(Optional)*
         :param int external_station_id: Query on a different (content providing) station *(Optional)*
         :return: ModelTypeResults
                  If the method is called asynchronously,
@@ -201,20 +204,23 @@ class ModelTypeApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int page: Current page *(Optional)*
-        :param str model:
         :param int program_id: Search on Program ID *(Optional)*
         :param int broadcast_id: Search on Broadcast ID *(Optional)*
         :param int item_id: Search on Item ID *(Optional)*
         :param int campaign_id: Search on Campaign ID *(Optional)*
         :param int presenter_id: Search on Presenter ID *(Optional)*
         :param int contact_id: Search on Contact ID *(Optional)*
+        :param str model: Search Modeltypes for certain Model *(Optional)*
+        :param int limit: Results per page *(Optional)*
+        :param str order_by: Field to order the results *(Optional)*
+        :param str order_direction: Direction of ordering *(Optional)*
         :param int external_station_id: Query on a different (content providing) station *(Optional)*
         :return: ModelTypeResults
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'model', 'program_id', 'broadcast_id', 'item_id', 'campaign_id', 'presenter_id', 'contact_id', 'external_station_id']
+        all_params = ['page', 'program_id', 'broadcast_id', 'item_id', 'campaign_id', 'presenter_id', 'contact_id', 'model', 'limit', 'order_by', 'order_direction', 'external_station_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -232,6 +238,10 @@ class ModelTypeApi(object):
 
         if 'page' in params and params['page'] < 0:
             raise ValueError("Invalid value for parameter `page` when calling `list_model_types`, must be a value greater than or equal to `0`")
+        if 'limit' in params and params['limit'] > 50:
+            raise ValueError("Invalid value for parameter `limit` when calling `list_model_types`, must be a value less than or equal to `50`")
+        if 'limit' in params and params['limit'] < 1:
+            raise ValueError("Invalid value for parameter `limit` when calling `list_model_types`, must be a value greater than or equal to `1`")
 
         collection_formats = {}
 
@@ -240,8 +250,6 @@ class ModelTypeApi(object):
         query_params = []
         if 'page' in params:
             query_params.append(('page', params['page']))
-        if 'model' in params:
-            query_params.append(('model', params['model']))
         if 'program_id' in params:
             query_params.append(('program_id', params['program_id']))
         if 'broadcast_id' in params:
@@ -254,6 +262,14 @@ class ModelTypeApi(object):
             query_params.append(('presenter_id', params['presenter_id']))
         if 'contact_id' in params:
             query_params.append(('contact_id', params['contact_id']))
+        if 'model' in params:
+            query_params.append(('model', params['model']))
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))
+        if 'order_by' in params:
+            query_params.append(('order-by', params['order_by']))
+        if 'order_direction' in params:
+            query_params.append(('order-direction', params['order_direction']))
         if 'external_station_id' in params:
             query_params.append(('_external_station_id', params['external_station_id']))
 

@@ -1,6 +1,6 @@
 # radiomanager_sdk.ProgramApi
 
-All URIs are relative to *https://staging.radiomanager.pluxbox.com/api/v2*
+All URIs are relative to *https://radiomanager.pb/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_programs**
-> ProgramResults list_programs(page=page, genre_id=genre_id, model_type_id=model_type_id, presenter_id=presenter_id, tag_id=tag_id, broadcast_id=broadcast_id, item_id=item_id, block_id=block_id, external_station_id=external_station_id)
+> ProgramResults list_programs(page=page, broadcast_id=broadcast_id, model_type_id=model_type_id, tag_id=tag_id, presenter_id=presenter_id, genre_id=genre_id, block_id=block_id, item_id=item_id, limit=limit, order_by=order_by, order_direction=order_direction, external_station_id=external_station_id)
 
 Get all programs.
 
@@ -195,18 +195,21 @@ radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = radiomanager_sdk.ProgramApi()
 page = 789 # int | Current page *(Optional)* (optional)
-genre_id = 789 # int | Search on Genre ID *(Optional)* (optional)
-model_type_id = 789 # int | Search on ModelType ID *(Optional)* (optional)
-presenter_id = 789 # int | Search on Presenter ID *(Optional)* `(Relation)` (optional)
-tag_id = 789 # int | Search on Tag ID *(Optional)* `(Relation)` (optional)
 broadcast_id = 789 # int | Search on Broadcast ID *(Optional)* `(Relation)` (optional)
-item_id = 789 # int | Search on Item ID *(Optional)* `(Relation)` (optional)
+model_type_id = 789 # int | Search on ModelType ID *(Optional)* `(Relation)` (optional)
+tag_id = 789 # int | Search on Tag ID *(Optional)* `(Relation)` (optional)
+presenter_id = 789 # int | Search on Presenter ID *(Optional)* `(Relation)` (optional)
+genre_id = 789 # int | Search on Genre ID *(Optional)* (optional)
 block_id = 789 # int | Search on Block ID *(Optional)* `(Relation)` (optional)
+item_id = 789 # int | Search on Item ID *(Optional)* `(Relation)` (optional)
+limit = 789 # int | Results per page *(Optional)* (optional)
+order_by = 'order_by_example' # str | Field to order the results *(Optional)* (optional)
+order_direction = 'order_direction_example' # str | Direction of ordering *(Optional)* (optional)
 external_station_id = 789 # int | Query on a different (content providing) station *(Optional)* (optional)
 
 try: 
     # Get all programs.
-    api_response = api_instance.list_programs(page=page, genre_id=genre_id, model_type_id=model_type_id, presenter_id=presenter_id, tag_id=tag_id, broadcast_id=broadcast_id, item_id=item_id, block_id=block_id, external_station_id=external_station_id)
+    api_response = api_instance.list_programs(page=page, broadcast_id=broadcast_id, model_type_id=model_type_id, tag_id=tag_id, presenter_id=presenter_id, genre_id=genre_id, block_id=block_id, item_id=item_id, limit=limit, order_by=order_by, order_direction=order_direction, external_station_id=external_station_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProgramApi->list_programs: %s\n" % e)
@@ -217,13 +220,16 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| Current page *(Optional)* | [optional] 
- **genre_id** | **int**| Search on Genre ID *(Optional)* | [optional] 
- **model_type_id** | **int**| Search on ModelType ID *(Optional)* | [optional] 
- **presenter_id** | **int**| Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **tag_id** | **int**| Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
  **broadcast_id** | **int**| Search on Broadcast ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
- **item_id** | **int**| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **model_type_id** | **int**| Search on ModelType ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **tag_id** | **int**| Search on Tag ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **presenter_id** | **int**| Search on Presenter ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **genre_id** | **int**| Search on Genre ID *(Optional)* | [optional] 
  **block_id** | **int**| Search on Block ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **item_id** | **int**| Search on Item ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **limit** | **int**| Results per page *(Optional)* | [optional] 
+ **order_by** | **str**| Field to order the results *(Optional)* | [optional] 
+ **order_direction** | **str**| Direction of ordering *(Optional)* | [optional] 
  **external_station_id** | **int**| Query on a different (content providing) station *(Optional)* | [optional] 
 
 ### Return type

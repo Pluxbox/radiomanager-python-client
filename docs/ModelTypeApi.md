@@ -1,6 +1,6 @@
 # radiomanager_sdk.ModelTypeApi
 
-All URIs are relative to *https://staging.radiomanager.pluxbox.com/api/v2*
+All URIs are relative to *https://radiomanager.pb/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_model_types**
-> ModelTypeResults list_model_types(page=page, model=model, program_id=program_id, broadcast_id=broadcast_id, item_id=item_id, campaign_id=campaign_id, presenter_id=presenter_id, contact_id=contact_id, external_station_id=external_station_id)
+> ModelTypeResults list_model_types(page=page, program_id=program_id, broadcast_id=broadcast_id, item_id=item_id, campaign_id=campaign_id, presenter_id=presenter_id, contact_id=contact_id, model=model, limit=limit, order_by=order_by, order_direction=order_direction, external_station_id=external_station_id)
 
 Get all modelTypes.
 
@@ -86,18 +86,21 @@ radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = radiomanager_sdk.ModelTypeApi()
 page = 789 # int | Current page *(Optional)* (optional)
-model = 'model_example' # str |  (optional)
 program_id = 789 # int | Search on Program ID *(Optional)* (optional)
 broadcast_id = 789 # int | Search on Broadcast ID *(Optional)* (optional)
 item_id = 789 # int | Search on Item ID *(Optional)* (optional)
 campaign_id = 789 # int | Search on Campaign ID *(Optional)* (optional)
 presenter_id = 789 # int | Search on Presenter ID *(Optional)* (optional)
 contact_id = 789 # int | Search on Contact ID *(Optional)* (optional)
+model = 'model_example' # str | Search Modeltypes for certain Model *(Optional)* (optional)
+limit = 789 # int | Results per page *(Optional)* (optional)
+order_by = 'order_by_example' # str | Field to order the results *(Optional)* (optional)
+order_direction = 'order_direction_example' # str | Direction of ordering *(Optional)* (optional)
 external_station_id = 789 # int | Query on a different (content providing) station *(Optional)* (optional)
 
 try: 
     # Get all modelTypes.
-    api_response = api_instance.list_model_types(page=page, model=model, program_id=program_id, broadcast_id=broadcast_id, item_id=item_id, campaign_id=campaign_id, presenter_id=presenter_id, contact_id=contact_id, external_station_id=external_station_id)
+    api_response = api_instance.list_model_types(page=page, program_id=program_id, broadcast_id=broadcast_id, item_id=item_id, campaign_id=campaign_id, presenter_id=presenter_id, contact_id=contact_id, model=model, limit=limit, order_by=order_by, order_direction=order_direction, external_station_id=external_station_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ModelTypeApi->list_model_types: %s\n" % e)
@@ -108,13 +111,16 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **int**| Current page *(Optional)* | [optional] 
- **model** | **str**|  | [optional] 
  **program_id** | **int**| Search on Program ID *(Optional)* | [optional] 
  **broadcast_id** | **int**| Search on Broadcast ID *(Optional)* | [optional] 
  **item_id** | **int**| Search on Item ID *(Optional)* | [optional] 
  **campaign_id** | **int**| Search on Campaign ID *(Optional)* | [optional] 
  **presenter_id** | **int**| Search on Presenter ID *(Optional)* | [optional] 
  **contact_id** | **int**| Search on Contact ID *(Optional)* | [optional] 
+ **model** | **str**| Search Modeltypes for certain Model *(Optional)* | [optional] 
+ **limit** | **int**| Results per page *(Optional)* | [optional] 
+ **order_by** | **str**| Field to order the results *(Optional)* | [optional] 
+ **order_direction** | **str**| Direction of ordering *(Optional)* | [optional] 
  **external_station_id** | **int**| Query on a different (content providing) station *(Optional)* | [optional] 
 
 ### Return type

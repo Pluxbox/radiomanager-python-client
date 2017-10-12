@@ -363,11 +363,14 @@ class BlockApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int page: Current page *(Optional)*
+        :param int broadcast_id: Search on Broadcast ID *(Optional)* `(Relation)`
+        :param int item_id: Search on Item ID *(Optional)* `(Relation)`
+        :param int program_id: Search on Program ID *(Optional)* `(Relation)`
         :param datetime start_min: Minimum start date *(Optional)*
         :param datetime start_max: Maximum start date *(Optional)*
-        :param int broadcast_id: Search on Broadcast ID *(Optional)* `(Relation)`
-        :param int program_id: Search on Program ID *(Optional)* `(Relation)`
-        :param int item_id: Search on Item ID *(Optional)* `(Relation)`
+        :param int limit: Results per page *(Optional)*
+        :param str order_by: Field to order the results *(Optional)*
+        :param str order_direction: Direction of ordering *(Optional)*
         :param int external_station_id: Query on a different (content providing) station *(Optional)*
         :return: BlockResults
                  If the method is called asynchronously,
@@ -395,18 +398,21 @@ class BlockApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int page: Current page *(Optional)*
+        :param int broadcast_id: Search on Broadcast ID *(Optional)* `(Relation)`
+        :param int item_id: Search on Item ID *(Optional)* `(Relation)`
+        :param int program_id: Search on Program ID *(Optional)* `(Relation)`
         :param datetime start_min: Minimum start date *(Optional)*
         :param datetime start_max: Maximum start date *(Optional)*
-        :param int broadcast_id: Search on Broadcast ID *(Optional)* `(Relation)`
-        :param int program_id: Search on Program ID *(Optional)* `(Relation)`
-        :param int item_id: Search on Item ID *(Optional)* `(Relation)`
+        :param int limit: Results per page *(Optional)*
+        :param str order_by: Field to order the results *(Optional)*
+        :param str order_direction: Direction of ordering *(Optional)*
         :param int external_station_id: Query on a different (content providing) station *(Optional)*
         :return: BlockResults
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['page', 'start_min', 'start_max', 'broadcast_id', 'program_id', 'item_id', 'external_station_id']
+        all_params = ['page', 'broadcast_id', 'item_id', 'program_id', 'start_min', 'start_max', 'limit', 'order_by', 'order_direction', 'external_station_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -424,6 +430,10 @@ class BlockApi(object):
 
         if 'page' in params and params['page'] < 0:
             raise ValueError("Invalid value for parameter `page` when calling `list_blocks`, must be a value greater than or equal to `0`")
+        if 'limit' in params and params['limit'] > 50:
+            raise ValueError("Invalid value for parameter `limit` when calling `list_blocks`, must be a value less than or equal to `50`")
+        if 'limit' in params and params['limit'] < 1:
+            raise ValueError("Invalid value for parameter `limit` when calling `list_blocks`, must be a value greater than or equal to `1`")
 
         collection_formats = {}
 
@@ -432,16 +442,22 @@ class BlockApi(object):
         query_params = []
         if 'page' in params:
             query_params.append(('page', params['page']))
+        if 'broadcast_id' in params:
+            query_params.append(('broadcast_id', params['broadcast_id']))
+        if 'item_id' in params:
+            query_params.append(('item_id', params['item_id']))
+        if 'program_id' in params:
+            query_params.append(('program_id', params['program_id']))
         if 'start_min' in params:
             query_params.append(('start-min', params['start_min']))
         if 'start_max' in params:
             query_params.append(('start-max', params['start_max']))
-        if 'broadcast_id' in params:
-            query_params.append(('broadcast_id', params['broadcast_id']))
-        if 'program_id' in params:
-            query_params.append(('program_id', params['program_id']))
-        if 'item_id' in params:
-            query_params.append(('item_id', params['item_id']))
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))
+        if 'order_by' in params:
+            query_params.append(('order-by', params['order_by']))
+        if 'order_direction' in params:
+            query_params.append(('order-direction', params['order_direction']))
         if 'external_station_id' in params:
             query_params.append(('_external_station_id', params['external_station_id']))
 
