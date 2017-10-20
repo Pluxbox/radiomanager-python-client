@@ -5,7 +5,6 @@ from .block_api import BlockApi
 from .broadcast_api import BroadcastApi
 from .campaign_api import CampaignApi
 from .contact_api import ContactApi
-from .external_message_api import ExternalMessageApi
 from .genre_api import GenreApi
 from .item_api import ItemApi
 from .model_type_api import ModelTypeApi

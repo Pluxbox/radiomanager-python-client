@@ -480,7 +480,7 @@ class BroadcastApi(object):
             for asynchronous request. (optional)
         :param datetime date: Date *(Optional)*
         :param bool withunpublished: Show Unpublished *(Optional)*
-        :return: EPGBroadcast
+        :return: EPGResults
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -507,7 +507,7 @@ class BroadcastApi(object):
             for asynchronous request. (optional)
         :param datetime date: Date *(Optional)*
         :param bool withunpublished: Show Unpublished *(Optional)*
-        :return: EPGBroadcast
+        :return: EPGResults
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -563,7 +563,7 @@ class BroadcastApi(object):
                                         body=body_params,
                                         post_params=form_params,
                                         files=local_var_files,
-                                        response_type='EPGBroadcast',
+                                        response_type='EPGResults',
                                         auth_settings=auth_settings,
                                         callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
@@ -587,7 +587,7 @@ class BroadcastApi(object):
             for asynchronous request. (optional)
         :param datetime date: Date *(Optional)*
         :param bool withunpublished: Show Unpublished *(Optional)*
-        :return: EPGBroadcast
+        :return: EPGResults
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -614,7 +614,7 @@ class BroadcastApi(object):
             for asynchronous request. (optional)
         :param datetime date: Date *(Optional)*
         :param bool withunpublished: Show Unpublished *(Optional)*
-        :return: EPGBroadcast
+        :return: EPGResults
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -670,7 +670,7 @@ class BroadcastApi(object):
                                         body=body_params,
                                         post_params=form_params,
                                         files=local_var_files,
-                                        response_type='EPGBroadcast',
+                                        response_type='EPGResults',
                                         auth_settings=auth_settings,
                                         callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
@@ -792,7 +792,7 @@ class BroadcastApi(object):
             for asynchronous request. (optional)
         :param str date: Date *(Optional)*
         :param bool withunpublished: Show Unpublished *(Optional)*
-        :return: EPGBroadcast
+        :return: EPGResults
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -819,7 +819,7 @@ class BroadcastApi(object):
             for asynchronous request. (optional)
         :param str date: Date *(Optional)*
         :param bool withunpublished: Show Unpublished *(Optional)*
-        :return: EPGBroadcast
+        :return: EPGResults
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -875,7 +875,7 @@ class BroadcastApi(object):
                                         body=body_params,
                                         post_params=form_params,
                                         files=local_var_files,
-                                        response_type='EPGBroadcast',
+                                        response_type='EPGResults',
                                         auth_settings=auth_settings,
                                         callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
@@ -1062,7 +1062,7 @@ class BroadcastApi(object):
         :param int program_id: Search on Program ID *(Optional)* `(Relation)`
         :param int presenter_id: Search on Presenter ID *(Optional)* `(Relation)`
         :param int tag_id: Search on Tag ID *(Optional)* `(Relation)`
-        :return: EPGBroadcast
+        :return: EPGResults
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1091,7 +1091,7 @@ class BroadcastApi(object):
         :param int program_id: Search on Program ID *(Optional)* `(Relation)`
         :param int presenter_id: Search on Presenter ID *(Optional)* `(Relation)`
         :param int tag_id: Search on Tag ID *(Optional)* `(Relation)`
-        :return: EPGBroadcast
+        :return: EPGResults
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -1156,7 +1156,7 @@ class BroadcastApi(object):
                                         body=body_params,
                                         post_params=form_params,
                                         files=local_var_files,
-                                        response_type='EPGBroadcast',
+                                        response_type='EPGResults',
                                         auth_settings=auth_settings,
                                         callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),

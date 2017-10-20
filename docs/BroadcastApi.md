@@ -1,6 +1,6 @@
 # radiomanager_sdk.BroadcastApi
 
-All URIs are relative to *https://radiomanager.pb/api/v2*
+All URIs are relative to *https://staging.radiomanager.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -228,7 +228,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_daily_epg**
-> EPGBroadcast get_daily_epg(date=date, withunpublished=withunpublished)
+> EPGResults get_daily_epg(date=date, withunpublished=withunpublished)
 
 Get daily EPG
 
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EPGBroadcast**](EPGBroadcast.md)
+[**EPGResults**](EPGResults.md)
 
 ### Authorization
 
@@ -283,7 +283,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_epg_by_date**
-> EPGBroadcast get_epg_by_date(date=date, withunpublished=withunpublished)
+> EPGResults get_epg_by_date(date=date, withunpublished=withunpublished)
 
 Get EPG by date
 
@@ -324,7 +324,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EPGBroadcast**](EPGBroadcast.md)
+[**EPGResults**](EPGResults.md)
 
 ### Authorization
 
@@ -387,7 +387,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_weekly_epg**
-> EPGBroadcast get_weekly_epg(date=date, withunpublished=withunpublished)
+> EPGResults get_weekly_epg(date=date, withunpublished=withunpublished)
 
 Get weekly EPG
 
@@ -428,7 +428,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EPGBroadcast**](EPGBroadcast.md)
+[**EPGResults**](EPGResults.md)
 
 ### Authorization
 
@@ -521,7 +521,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **print_broadcast_by_id**
-> EPGBroadcast print_broadcast_by_id(id, program_id=program_id, presenter_id=presenter_id, tag_id=tag_id)
+> EPGResults print_broadcast_by_id(id, program_id=program_id, presenter_id=presenter_id, tag_id=tag_id)
 
 Print Broadcast by id
 
@@ -566,7 +566,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**EPGBroadcast**](EPGBroadcast.md)
+[**EPGResults**](EPGResults.md)
 
 ### Authorization
 

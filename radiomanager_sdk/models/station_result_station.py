@@ -55,6 +55,7 @@ class StationResultStation(object):
         'pty_code': 'int',
         'pty_type': 'str',
         'station_key': 'str',
+        'timezone': 'str',
         'trial_date': 'datetime'
     }
 
@@ -83,10 +84,11 @@ class StationResultStation(object):
         'pty_code': 'pty_code',
         'pty_type': 'pty_type',
         'station_key': 'station_key',
+        'timezone': 'timezone',
         'trial_date': 'trial_date'
     }
 
-    def __init__(self, id=None, name=None, created_at=None, updated_at=None, system_name=None, short_name=None, medium_name=None, website=None, email=None, keywords=None, description=None, sms=None, telephone=None, genre_id=None, language=None, active=None, logo_rectangle=None, logo_128x128=None, logo_320x320=None, logo_600x600=None, pay_off=None, pty_code=None, pty_type=None, station_key=None, trial_date=None):
+    def __init__(self, id=None, name=None, created_at=None, updated_at=None, system_name=None, short_name=None, medium_name=None, website=None, email=None, keywords=None, description=None, sms=None, telephone=None, genre_id=None, language=None, active=None, logo_rectangle=None, logo_128x128=None, logo_320x320=None, logo_600x600=None, pay_off=None, pty_code=None, pty_type=None, station_key=None, timezone=None, trial_date=None):
         """
         StationResultStation - a model defined in Swagger
         """
@@ -115,6 +117,7 @@ class StationResultStation(object):
         self._pty_code = None
         self._pty_type = None
         self._station_key = None
+        self._timezone = None
         self._trial_date = None
 
         if id is not None:
@@ -165,6 +168,8 @@ class StationResultStation(object):
           self.pty_type = pty_type
         if station_key is not None:
           self.station_key = station_key
+        if timezone is not None:
+          self.timezone = timezone
         if trial_date is not None:
           self.trial_date = trial_date
 
@@ -671,6 +676,27 @@ class StationResultStation(object):
         """
 
         self._station_key = station_key
+
+    @property
+    def timezone(self):
+        """
+        Gets the timezone of this StationResultStation.
+
+        :return: The timezone of this StationResultStation.
+        :rtype: str
+        """
+        return self._timezone
+
+    @timezone.setter
+    def timezone(self, timezone):
+        """
+        Sets the timezone of this StationResultStation.
+
+        :param timezone: The timezone of this StationResultStation.
+        :type: str
+        """
+
+        self._timezone = timezone
 
     @property
     def trial_date(self):

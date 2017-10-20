@@ -23,6 +23,8 @@ from .models.block_relations_items_params import BlockRelationsItemsParams
 from .models.block_relations_program import BlockRelationsProgram
 from .models.block_results import BlockResults
 from .models.broadcast import Broadcast
+from .models.broadcast_epg_day import BroadcastEPGDay
+from .models.broadcast_epg_relations import BroadcastEPGRelations
 from .models.broadcast_field_values import BroadcastFieldValues
 from .models.broadcast_input_only import BroadcastInputOnly
 from .models.broadcast_output_only import BroadcastOutputOnly
@@ -50,8 +52,7 @@ from .models.contact_relations_tags_params import ContactRelationsTagsParams
 from .models.contact_results import ContactResults
 from .models.data import Data
 from .models.data_1 import Data1
-from .models.epg_broadcast import EPGBroadcast
-from .models.external_message_queue_data import ExternalMessageQueueData
+from .models.epg_results import EPGResults
 from .models.forbidden import Forbidden
 from .models.genre import Genre
 from .models.genre_output_only import GenreOutputOnly
@@ -141,6 +142,7 @@ from .models.user_results import UserResults
 from .models.visual_result import VisualResult
 from .models.block_result import BlockResult
 from .models.broadcast_data_input import BroadcastDataInput
+from .models.broadcast_epg_result import BroadcastEPGResult
 from .models.broadcast_result import BroadcastResult
 from .models.campaign_data_input import CampaignDataInput
 from .models.campaign_result import CampaignResult
@@ -151,6 +153,7 @@ from .models.item_data_input import ItemDataInput
 from .models.item_result import ItemResult
 from .models.model_type_result import ModelTypeResult
 from .models.presenter_data_input import PresenterDataInput
+from .models.presenter_epg_result import PresenterEPGResult
 from .models.presenter_result import PresenterResult
 from .models.program_data_input import ProgramDataInput
 from .models.program_result import ProgramResult
@@ -164,7 +167,6 @@ from .apis.block_api import BlockApi
 from .apis.broadcast_api import BroadcastApi
 from .apis.campaign_api import CampaignApi
 from .apis.contact_api import ContactApi
-from .apis.external_message_api import ExternalMessageApi
 from .apis.genre_api import GenreApi
 from .apis.item_api import ItemApi
 from .apis.model_type_api import ModelTypeApi

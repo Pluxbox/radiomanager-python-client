@@ -52,7 +52,7 @@ except ApiException as e:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://radiomanager.pb/api/v2*
+All URIs are relative to *https://staging.radiomanager.io/api/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -81,7 +81,6 @@ Class | Method | HTTP request | Description
 *ContactApi* | [**get_contact_by_id**](docs/ContactApi.md#get_contact_by_id) | **GET** /contacts/{id} | Get contact by id
 *ContactApi* | [**list_contacts**](docs/ContactApi.md#list_contacts) | **GET** /contacts | Get all contacts.
 *ContactApi* | [**update_contact_by_id**](docs/ContactApi.md#update_contact_by_id) | **PATCH** /contacts/{id} | Update contact by id
-*ExternalMessageApi* | [**queue_external_message**](docs/ExternalMessageApi.md#queue_external_message) | **POST** /externalmessagequeue | Queue External Message.
 *GenreApi* | [**get_genre_by_id**](docs/GenreApi.md#get_genre_by_id) | **GET** /genres/{id} | Get genre by id
 *GenreApi* | [**list_genres**](docs/GenreApi.md#list_genres) | **GET** /genres | List all genres.
 *ItemApi* | [**create_item**](docs/ItemApi.md#create_item) | **POST** /items | Create an new item.
@@ -135,6 +134,8 @@ Class | Method | HTTP request | Description
  - [BlockRelationsProgram](docs/BlockRelationsProgram.md)
  - [BlockResults](docs/BlockResults.md)
  - [Broadcast](docs/Broadcast.md)
+ - [BroadcastEPGDay](docs/BroadcastEPGDay.md)
+ - [BroadcastEPGRelations](docs/BroadcastEPGRelations.md)
  - [BroadcastFieldValues](docs/BroadcastFieldValues.md)
  - [BroadcastInputOnly](docs/BroadcastInputOnly.md)
  - [BroadcastOutputOnly](docs/BroadcastOutputOnly.md)
@@ -162,8 +163,7 @@ Class | Method | HTTP request | Description
  - [ContactResults](docs/ContactResults.md)
  - [Data](docs/Data.md)
  - [Data1](docs/Data1.md)
- - [EPGBroadcast](docs/EPGBroadcast.md)
- - [ExternalMessageQueueData](docs/ExternalMessageQueueData.md)
+ - [EPGResults](docs/EPGResults.md)
  - [Forbidden](docs/Forbidden.md)
  - [Genre](docs/Genre.md)
  - [GenreOutputOnly](docs/GenreOutputOnly.md)
@@ -253,6 +253,7 @@ Class | Method | HTTP request | Description
  - [VisualResult](docs/VisualResult.md)
  - [BlockResult](docs/BlockResult.md)
  - [BroadcastDataInput](docs/BroadcastDataInput.md)
+ - [BroadcastEPGResult](docs/BroadcastEPGResult.md)
  - [BroadcastResult](docs/BroadcastResult.md)
  - [CampaignDataInput](docs/CampaignDataInput.md)
  - [CampaignResult](docs/CampaignResult.md)
@@ -263,6 +264,7 @@ Class | Method | HTTP request | Description
  - [ItemResult](docs/ItemResult.md)
  - [ModelTypeResult](docs/ModelTypeResult.md)
  - [PresenterDataInput](docs/PresenterDataInput.md)
+ - [PresenterEPGResult](docs/PresenterEPGResult.md)
  - [PresenterResult](docs/PresenterResult.md)
  - [ProgramDataInput](docs/ProgramDataInput.md)
  - [ProgramResult](docs/ProgramResult.md)

@@ -23,6 +23,8 @@ from .block_relations_items_params import BlockRelationsItemsParams
 from .block_relations_program import BlockRelationsProgram
 from .block_results import BlockResults
 from .broadcast import Broadcast
+from .broadcast_epg_day import BroadcastEPGDay
+from .broadcast_epg_relations import BroadcastEPGRelations
 from .broadcast_field_values import BroadcastFieldValues
 from .broadcast_input_only import BroadcastInputOnly
 from .broadcast_output_only import BroadcastOutputOnly
@@ -50,8 +52,7 @@ from .contact_relations_tags_params import ContactRelationsTagsParams
 from .contact_results import ContactResults
 from .data import Data
 from .data_1 import Data1
-from .epg_broadcast import EPGBroadcast
-from .external_message_queue_data import ExternalMessageQueueData
+from .epg_results import EPGResults
 from .forbidden import Forbidden
 from .genre import Genre
 from .genre_output_only import GenreOutputOnly
@@ -141,6 +142,7 @@ from .user_results import UserResults
 from .visual_result import VisualResult
 from .block_result import BlockResult
 from .broadcast_data_input import BroadcastDataInput
+from .broadcast_epg_result import BroadcastEPGResult
 from .broadcast_result import BroadcastResult
 from .campaign_data_input import CampaignDataInput
 from .campaign_result import CampaignResult
@@ -151,6 +153,7 @@ from .item_data_input import ItemDataInput
 from .item_result import ItemResult
 from .model_type_result import ModelTypeResult
 from .presenter_data_input import PresenterDataInput
+from .presenter_epg_result import PresenterEPGResult
 from .presenter_result import PresenterResult
 from .program_data_input import ProgramDataInput
 from .program_result import ProgramResult
