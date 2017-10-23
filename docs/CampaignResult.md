@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **item** | [**list[Item]**](Item.md) |  | [optional] 
 **external_station_id** | **int** |  | [optional] 
 **model_type_id** | **int** |  | 
-**field_values** | **list[object]** |  | [optional] 
+**field_values** | **object** |  | [optional] 
 **title** | **str** |  | [optional] 
 **start** | **datetime** |  | 
 **stop** | **datetime** |  | 

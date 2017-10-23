@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **deleted_at** | **datetime** |  | [optional] 
 **external_station_id** | **int** |  | [optional] 
 **model_type_id** | **int** |  | 
-**field_values** | [**ContactFieldValues**](ContactFieldValues.md) |  | [optional] 
+**field_values** | **object** |  | [optional] 
 **email** | **str** |  | [optional] 
 **firstname** | **str** |  | 
 **lastname** | **str** |  | 

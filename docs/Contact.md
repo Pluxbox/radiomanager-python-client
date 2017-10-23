@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **model_type_id** | **int** |  | 
-**field_values** | [**ContactFieldValues**](ContactFieldValues.md) |  | [optional] 
+**field_values** | **object** |  | [optional] 
 **email** | **str** |  | [optional] 
 **firstname** | **str** |  | 
 **lastname** | **str** |  | 

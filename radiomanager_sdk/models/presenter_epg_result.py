@@ -32,7 +32,7 @@ class PresenterEPGResult(object):
     """
     swagger_types = {
         'model_type_id': 'int',
-        'field_values': 'list[object]',
+        'field_values': 'object',
         'firstname': 'str',
         'lastname': 'str',
         'active': 'bool',
@@ -122,7 +122,7 @@ class PresenterEPGResult(object):
         Gets the field_values of this PresenterEPGResult.
 
         :return: The field_values of this PresenterEPGResult.
-        :rtype: list[object]
+        :rtype: object
         """
         return self._field_values
 
@@ -132,7 +132,7 @@ class PresenterEPGResult(object):
         Sets the field_values of this PresenterEPGResult.
 
         :param field_values: The field_values of this PresenterEPGResult.
-        :type: list[object]
+        :type: object
         """
 
         self._field_values = field_values

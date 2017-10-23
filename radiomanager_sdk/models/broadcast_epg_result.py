@@ -39,7 +39,7 @@ class BroadcastEPGResult(object):
         'program_id': 'int',
         'model_type_id': 'int',
         'station_id': 'int',
-        'field_values': 'BroadcastFieldValues',
+        'field_values': 'object',
         'title': 'str',
         'start': 'datetime',
         'stop': 'datetime',
@@ -386,7 +386,7 @@ class BroadcastEPGResult(object):
         Gets the field_values of this BroadcastEPGResult.
 
         :return: The field_values of this BroadcastEPGResult.
-        :rtype: BroadcastFieldValues
+        :rtype: object
         """
         return self._field_values
 
@@ -396,7 +396,7 @@ class BroadcastEPGResult(object):
         Sets the field_values of this BroadcastEPGResult.
 
         :param field_values: The field_values of this BroadcastEPGResult.
-        :type: BroadcastFieldValues
+        :type: object
         """
 
         self._field_values = field_values

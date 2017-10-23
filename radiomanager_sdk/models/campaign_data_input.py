@@ -32,7 +32,7 @@ class CampaignDataInput(object):
     """
     swagger_types = {
         'model_type_id': 'int',
-        'field_values': 'list[object]',
+        'field_values': 'object',
         'title': 'str',
         'start': 'datetime',
         'stop': 'datetime',
@@ -104,7 +104,7 @@ class CampaignDataInput(object):
         Gets the field_values of this CampaignDataInput.
 
         :return: The field_values of this CampaignDataInput.
-        :rtype: list[object]
+        :rtype: object
         """
         return self._field_values
 
@@ -114,7 +114,7 @@ class CampaignDataInput(object):
         Sets the field_values of this CampaignDataInput.
 
         :param field_values: The field_values of this CampaignDataInput.
-        :type: list[object]
+        :type: object
         """
 
         self._field_values = field_values

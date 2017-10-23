@@ -39,7 +39,7 @@ class BroadcastResult(object):
         'program_id': 'int',
         'model_type_id': 'int',
         'station_id': 'int',
-        'field_values': 'BroadcastFieldValues',
+        'field_values': 'object',
         'title': 'str',
         'start': 'datetime',
         'stop': 'datetime',
@@ -386,7 +386,7 @@ class BroadcastResult(object):
         Gets the field_values of this BroadcastResult.
 
         :return: The field_values of this BroadcastResult.
-        :rtype: BroadcastFieldValues
+        :rtype: object
         """
         return self._field_values
 
@@ -396,7 +396,7 @@ class BroadcastResult(object):
         Sets the field_values of this BroadcastResult.
 
         :param field_values: The field_values of this BroadcastResult.
-        :type: BroadcastFieldValues
+        :type: object
         """
 
         self._field_values = field_values

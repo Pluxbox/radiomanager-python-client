@@ -34,7 +34,7 @@ class Item(object):
         'model_type_id': 'int',
         'block_id': 'int',
         'external_id': 'str',
-        'field_values': 'ImportItemFieldValues',
+        'field_values': 'object',
         'title': 'str',
         'duration': 'int',
         'start': 'datetime',
@@ -193,7 +193,7 @@ class Item(object):
         Gets the field_values of this Item.
 
         :return: The field_values of this Item.
-        :rtype: ImportItemFieldValues
+        :rtype: object
         """
         return self._field_values
 
@@ -203,7 +203,7 @@ class Item(object):
         Sets the field_values of this Item.
 
         :param field_values: The field_values of this Item.
-        :type: ImportItemFieldValues
+        :type: object
         """
 
         self._field_values = field_values

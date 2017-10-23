@@ -34,7 +34,7 @@ class Broadcast(object):
         'program_id': 'int',
         'model_type_id': 'int',
         'station_id': 'int',
-        'field_values': 'BroadcastFieldValues',
+        'field_values': 'object',
         'title': 'str',
         'start': 'datetime',
         'stop': 'datetime',
@@ -222,7 +222,7 @@ class Broadcast(object):
         Gets the field_values of this Broadcast.
 
         :return: The field_values of this Broadcast.
-        :rtype: BroadcastFieldValues
+        :rtype: object
         """
         return self._field_values
 
@@ -232,7 +232,7 @@ class Broadcast(object):
         Sets the field_values of this Broadcast.
 
         :param field_values: The field_values of this Broadcast.
-        :type: BroadcastFieldValues
+        :type: object
         """
 
         self._field_values = field_values

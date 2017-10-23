@@ -32,7 +32,7 @@ class Presenter(object):
     """
     swagger_types = {
         'model_type_id': 'int',
-        'field_values': 'list[object]',
+        'field_values': 'object',
         'firstname': 'str',
         'lastname': 'str',
         'active': 'bool',
@@ -101,7 +101,7 @@ class Presenter(object):
         Gets the field_values of this Presenter.
 
         :return: The field_values of this Presenter.
-        :rtype: list[object]
+        :rtype: object
         """
         return self._field_values
 
@@ -111,7 +111,7 @@ class Presenter(object):
         Sets the field_values of this Presenter.
 
         :param field_values: The field_values of this Presenter.
-        :type: list[object]
+        :type: object
         """
 
         self._field_values = field_values

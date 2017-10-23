@@ -37,7 +37,7 @@ class ContactResult(object):
         'deleted_at': 'datetime',
         'external_station_id': 'int',
         'model_type_id': 'int',
-        'field_values': 'ContactFieldValues',
+        'field_values': 'object',
         'email': 'str',
         'firstname': 'str',
         'lastname': 'str',
@@ -244,7 +244,7 @@ class ContactResult(object):
         Gets the field_values of this ContactResult.
 
         :return: The field_values of this ContactResult.
-        :rtype: ContactFieldValues
+        :rtype: object
         """
         return self._field_values
 
@@ -254,7 +254,7 @@ class ContactResult(object):
         Sets the field_values of this ContactResult.
 
         :param field_values: The field_values of this ContactResult.
-        :type: ContactFieldValues
+        :type: object
         """
 
         self._field_values = field_values

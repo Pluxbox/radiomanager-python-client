@@ -32,7 +32,7 @@ class Contact(object):
     """
     swagger_types = {
         'model_type_id': 'int',
-        'field_values': 'ContactFieldValues',
+        'field_values': 'object',
         'email': 'str',
         'firstname': 'str',
         'lastname': 'str',
@@ -99,7 +99,7 @@ class Contact(object):
         Gets the field_values of this Contact.
 
         :return: The field_values of this Contact.
-        :rtype: ContactFieldValues
+        :rtype: object
         """
         return self._field_values
 
@@ -109,7 +109,7 @@ class Contact(object):
         Sets the field_values of this Contact.
 
         :param field_values: The field_values of this Contact.
-        :type: ContactFieldValues
+        :type: object
         """
 
         self._field_values = field_values

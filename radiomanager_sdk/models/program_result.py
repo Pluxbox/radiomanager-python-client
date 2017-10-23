@@ -37,7 +37,7 @@ class ProgramResult(object):
         'deleted_at': 'datetime',
         'external_station_id': 'int',
         'model_type_id': 'int',
-        'field_values': 'ProgramFieldValues',
+        'field_values': 'object',
         'title': 'str',
         'disabled': 'bool',
         'genre_id': 'int',
@@ -299,7 +299,7 @@ class ProgramResult(object):
         Gets the field_values of this ProgramResult.
 
         :return: The field_values of this ProgramResult.
-        :rtype: ProgramFieldValues
+        :rtype: object
         """
         return self._field_values
 
@@ -309,7 +309,7 @@ class ProgramResult(object):
         Sets the field_values of this ProgramResult.
 
         :param field_values: The field_values of this ProgramResult.
-        :type: ProgramFieldValues
+        :type: object
         """
 
         self._field_values = field_values

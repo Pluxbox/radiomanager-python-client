@@ -34,7 +34,7 @@ class BroadcastDataInput(object):
         'program_id': 'int',
         'model_type_id': 'int',
         'station_id': 'int',
-        'field_values': 'BroadcastFieldValues',
+        'field_values': 'object',
         'title': 'str',
         'start': 'datetime',
         'stop': 'datetime',
@@ -232,7 +232,7 @@ class BroadcastDataInput(object):
         Gets the field_values of this BroadcastDataInput.
 
         :return: The field_values of this BroadcastDataInput.
-        :rtype: BroadcastFieldValues
+        :rtype: object
         """
         return self._field_values
 
@@ -242,7 +242,7 @@ class BroadcastDataInput(object):
         Sets the field_values of this BroadcastDataInput.
 
         :param field_values: The field_values of this BroadcastDataInput.
-        :type: BroadcastFieldValues
+        :type: object
         """
 
         self._field_values = field_values

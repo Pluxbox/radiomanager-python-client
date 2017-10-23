@@ -38,7 +38,7 @@ class CampaignResult(object):
         'item': 'list[Item]',
         'external_station_id': 'int',
         'model_type_id': 'int',
-        'field_values': 'list[object]',
+        'field_values': 'object',
         'title': 'str',
         'start': 'datetime',
         'stop': 'datetime',
@@ -274,7 +274,7 @@ class CampaignResult(object):
         Gets the field_values of this CampaignResult.
 
         :return: The field_values of this CampaignResult.
-        :rtype: list[object]
+        :rtype: object
         """
         return self._field_values
 
@@ -284,7 +284,7 @@ class CampaignResult(object):
         Sets the field_values of this CampaignResult.
 
         :param field_values: The field_values of this CampaignResult.
-        :type: list[object]
+        :type: object
         """
 
         self._field_values = field_values

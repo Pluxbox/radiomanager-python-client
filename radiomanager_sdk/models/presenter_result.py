@@ -37,7 +37,7 @@ class PresenterResult(object):
         'deleted_at': 'datetime',
         'external_station_id': 'int',
         'model_type_id': 'int',
-        'field_values': 'list[object]',
+        'field_values': 'object',
         'firstname': 'str',
         'lastname': 'str',
         'active': 'bool',
@@ -250,7 +250,7 @@ class PresenterResult(object):
         Gets the field_values of this PresenterResult.
 
         :return: The field_values of this PresenterResult.
-        :rtype: list[object]
+        :rtype: object
         """
         return self._field_values
 
@@ -260,7 +260,7 @@ class PresenterResult(object):
         Sets the field_values of this PresenterResult.
 
         :param field_values: The field_values of this PresenterResult.
-        :type: list[object]
+        :type: object
         """
 
         self._field_values = field_values

@@ -33,7 +33,7 @@ class ImportItem(object):
     swagger_types = {
         'model_type_id': 'int',
         'external_id': 'str',
-        'field_values': 'ImportItemFieldValues',
+        'field_values': 'object',
         'title': 'str',
         'duration': 'int',
         'start': 'datetime',
@@ -148,7 +148,7 @@ class ImportItem(object):
         Gets the field_values of this ImportItem.
 
         :return: The field_values of this ImportItem.
-        :rtype: ImportItemFieldValues
+        :rtype: object
         """
         return self._field_values
 
@@ -158,7 +158,7 @@ class ImportItem(object):
         Sets the field_values of this ImportItem.
 
         :param field_values: The field_values of this ImportItem.
-        :type: ImportItemFieldValues
+        :type: object
         """
 
         self._field_values = field_values

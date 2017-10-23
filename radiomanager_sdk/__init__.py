@@ -25,7 +25,6 @@ from .models.block_results import BlockResults
 from .models.broadcast import Broadcast
 from .models.broadcast_epg_day import BroadcastEPGDay
 from .models.broadcast_epg_relations import BroadcastEPGRelations
-from .models.broadcast_field_values import BroadcastFieldValues
 from .models.broadcast_input_only import BroadcastInputOnly
 from .models.broadcast_output_only import BroadcastOutputOnly
 from .models.broadcast_relations import BroadcastRelations
@@ -43,7 +42,6 @@ from .models.campaign_relations_items import CampaignRelationsItems
 from .models.campaign_relations_items_params import CampaignRelationsItemsParams
 from .models.campaign_results import CampaignResults
 from .models.contact import Contact
-from .models.contact_field_values import ContactFieldValues
 from .models.contact_output_only import ContactOutputOnly
 from .models.contact_relations import ContactRelations
 from .models.contact_relations_items import ContactRelationsItems
@@ -62,7 +60,6 @@ from .models.genre_relations_broadcasts_params import GenreRelationsBroadcastsPa
 from .models.genre_relations_programs import GenreRelationsPrograms
 from .models.genre_results import GenreResults
 from .models.import_item import ImportItem
-from .models.import_item_field_values import ImportItemFieldValues
 from .models.inline_response_202 import InlineResponse202
 from .models.internal_server_error import InternalServerError
 from .models.invite_user_data import InviteUserData
@@ -100,7 +97,6 @@ from .models.presenter_relations_programs import PresenterRelationsPrograms
 from .models.presenter_relations_programs_params import PresenterRelationsProgramsParams
 from .models.presenter_results import PresenterResults
 from .models.program import Program
-from .models.program_field_values import ProgramFieldValues
 from .models.program_input_only import ProgramInputOnly
 from .models.program_output_only import ProgramOutputOnly
 from .models.program_relations import ProgramRelations

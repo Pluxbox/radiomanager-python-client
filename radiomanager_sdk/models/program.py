@@ -32,7 +32,7 @@ class Program(object):
     """
     swagger_types = {
         'model_type_id': 'int',
-        'field_values': 'ProgramFieldValues',
+        'field_values': 'object',
         'title': 'str',
         'disabled': 'bool',
         'genre_id': 'int',
@@ -135,7 +135,7 @@ class Program(object):
         Gets the field_values of this Program.
 
         :return: The field_values of this Program.
-        :rtype: ProgramFieldValues
+        :rtype: object
         """
         return self._field_values
 
@@ -145,7 +145,7 @@ class Program(object):
         Sets the field_values of this Program.
 
         :param field_values: The field_values of this Program.
-        :type: ProgramFieldValues
+        :type: object
         """
 
         self._field_values = field_values
