@@ -40,7 +40,7 @@ class StationResultStation(object):
         'medium_name': 'str',
         'website': 'str',
         'email': 'str',
-        'keywords': 'str',
+        'keywords': 'list[str]',
         'description': 'str',
         'sms': 'str',
         'telephone': 'str',
@@ -368,7 +368,7 @@ class StationResultStation(object):
         Gets the keywords of this StationResultStation.
 
         :return: The keywords of this StationResultStation.
-        :rtype: str
+        :rtype: list[str]
         """
         return self._keywords
 
@@ -378,7 +378,7 @@ class StationResultStation(object):
         Sets the keywords of this StationResultStation.
 
         :param keywords: The keywords of this StationResultStation.
-        :type: str
+        :type: list[str]
         """
 
         self._keywords = keywords

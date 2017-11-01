@@ -1,6 +1,6 @@
 # radiomanager_sdk.BroadcastApi
 
-All URIs are relative to *https://radiomanager.io/api/v2*
+All URIs are relative to *https://staging.radiomanager.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -179,7 +179,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_current_broadcast**
-> Broadcast get_current_broadcast()
+> BroadcastResult get_current_broadcast(withunpublished=withunpublished)
 
 Get current Broadcast
 
@@ -200,21 +200,25 @@ radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = radiomanager_sdk.BroadcastApi()
+withunpublished = true # bool | Show Unpublished *(Optional)* (optional)
 
 try: 
     # Get current Broadcast
-    api_response = api_instance.get_current_broadcast()
+    api_response = api_instance.get_current_broadcast(withunpublished=withunpublished)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BroadcastApi->get_current_broadcast: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **withunpublished** | **bool**| Show Unpublished *(Optional)* | [optional] 
 
 ### Return type
 
-[**Broadcast**](Broadcast.md)
+[**BroadcastResult**](BroadcastResult.md)
 
 ### Authorization
 
@@ -338,7 +342,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_next_broadcast**
-> Broadcast get_next_broadcast()
+> BroadcastResult get_next_broadcast(withunpublished=withunpublished)
 
 Get next Broadcast
 
@@ -359,21 +363,25 @@ radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 
 # create an instance of the API class
 api_instance = radiomanager_sdk.BroadcastApi()
+withunpublished = true # bool | Show Unpublished *(Optional)* (optional)
 
 try: 
     # Get next Broadcast
-    api_response = api_instance.get_next_broadcast()
+    api_response = api_instance.get_next_broadcast(withunpublished=withunpublished)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling BroadcastApi->get_next_broadcast: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **withunpublished** | **bool**| Show Unpublished *(Optional)* | [optional] 
 
 ### Return type
 
-[**Broadcast**](Broadcast.md)
+[**BroadcastResult**](BroadcastResult.md)
 
 ### Authorization
 

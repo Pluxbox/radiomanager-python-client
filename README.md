@@ -52,7 +52,7 @@ except ApiException as e:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://radiomanager.io/api/v2*
+All URIs are relative to *https://staging.radiomanager.io/api/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------

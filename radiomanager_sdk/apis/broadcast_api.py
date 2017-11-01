@@ -380,7 +380,8 @@ class BroadcastApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :return: Broadcast
+        :param bool withunpublished: Show Unpublished *(Optional)*
+        :return: BroadcastResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -405,12 +406,13 @@ class BroadcastApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :return: Broadcast
+        :param bool withunpublished: Show Unpublished *(Optional)*
+        :return: BroadcastResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []
+        all_params = ['withunpublished']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -426,11 +428,14 @@ class BroadcastApi(object):
             params[key] = val
         del params['kwargs']
 
+
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
+        if 'withunpublished' in params:
+            query_params.append(('withunpublished', params['withunpublished']))
 
         header_params = {}
 
@@ -456,7 +461,7 @@ class BroadcastApi(object):
                                         body=body_params,
                                         post_params=form_params,
                                         files=local_var_files,
-                                        response_type='Broadcast',
+                                        response_type='BroadcastResult',
                                         auth_settings=auth_settings,
                                         callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
@@ -692,7 +697,8 @@ class BroadcastApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :return: Broadcast
+        :param bool withunpublished: Show Unpublished *(Optional)*
+        :return: BroadcastResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -717,12 +723,13 @@ class BroadcastApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :return: Broadcast
+        :param bool withunpublished: Show Unpublished *(Optional)*
+        :return: BroadcastResult
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []
+        all_params = ['withunpublished']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -738,11 +745,14 @@ class BroadcastApi(object):
             params[key] = val
         del params['kwargs']
 
+
         collection_formats = {}
 
         path_params = {}
 
         query_params = []
+        if 'withunpublished' in params:
+            query_params.append(('withunpublished', params['withunpublished']))
 
         header_params = {}
 
@@ -768,7 +778,7 @@ class BroadcastApi(object):
                                         body=body_params,
                                         post_params=form_params,
                                         files=local_var_files,
-                                        response_type='Broadcast',
+                                        response_type='BroadcastResult',
                                         auth_settings=auth_settings,
                                         callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),

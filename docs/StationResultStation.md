@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **medium_name** | **str** |  | [optional] 
 **website** | **str** |  | [optional] 
 **email** | **str** |  | [optional] 
-**keywords** | **str** |  | [optional] 
+**keywords** | **list[str]** |  | [optional] 
 **description** | **str** |  | [optional] 
 **sms** | **str** |  | [optional] 
 **telephone** | **str** |  | [optional] 
