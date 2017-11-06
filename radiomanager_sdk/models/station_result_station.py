@@ -55,8 +55,7 @@ class StationResultStation(object):
         'pty_code': 'int',
         'pty_type': 'str',
         'station_key': 'str',
-        'timezone': 'str',
-        'trial_date': 'datetime'
+        'timezone': 'str'
     }
 
     attribute_map = {
@@ -84,11 +83,10 @@ class StationResultStation(object):
         'pty_code': 'pty_code',
         'pty_type': 'pty_type',
         'station_key': 'station_key',
-        'timezone': 'timezone',
-        'trial_date': 'trial_date'
+        'timezone': 'timezone'
     }
 
-    def __init__(self, id=None, name=None, created_at=None, updated_at=None, system_name=None, short_name=None, medium_name=None, website=None, email=None, keywords=None, description=None, sms=None, telephone=None, genre_id=None, language=None, active=None, logo_rectangle=None, logo_128x128=None, logo_320x320=None, logo_600x600=None, pay_off=None, pty_code=None, pty_type=None, station_key=None, timezone=None, trial_date=None):
+    def __init__(self, id=None, name=None, created_at=None, updated_at=None, system_name=None, short_name=None, medium_name=None, website=None, email=None, keywords=None, description=None, sms=None, telephone=None, genre_id=None, language=None, active=None, logo_rectangle=None, logo_128x128=None, logo_320x320=None, logo_600x600=None, pay_off=None, pty_code=None, pty_type=None, station_key=None, timezone=None):
         """
         StationResultStation - a model defined in Swagger
         """
@@ -118,7 +116,6 @@ class StationResultStation(object):
         self._pty_type = None
         self._station_key = None
         self._timezone = None
-        self._trial_date = None
 
         if id is not None:
           self.id = id
@@ -170,8 +167,6 @@ class StationResultStation(object):
           self.station_key = station_key
         if timezone is not None:
           self.timezone = timezone
-        if trial_date is not None:
-          self.trial_date = trial_date
 
     @property
     def id(self):
@@ -697,27 +692,6 @@ class StationResultStation(object):
         """
 
         self._timezone = timezone
-
-    @property
-    def trial_date(self):
-        """
-        Gets the trial_date of this StationResultStation.
-
-        :return: The trial_date of this StationResultStation.
-        :rtype: datetime
-        """
-        return self._trial_date
-
-    @trial_date.setter
-    def trial_date(self, trial_date):
-        """
-        Sets the trial_date of this StationResultStation.
-
-        :param trial_date: The trial_date of this StationResultStation.
-        :type: datetime
-        """
-
-        self._trial_date = trial_date
 
     def to_dict(self):
         """
