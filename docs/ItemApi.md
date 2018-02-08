@@ -502,7 +502,7 @@ radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # create an instance of the API class
 api_instance = radiomanager_sdk.ItemApi()
 id = 789 # int | ID of Item **(Required)**
-data = radiomanager_sdk.Item() # Item | Data *(Optional)* (optional)
+data = radiomanager_sdk.ItemDataInput() # ItemDataInput | Data *(Optional)* (optional)
 
 try: 
     # Update extended item details by ID.
@@ -517,7 +517,7 @@ except ApiException as e:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **int**| ID of Item **(Required)** | 
- **data** | [**Item**](Item.md)| Data *(Optional)* | [optional] 
+ **data** | [**ItemDataInput**](ItemDataInput.md)| Data *(Optional)* | [optional] 
 
 ### Return type
 

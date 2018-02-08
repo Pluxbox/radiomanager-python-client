@@ -975,7 +975,7 @@ class ItemApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int id: ID of Item **(Required)** (required)
-        :param Item data: Data *(Optional)*
+        :param ItemDataInput data: Data *(Optional)*
         :return: Success
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1002,7 +1002,7 @@ class ItemApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int id: ID of Item **(Required)** (required)
-        :param Item data: Data *(Optional)*
+        :param ItemDataInput data: Data *(Optional)*
         :return: Success
                  If the method is called asynchronously,
                  returns the request thread.

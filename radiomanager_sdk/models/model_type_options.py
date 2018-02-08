@@ -31,22 +31,27 @@ class ModelTypeOptions(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'color': 'str'
+        'color': 'str',
+        'sub_broadcast': 'bool'
     }
 
     attribute_map = {
-        'color': 'color'
+        'color': 'color',
+        'sub_broadcast': 'subBroadcast'
     }
 
-    def __init__(self, color=None):
+    def __init__(self, color=None, sub_broadcast=None):
         """
         ModelTypeOptions - a model defined in Swagger
         """
 
         self._color = None
+        self._sub_broadcast = None
 
         if color is not None:
           self.color = color
+        if sub_broadcast is not None:
+          self.sub_broadcast = sub_broadcast
 
     @property
     def color(self):
@@ -68,6 +73,27 @@ class ModelTypeOptions(object):
         """
 
         self._color = color
+
+    @property
+    def sub_broadcast(self):
+        """
+        Gets the sub_broadcast of this ModelTypeOptions.
+
+        :return: The sub_broadcast of this ModelTypeOptions.
+        :rtype: bool
+        """
+        return self._sub_broadcast
+
+    @sub_broadcast.setter
+    def sub_broadcast(self, sub_broadcast):
+        """
+        Sets the sub_broadcast of this ModelTypeOptions.
+
+        :param sub_broadcast: The sub_broadcast of this ModelTypeOptions.
+        :type: bool
+        """
+
+        self._sub_broadcast = sub_broadcast
 
     def to_dict(self):
         """

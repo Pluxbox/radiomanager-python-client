@@ -42,7 +42,7 @@ class UserResult(object):
         'settings': 'UserResultSettings',
         'language': 'bool',
         'active_external_station_id': 'int',
-        'role_id': 'int'
+        'roles': 'list[UserResultRoles]'
     }
 
     attribute_map = {
@@ -57,10 +57,10 @@ class UserResult(object):
         'settings': 'settings',
         'language': 'language',
         'active_external_station_id': 'active_external_station_id',
-        'role_id': 'role_id'
+        'roles': 'roles'
     }
 
-    def __init__(self, id=None, email=None, firstname=None, lastname=None, phone=None, created_at=None, updated_at=None, active=None, settings=None, language=None, active_external_station_id=None, role_id=None):
+    def __init__(self, id=None, email=None, firstname=None, lastname=None, phone=None, created_at=None, updated_at=None, active=None, settings=None, language=None, active_external_station_id=None, roles=None):
         """
         UserResult - a model defined in Swagger
         """
@@ -76,7 +76,7 @@ class UserResult(object):
         self._settings = None
         self._language = None
         self._active_external_station_id = None
-        self._role_id = None
+        self._roles = None
 
         self.id = id
         self.email = email
@@ -96,8 +96,8 @@ class UserResult(object):
           self.language = language
         if active_external_station_id is not None:
           self.active_external_station_id = active_external_station_id
-        if role_id is not None:
-          self.role_id = role_id
+        if roles is not None:
+          self.roles = roles
 
     @property
     def id(self):
@@ -339,25 +339,25 @@ class UserResult(object):
         self._active_external_station_id = active_external_station_id
 
     @property
-    def role_id(self):
+    def roles(self):
         """
-        Gets the role_id of this UserResult.
+        Gets the roles of this UserResult.
 
-        :return: The role_id of this UserResult.
-        :rtype: int
+        :return: The roles of this UserResult.
+        :rtype: list[UserResultRoles]
         """
-        return self._role_id
+        return self._roles
 
-    @role_id.setter
-    def role_id(self, role_id):
+    @roles.setter
+    def roles(self, roles):
         """
-        Sets the role_id of this UserResult.
+        Sets the roles of this UserResult.
 
-        :param role_id: The role_id of this UserResult.
-        :type: int
+        :param roles: The roles of this UserResult.
+        :type: list[UserResultRoles]
         """
 
-        self._role_id = role_id
+        self._roles = roles
 
     def to_dict(self):
         """

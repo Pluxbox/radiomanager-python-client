@@ -51,7 +51,7 @@ class TestBlockApi(unittest.TestCase):
         """
         Test case for get_next_block
 
-        Get next Block
+        Get upcoming Block
         """
         pass
 
