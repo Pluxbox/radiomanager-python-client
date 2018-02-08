@@ -252,8 +252,8 @@ class BlockApi(object):
 
     def get_next_block(self, **kwargs):
         """
-        Get next Block
-        Get next Block
+        Get upcoming Block
+        Get upcoming Block
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -277,8 +277,8 @@ class BlockApi(object):
 
     def get_next_block_with_http_info(self, **kwargs):
         """
-        Get next Block
-        Get next Block
+        Get upcoming Block
+        Get upcoming Block
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.

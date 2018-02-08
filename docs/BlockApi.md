@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_block_by_id**](BlockApi.md#get_block_by_id) | **GET** /blocks/{id} | Get block by id
 [**get_current_block**](BlockApi.md#get_current_block) | **GET** /blocks/current | Get current Block
-[**get_next_block**](BlockApi.md#get_next_block) | **GET** /blocks/next | Get next Block
+[**get_next_block**](BlockApi.md#get_next_block) | **GET** /blocks/next | Get upcoming Block
 [**list_blocks**](BlockApi.md#list_blocks) | **GET** /blocks | Get a list of all blocks currently in your station.
 
 
@@ -117,9 +117,9 @@ This endpoint does not need any parameter.
 # **get_next_block**
 > BlockResult get_next_block()
 
-Get next Block
+Get upcoming Block
 
-Get next Block
+Get upcoming Block
 
 ### Example 
 ```python
@@ -138,7 +138,7 @@ radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
 api_instance = radiomanager_sdk.BlockApi()
 
 try: 
-    # Get next Block
+    # Get upcoming Block
     api_response = api_instance.get_next_block()
     pprint(api_response)
 except ApiException as e:

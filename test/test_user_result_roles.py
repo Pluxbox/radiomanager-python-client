@@ -19,11 +19,11 @@ import unittest
 
 import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
-from radiomanager_sdk.models.import_item_field_values import ImportItemFieldValues
+from radiomanager_sdk.models.user_result_roles import UserResultRoles
 
 
-class TestImportItemFieldValues(unittest.TestCase):
-    """ ImportItemFieldValues unit test stubs """
+class TestUserResultRoles(unittest.TestCase):
+    """ UserResultRoles unit test stubs """
 
     def setUp(self):
         pass
@@ -31,12 +31,12 @@ class TestImportItemFieldValues(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def testImportItemFieldValues(self):
+    def testUserResultRoles(self):
         """
-        Test ImportItemFieldValues
+        Test UserResultRoles
         """
         # FIXME: construct object with mandatory attributes with example values
-        #model = radiomanager_sdk.models.import_item_field_values.ImportItemFieldValues()
+        #model = radiomanager_sdk.models.user_result_roles.UserResultRoles()
         pass
 
 

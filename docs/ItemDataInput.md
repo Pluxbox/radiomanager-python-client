@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **static_start** | **bool** |  | [optional] 
 **details** | **str** |  | [optional] 
 **previous_id** | **int** |  | [optional] 
+**before_id** | **int** |  | [optional] 
 **contacts** | **list[int]** |  | [optional] 
 **tags** | **list[int]** |  | [optional] 
 

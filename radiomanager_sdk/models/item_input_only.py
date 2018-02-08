@@ -32,27 +32,32 @@ class ItemInputOnly(object):
     """
     swagger_types = {
         'previous_id': 'int',
+        'before_id': 'int',
         'contacts': 'list[int]',
         'tags': 'list[int]'
     }
 
     attribute_map = {
         'previous_id': '_previous_id',
+        'before_id': '_before_id',
         'contacts': 'contacts',
         'tags': 'tags'
     }
 
-    def __init__(self, previous_id=None, contacts=None, tags=None):
+    def __init__(self, previous_id=None, before_id=None, contacts=None, tags=None):
         """
         ItemInputOnly - a model defined in Swagger
         """
 
         self._previous_id = None
+        self._before_id = None
         self._contacts = None
         self._tags = None
 
         if previous_id is not None:
           self.previous_id = previous_id
+        if before_id is not None:
+          self.before_id = before_id
         if contacts is not None:
           self.contacts = contacts
         if tags is not None:
@@ -78,6 +83,27 @@ class ItemInputOnly(object):
         """
 
         self._previous_id = previous_id
+
+    @property
+    def before_id(self):
+        """
+        Gets the before_id of this ItemInputOnly.
+
+        :return: The before_id of this ItemInputOnly.
+        :rtype: int
+        """
+        return self._before_id
+
+    @before_id.setter
+    def before_id(self, before_id):
+        """
+        Sets the before_id of this ItemInputOnly.
+
+        :param before_id: The before_id of this ItemInputOnly.
+        :type: int
+        """
+
+        self._before_id = before_id
 
     @property
     def contacts(self):

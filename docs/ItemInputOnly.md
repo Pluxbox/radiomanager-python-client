@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **previous_id** | **int** |  | [optional] 
+**before_id** | **int** |  | [optional] 
 **contacts** | **list[int]** |  | [optional] 
 **tags** | **list[int]** |  | [optional] 
 

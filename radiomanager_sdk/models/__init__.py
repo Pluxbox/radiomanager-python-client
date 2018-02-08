@@ -133,6 +133,7 @@ from .text_string import TextString
 from .too_many_requests import TooManyRequests
 from .unprocessable_entity import UnprocessableEntity
 from .user_result import UserResult
+from .user_result_roles import UserResultRoles
 from .user_result_settings import UserResultSettings
 from .user_results import UserResults
 from .visual_result import VisualResult

@@ -32,24 +32,24 @@ class InviteUserData(object):
     """
     swagger_types = {
         'email': 'str',
-        'role_id': 'int'
+        'role_ids': 'list[int]'
     }
 
     attribute_map = {
         'email': 'email',
-        'role_id': 'role_id'
+        'role_ids': 'role_ids'
     }
 
-    def __init__(self, email=None, role_id=None):
+    def __init__(self, email=None, role_ids=None):
         """
         InviteUserData - a model defined in Swagger
         """
 
         self._email = None
-        self._role_id = None
+        self._role_ids = None
 
         self.email = email
-        self.role_id = role_id
+        self.role_ids = role_ids
 
     @property
     def email(self):
@@ -75,27 +75,27 @@ class InviteUserData(object):
         self._email = email
 
     @property
-    def role_id(self):
+    def role_ids(self):
         """
-        Gets the role_id of this InviteUserData.
+        Gets the role_ids of this InviteUserData.
 
-        :return: The role_id of this InviteUserData.
-        :rtype: int
+        :return: The role_ids of this InviteUserData.
+        :rtype: list[int]
         """
-        return self._role_id
+        return self._role_ids
 
-    @role_id.setter
-    def role_id(self, role_id):
+    @role_ids.setter
+    def role_ids(self, role_ids):
         """
-        Sets the role_id of this InviteUserData.
+        Sets the role_ids of this InviteUserData.
 
-        :param role_id: The role_id of this InviteUserData.
-        :type: int
+        :param role_ids: The role_ids of this InviteUserData.
+        :type: list[int]
         """
-        if role_id is None:
-            raise ValueError("Invalid value for `role_id`, must not be `None`")
+        if role_ids is None:
+            raise ValueError("Invalid value for `role_ids`, must not be `None`")
 
-        self._role_id = role_id
+        self._role_ids = role_ids
 
     def to_dict(self):
         """

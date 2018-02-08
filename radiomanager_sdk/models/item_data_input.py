@@ -48,6 +48,7 @@ class ItemDataInput(object):
         'static_start': 'bool',
         'details': 'str',
         'previous_id': 'int',
+        'before_id': 'int',
         'contacts': 'list[int]',
         'tags': 'list[int]'
     }
@@ -70,11 +71,12 @@ class ItemDataInput(object):
         'static_start': 'static_start',
         'details': 'details',
         'previous_id': '_previous_id',
+        'before_id': '_before_id',
         'contacts': 'contacts',
         'tags': 'tags'
     }
 
-    def __init__(self, model_type_id=None, block_id=None, external_id=None, field_values=None, title=None, duration=None, start=None, status=None, _import=None, campaign_id=None, recommended=None, station_draft_id=None, program_draft_id=None, user_draft_id=None, static_start=None, details=None, previous_id=None, contacts=None, tags=None):
+    def __init__(self, model_type_id=None, block_id=None, external_id=None, field_values=None, title=None, duration=None, start=None, status=None, _import=None, campaign_id=None, recommended=None, station_draft_id=None, program_draft_id=None, user_draft_id=None, static_start=None, details=None, previous_id=None, before_id=None, contacts=None, tags=None):
         """
         ItemDataInput - a model defined in Swagger
         """
@@ -96,6 +98,7 @@ class ItemDataInput(object):
         self._static_start = None
         self._details = None
         self._previous_id = None
+        self._before_id = None
         self._contacts = None
         self._tags = None
 
@@ -132,6 +135,8 @@ class ItemDataInput(object):
           self.details = details
         if previous_id is not None:
           self.previous_id = previous_id
+        if before_id is not None:
+          self.before_id = before_id
         if contacts is not None:
           self.contacts = contacts
         if tags is not None:
@@ -501,6 +506,27 @@ class ItemDataInput(object):
         """
 
         self._previous_id = previous_id
+
+    @property
+    def before_id(self):
+        """
+        Gets the before_id of this ItemDataInput.
+
+        :return: The before_id of this ItemDataInput.
+        :rtype: int
+        """
+        return self._before_id
+
+    @before_id.setter
+    def before_id(self, before_id):
+        """
+        Sets the before_id of this ItemDataInput.
+
+        :param before_id: The before_id of this ItemDataInput.
+        :type: int
+        """
+
+        self._before_id = before_id
 
     @property
     def contacts(self):
