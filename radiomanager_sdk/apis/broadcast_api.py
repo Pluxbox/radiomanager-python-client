@@ -1056,8 +1056,8 @@ class BroadcastApi(object):
 
     def print_broadcast_by_id(self, id, **kwargs):
         """
-        Print Broadcast by id
-        Print Broadcast by id
+        Print broadcast by id with template
+        Print broadcast by id with template
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1069,9 +1069,7 @@ class BroadcastApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int id: ID of Broadcast **(Required)** (required)
-        :param int program_id: Search on Program ID *(Optional)* `(Relation)`
-        :param int presenter_id: Search on Presenter ID *(Optional)* `(Relation)`
-        :param int tag_id: Search on Tag ID *(Optional)* `(Relation)`
+        :param int template_id: Search on template ID *(Optional)*
         :return: EPGResults
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1085,8 +1083,8 @@ class BroadcastApi(object):
 
     def print_broadcast_by_id_with_http_info(self, id, **kwargs):
         """
-        Print Broadcast by id
-        Print Broadcast by id
+        Print broadcast by id with template
+        Print broadcast by id with template
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -1098,15 +1096,13 @@ class BroadcastApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param int id: ID of Broadcast **(Required)** (required)
-        :param int program_id: Search on Program ID *(Optional)* `(Relation)`
-        :param int presenter_id: Search on Presenter ID *(Optional)* `(Relation)`
-        :param int tag_id: Search on Tag ID *(Optional)* `(Relation)`
+        :param int template_id: Search on template ID *(Optional)*
         :return: EPGResults
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id', 'program_id', 'presenter_id', 'tag_id']
+        all_params = ['id', 'template_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -1135,12 +1131,8 @@ class BroadcastApi(object):
             path_params['id'] = params['id']
 
         query_params = []
-        if 'program_id' in params:
-            query_params.append(('program_id', params['program_id']))
-        if 'presenter_id' in params:
-            query_params.append(('presenter_id', params['presenter_id']))
-        if 'tag_id' in params:
-            query_params.append(('tag_id', params['tag_id']))
+        if 'template_id' in params:
+            query_params.append(('template_id', params['template_id']))
 
         header_params = {}
 

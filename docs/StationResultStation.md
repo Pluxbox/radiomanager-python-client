@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **pty_type** | **str** |  | [optional] 
 **station_key** | **str** |  | [optional] 
 **timezone** | **str** |  | [optional] 
+**start_days** | [**StationResultStationStartDays**](StationResultStationStartDays.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

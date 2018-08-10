@@ -55,7 +55,8 @@ class StationResultStation(object):
         'pty_code': 'int',
         'pty_type': 'str',
         'station_key': 'str',
-        'timezone': 'str'
+        'timezone': 'str',
+        'start_days': 'StationResultStationStartDays'
     }
 
     attribute_map = {
@@ -83,10 +84,11 @@ class StationResultStation(object):
         'pty_code': 'pty_code',
         'pty_type': 'pty_type',
         'station_key': 'station_key',
-        'timezone': 'timezone'
+        'timezone': 'timezone',
+        'start_days': 'start_days'
     }
 
-    def __init__(self, id=None, name=None, created_at=None, updated_at=None, system_name=None, short_name=None, medium_name=None, website=None, email=None, keywords=None, description=None, sms=None, telephone=None, genre_id=None, language=None, active=None, logo_rectangle=None, logo_128x128=None, logo_320x320=None, logo_600x600=None, pay_off=None, pty_code=None, pty_type=None, station_key=None, timezone=None):
+    def __init__(self, id=None, name=None, created_at=None, updated_at=None, system_name=None, short_name=None, medium_name=None, website=None, email=None, keywords=None, description=None, sms=None, telephone=None, genre_id=None, language=None, active=None, logo_rectangle=None, logo_128x128=None, logo_320x320=None, logo_600x600=None, pay_off=None, pty_code=None, pty_type=None, station_key=None, timezone=None, start_days=None):
         """
         StationResultStation - a model defined in Swagger
         """
@@ -116,6 +118,7 @@ class StationResultStation(object):
         self._pty_type = None
         self._station_key = None
         self._timezone = None
+        self._start_days = None
 
         if id is not None:
           self.id = id
@@ -167,6 +170,8 @@ class StationResultStation(object):
           self.station_key = station_key
         if timezone is not None:
           self.timezone = timezone
+        if start_days is not None:
+          self.start_days = start_days
 
     @property
     def id(self):
@@ -692,6 +697,27 @@ class StationResultStation(object):
         """
 
         self._timezone = timezone
+
+    @property
+    def start_days(self):
+        """
+        Gets the start_days of this StationResultStation.
+
+        :return: The start_days of this StationResultStation.
+        :rtype: StationResultStationStartDays
+        """
+        return self._start_days
+
+    @start_days.setter
+    def start_days(self, start_days):
+        """
+        Sets the start_days of this StationResultStation.
+
+        :param start_days: The start_days of this StationResultStation.
+        :type: StationResultStationStartDays
+        """
+
+        self._start_days = start_days
 
     def to_dict(self):
         """

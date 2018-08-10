@@ -31,6 +31,7 @@ class ProgramRelations(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'genre': 'BroadcastRelationsGenre',
         'items': 'ProgramRelationsItems',
         'blocks': 'ProgramRelationsBlocks',
         'broadcasts': 'ProgramRelationsBroadcasts',
@@ -40,6 +41,7 @@ class ProgramRelations(object):
     }
 
     attribute_map = {
+        'genre': 'genre',
         'items': 'items',
         'blocks': 'blocks',
         'broadcasts': 'broadcasts',
@@ -48,11 +50,12 @@ class ProgramRelations(object):
         'model_type': 'model_type'
     }
 
-    def __init__(self, items=None, blocks=None, broadcasts=None, presenters=None, tags=None, model_type=None):
+    def __init__(self, genre=None, items=None, blocks=None, broadcasts=None, presenters=None, tags=None, model_type=None):
         """
         ProgramRelations - a model defined in Swagger
         """
 
+        self._genre = None
         self._items = None
         self._blocks = None
         self._broadcasts = None
@@ -60,6 +63,8 @@ class ProgramRelations(object):
         self._tags = None
         self._model_type = None
 
+        if genre is not None:
+          self.genre = genre
         if items is not None:
           self.items = items
         if blocks is not None:
@@ -72,6 +77,27 @@ class ProgramRelations(object):
           self.tags = tags
         if model_type is not None:
           self.model_type = model_type
+
+    @property
+    def genre(self):
+        """
+        Gets the genre of this ProgramRelations.
+
+        :return: The genre of this ProgramRelations.
+        :rtype: BroadcastRelationsGenre
+        """
+        return self._genre
+
+    @genre.setter
+    def genre(self, genre):
+        """
+        Sets the genre of this ProgramRelations.
+
+        :param genre: The genre of this ProgramRelations.
+        :type: BroadcastRelationsGenre
+        """
+
+        self._genre = genre
 
     @property
     def items(self):

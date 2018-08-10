@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **recommended** | **bool** |  | [optional] 
 **language** | **str** |  | [optional] 
 **pty_code_id** | **int** |  | [optional] 
+**genre** | [**BroadcastRelationsGenre**](BroadcastRelationsGenre.md) |  | [optional] 
 **items** | [**ProgramRelationsItems**](ProgramRelationsItems.md) |  | [optional] 
 **blocks** | [**ProgramRelationsBlocks**](ProgramRelationsBlocks.md) |  | [optional] 
 **broadcasts** | [**ProgramRelationsBroadcasts**](ProgramRelationsBroadcasts.md) |  | [optional] 

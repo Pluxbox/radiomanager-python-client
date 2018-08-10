@@ -31,6 +31,7 @@ class BroadcastRelations(object):
                             and the value is json key in definition.
     """
     swagger_types = {
+        'genre': 'BroadcastRelationsGenre',
         'items': 'BroadcastRelationsItems',
         'blocks': 'BroadcastRelationsBlocks',
         'program': 'BlockRelationsProgram',
@@ -40,6 +41,7 @@ class BroadcastRelations(object):
     }
 
     attribute_map = {
+        'genre': 'genre',
         'items': 'items',
         'blocks': 'blocks',
         'program': 'program',
@@ -48,11 +50,12 @@ class BroadcastRelations(object):
         'model_type': 'model_type'
     }
 
-    def __init__(self, items=None, blocks=None, program=None, tags=None, presenters=None, model_type=None):
+    def __init__(self, genre=None, items=None, blocks=None, program=None, tags=None, presenters=None, model_type=None):
         """
         BroadcastRelations - a model defined in Swagger
         """
 
+        self._genre = None
         self._items = None
         self._blocks = None
         self._program = None
@@ -60,6 +63,8 @@ class BroadcastRelations(object):
         self._presenters = None
         self._model_type = None
 
+        if genre is not None:
+          self.genre = genre
         if items is not None:
           self.items = items
         if blocks is not None:
@@ -72,6 +77,27 @@ class BroadcastRelations(object):
           self.presenters = presenters
         if model_type is not None:
           self.model_type = model_type
+
+    @property
+    def genre(self):
+        """
+        Gets the genre of this BroadcastRelations.
+
+        :return: The genre of this BroadcastRelations.
+        :rtype: BroadcastRelationsGenre
+        """
+        return self._genre
+
+    @genre.setter
+    def genre(self, genre):
+        """
+        Sets the genre of this BroadcastRelations.
+
+        :param genre: The genre of this BroadcastRelations.
+        :type: BroadcastRelationsGenre
+        """
+
+        self._genre = genre
 
     @property
     def items(self):

@@ -58,6 +58,7 @@ class BroadcastResult(object):
         'repetition_start': 'datetime',
         'repetition_days': 'str',
         'pty_code_id': 'int',
+        'genre': 'BroadcastRelationsGenre',
         'items': 'BroadcastRelationsItems',
         'blocks': 'BroadcastRelationsBlocks',
         'program': 'BlockRelationsProgram',
@@ -94,6 +95,7 @@ class BroadcastResult(object):
         'repetition_start': 'repetition_start',
         'repetition_days': 'repetition_days',
         'pty_code_id': 'pty_code_id',
+        'genre': 'genre',
         'items': 'items',
         'blocks': 'blocks',
         'program': 'program',
@@ -102,7 +104,7 @@ class BroadcastResult(object):
         'model_type': 'model_type'
     }
 
-    def __init__(self, id=None, updated_at=None, created_at=None, deleted_at=None, external_station_id=None, program_id=None, model_type_id=None, station_id=None, field_values=None, title=None, start=None, stop=None, genre_id=None, description=None, short_name=None, medium_name=None, website=None, email=None, recommended=None, language=None, published=None, repetition_uid=None, repetition_type=None, repetition_end=None, repetition_start=None, repetition_days=None, pty_code_id=None, items=None, blocks=None, program=None, tags=None, presenters=None, model_type=None):
+    def __init__(self, id=None, updated_at=None, created_at=None, deleted_at=None, external_station_id=None, program_id=None, model_type_id=None, station_id=None, field_values=None, title=None, start=None, stop=None, genre_id=None, description=None, short_name=None, medium_name=None, website=None, email=None, recommended=None, language=None, published=None, repetition_uid=None, repetition_type=None, repetition_end=None, repetition_start=None, repetition_days=None, pty_code_id=None, genre=None, items=None, blocks=None, program=None, tags=None, presenters=None, model_type=None):
         """
         BroadcastResult - a model defined in Swagger
         """
@@ -134,6 +136,7 @@ class BroadcastResult(object):
         self._repetition_start = None
         self._repetition_days = None
         self._pty_code_id = None
+        self._genre = None
         self._items = None
         self._blocks = None
         self._program = None
@@ -191,6 +194,8 @@ class BroadcastResult(object):
           self.repetition_days = repetition_days
         if pty_code_id is not None:
           self.pty_code_id = pty_code_id
+        if genre is not None:
+          self.genre = genre
         if items is not None:
           self.items = items
         if blocks is not None:
@@ -782,10 +787,29 @@ class BroadcastResult(object):
         :param pty_code_id: The pty_code_id of this BroadcastResult.
         :type: int
         """
-        if pty_code_id is not None and pty_code_id < 1:
-            raise ValueError("Invalid value for `pty_code_id`, must be a value greater than or equal to `1`")
 
         self._pty_code_id = pty_code_id
+
+    @property
+    def genre(self):
+        """
+        Gets the genre of this BroadcastResult.
+
+        :return: The genre of this BroadcastResult.
+        :rtype: BroadcastRelationsGenre
+        """
+        return self._genre
+
+    @genre.setter
+    def genre(self, genre):
+        """
+        Sets the genre of this BroadcastResult.
+
+        :param genre: The genre of this BroadcastResult.
+        :type: BroadcastRelationsGenre
+        """
+
+        self._genre = genre
 
     @property
     def items(self):

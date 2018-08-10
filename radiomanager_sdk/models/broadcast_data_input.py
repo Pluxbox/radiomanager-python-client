@@ -628,8 +628,6 @@ class BroadcastDataInput(object):
         :param pty_code_id: The pty_code_id of this BroadcastDataInput.
         :type: int
         """
-        if pty_code_id is not None and pty_code_id < 1:
-            raise ValueError("Invalid value for `pty_code_id`, must be a value greater than or equal to `1`")
 
         self._pty_code_id = pty_code_id
 

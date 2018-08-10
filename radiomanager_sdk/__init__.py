@@ -29,6 +29,7 @@ from .models.broadcast_input_only import BroadcastInputOnly
 from .models.broadcast_output_only import BroadcastOutputOnly
 from .models.broadcast_relations import BroadcastRelations
 from .models.broadcast_relations_blocks import BroadcastRelationsBlocks
+from .models.broadcast_relations_genre import BroadcastRelationsGenre
 from .models.broadcast_relations_items import BroadcastRelationsItems
 from .models.broadcast_relations_items_params import BroadcastRelationsItemsParams
 from .models.broadcast_relations_model_type import BroadcastRelationsModelType
@@ -111,6 +112,7 @@ from .models.read_only import ReadOnly
 from .models.relations_placeholder import RelationsPlaceholder
 from .models.station_result import StationResult
 from .models.station_result_station import StationResultStation
+from .models.station_result_station_start_days import StationResultStationStartDays
 from .models.story import Story
 from .models.story_input_only import StoryInputOnly
 from .models.story_output_only import StoryOutputOnly

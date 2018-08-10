@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**current_item_post_structure**](ItemApi.md#current_item_post_structure) | **POST** /items/current/structure | Post a current playing item, keep structure
 [**current_item_post_timing**](ItemApi.md#current_item_post_timing) | **POST** /items/current/timing | Post a current playing item
 [**delete_item_by_id**](ItemApi.md#delete_item_by_id) | **DELETE** /items/{id} | Delete item by ID.
+[**get_current_item**](ItemApi.md#get_current_item) | **GET** /items/current | Get current Item
 [**get_item_by_id**](ItemApi.md#get_item_by_id) | **GET** /items/{id} | Get extended item details by ID.
 [**list_items**](ItemApi.md#list_items) | **GET** /items | Get a list of all the items currently in your station.
 [**playlist_post_structure**](ItemApi.md#playlist_post_structure) | **POST** /items/playlist/structure | Post a playlist, keep current structure
@@ -227,6 +228,59 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **get_current_item**
+> ItemResult get_current_item(lastplayed=lastplayed)
+
+Get current Item
+
+Get current Item
+
+### Example 
+```python
+from __future__ import print_function
+import time
+import radiomanager_sdk
+from radiomanager_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: API Key
+radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = radiomanager_sdk.ItemApi()
+lastplayed = true # bool | Show last played item if there is no current item*(Optional)* (optional)
+
+try: 
+    # Get current Item
+    api_response = api_instance.get_current_item(lastplayed=lastplayed)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ItemApi->get_current_item: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **lastplayed** | **bool**| Show last played item if there is no current item*(Optional)* | [optional] 
+
+### Return type
+
+[**ItemResult**](ItemResult.md)
+
+### Authorization
+
+[API Key](../README.md#API Key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **get_item_by_id**
 > ItemResult get_item_by_id(id, external_station_id=external_station_id)
 
@@ -283,7 +337,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **list_items**
-> ItemResults list_items(page=page, block_id=block_id, broadcast_id=broadcast_id, model_type_id=model_type_id, tag_id=tag_id, campaign_id=campaign_id, contact_id=contact_id, program_draft_id=program_draft_id, user_draft_id=user_draft_id, station_draft_id=station_draft_id, program_id=program_id, start_min=start_min, start_max=start_max, duration_min=duration_min, duration_max=duration_max, status=status, limit=limit, order_by=order_by, order_direction=order_direction, external_station_id=external_station_id)
+> ItemResults list_items(page=page, block_id=block_id, broadcast_id=broadcast_id, model_type_id=model_type_id, tag_id=tag_id, campaign_id=campaign_id, contact_id=contact_id, program_draft_id=program_draft_id, user_draft_id=user_draft_id, station_draft_id=station_draft_id, program_id=program_id, external_id=external_id, start_min=start_min, start_max=start_max, duration_min=duration_min, duration_max=duration_max, status=status, limit=limit, order_by=order_by, order_direction=order_direction, external_station_id=external_station_id)
 
 Get a list of all the items currently in your station.
 
@@ -315,6 +369,7 @@ program_draft_id = 789 # int | Search on Program Draft ID *(Optional)* (optional
 user_draft_id = 789 # int | Search on User Draft ID *(Optional)* (optional)
 station_draft_id = 789 # int | Search on Station Draft ID *(Optional)* (optional)
 program_id = 789 # int | Search on Program ID *(Optional)* `(Relation)` (optional)
+external_id = 'external_id_example' # str | Search on External ID *(Optional)* (optional)
 start_min = '2013-10-20T19:20:30+01:00' # datetime | Minimum start date *(Optional)* (optional)
 start_max = '2013-10-20T19:20:30+01:00' # datetime | Maximum start date *(Optional)* (optional)
 duration_min = 56 # int | Minimum duration (seconds) *(Optional)* (optional)
@@ -327,7 +382,7 @@ external_station_id = 789 # int | Query on a different (content providing) stati
 
 try: 
     # Get a list of all the items currently in your station.
-    api_response = api_instance.list_items(page=page, block_id=block_id, broadcast_id=broadcast_id, model_type_id=model_type_id, tag_id=tag_id, campaign_id=campaign_id, contact_id=contact_id, program_draft_id=program_draft_id, user_draft_id=user_draft_id, station_draft_id=station_draft_id, program_id=program_id, start_min=start_min, start_max=start_max, duration_min=duration_min, duration_max=duration_max, status=status, limit=limit, order_by=order_by, order_direction=order_direction, external_station_id=external_station_id)
+    api_response = api_instance.list_items(page=page, block_id=block_id, broadcast_id=broadcast_id, model_type_id=model_type_id, tag_id=tag_id, campaign_id=campaign_id, contact_id=contact_id, program_draft_id=program_draft_id, user_draft_id=user_draft_id, station_draft_id=station_draft_id, program_id=program_id, external_id=external_id, start_min=start_min, start_max=start_max, duration_min=duration_min, duration_max=duration_max, status=status, limit=limit, order_by=order_by, order_direction=order_direction, external_station_id=external_station_id)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ItemApi->list_items: %s\n" % e)
@@ -348,6 +403,7 @@ Name | Type | Description  | Notes
  **user_draft_id** | **int**| Search on User Draft ID *(Optional)* | [optional] 
  **station_draft_id** | **int**| Search on Station Draft ID *(Optional)* | [optional] 
  **program_id** | **int**| Search on Program ID *(Optional)* &#x60;(Relation)&#x60; | [optional] 
+ **external_id** | **str**| Search on External ID *(Optional)* | [optional] 
  **start_min** | **datetime**| Minimum start date *(Optional)* | [optional] 
  **start_max** | **datetime**| Maximum start date *(Optional)* | [optional] 
  **duration_min** | **int**| Minimum duration (seconds) *(Optional)* | [optional] 

@@ -49,6 +49,7 @@ class ProgramResult(object):
         'recommended': 'bool',
         'language': 'str',
         'pty_code_id': 'int',
+        'genre': 'BroadcastRelationsGenre',
         'items': 'ProgramRelationsItems',
         'blocks': 'ProgramRelationsBlocks',
         'broadcasts': 'ProgramRelationsBroadcasts',
@@ -76,6 +77,7 @@ class ProgramResult(object):
         'recommended': 'recommended',
         'language': 'language',
         'pty_code_id': 'pty_code_id',
+        'genre': 'genre',
         'items': 'items',
         'blocks': 'blocks',
         'broadcasts': 'broadcasts',
@@ -84,7 +86,7 @@ class ProgramResult(object):
         'model_type': 'model_type'
     }
 
-    def __init__(self, id=None, updated_at=None, created_at=None, deleted_at=None, external_station_id=None, model_type_id=None, field_values=None, title=None, disabled=None, genre_id=None, description=None, short_name=None, medium_name=None, website=None, email=None, recommended=None, language=None, pty_code_id=None, items=None, blocks=None, broadcasts=None, presenters=None, tags=None, model_type=None):
+    def __init__(self, id=None, updated_at=None, created_at=None, deleted_at=None, external_station_id=None, model_type_id=None, field_values=None, title=None, disabled=None, genre_id=None, description=None, short_name=None, medium_name=None, website=None, email=None, recommended=None, language=None, pty_code_id=None, genre=None, items=None, blocks=None, broadcasts=None, presenters=None, tags=None, model_type=None):
         """
         ProgramResult - a model defined in Swagger
         """
@@ -107,6 +109,7 @@ class ProgramResult(object):
         self._recommended = None
         self._language = None
         self._pty_code_id = None
+        self._genre = None
         self._items = None
         self._blocks = None
         self._broadcasts = None
@@ -144,6 +147,8 @@ class ProgramResult(object):
           self.language = language
         if pty_code_id is not None:
           self.pty_code_id = pty_code_id
+        if genre is not None:
+          self.genre = genre
         if items is not None:
           self.items = items
         if blocks is not None:
@@ -546,6 +551,27 @@ class ProgramResult(object):
         """
 
         self._pty_code_id = pty_code_id
+
+    @property
+    def genre(self):
+        """
+        Gets the genre of this ProgramResult.
+
+        :return: The genre of this ProgramResult.
+        :rtype: BroadcastRelationsGenre
+        """
+        return self._genre
+
+    @genre.setter
+    def genre(self, genre):
+        """
+        Sets the genre of this ProgramResult.
+
+        :param genre: The genre of this ProgramResult.
+        :type: BroadcastRelationsGenre
+        """
+
+        self._genre = genre
 
     @property
     def items(self):
