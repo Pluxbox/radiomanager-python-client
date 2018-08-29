@@ -457,6 +457,109 @@ class ItemApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
+    def get_current_item(self, **kwargs):
+        """
+        Get current Item
+        Get current Item
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_current_item(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param bool lastplayed: Show last played item if there is no current item*(Optional)*
+        :return: ItemResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('callback'):
+            return self.get_current_item_with_http_info(**kwargs)
+        else:
+            (data) = self.get_current_item_with_http_info(**kwargs)
+            return data
+
+    def get_current_item_with_http_info(self, **kwargs):
+        """
+        Get current Item
+        Get current Item
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please define a `callback` function
+        to be invoked when receiving the response.
+        >>> def callback_function(response):
+        >>>     pprint(response)
+        >>>
+        >>> thread = api.get_current_item_with_http_info(callback=callback_function)
+
+        :param callback function: The callback function
+            for asynchronous request. (optional)
+        :param bool lastplayed: Show last played item if there is no current item*(Optional)*
+        :return: ItemResult
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['lastplayed']
+        all_params.append('callback')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_current_item" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+        if 'lastplayed' in params:
+            query_params.append(('lastplayed', params['lastplayed']))
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.\
+            select_header_accept(['application/json'])
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.\
+            select_header_content_type(['application/json'])
+
+        # Authentication setting
+        auth_settings = ['API Key']
+
+        return self.api_client.call_api('/items/current', 'GET',
+                                        path_params,
+                                        query_params,
+                                        header_params,
+                                        body=body_params,
+                                        post_params=form_params,
+                                        files=local_var_files,
+                                        response_type='ItemResult',
+                                        auth_settings=auth_settings,
+                                        callback=params.get('callback'),
+                                        _return_http_data_only=params.get('_return_http_data_only'),
+                                        _preload_content=params.get('_preload_content', True),
+                                        _request_timeout=params.get('_request_timeout'),
+                                        collection_formats=collection_formats)
+
     def get_item_by_id(self, id, **kwargs):
         """
         Get extended item details by ID.
@@ -594,6 +697,7 @@ class ItemApi(object):
         :param int user_draft_id: Search on User Draft ID *(Optional)*
         :param int station_draft_id: Search on Station Draft ID *(Optional)*
         :param int program_id: Search on Program ID *(Optional)* `(Relation)`
+        :param str external_id: Search on External ID *(Optional)*
         :param datetime start_min: Minimum start date *(Optional)*
         :param datetime start_max: Maximum start date *(Optional)*
         :param int duration_min: Minimum duration (seconds) *(Optional)*
@@ -639,6 +743,7 @@ class ItemApi(object):
         :param int user_draft_id: Search on User Draft ID *(Optional)*
         :param int station_draft_id: Search on Station Draft ID *(Optional)*
         :param int program_id: Search on Program ID *(Optional)* `(Relation)`
+        :param str external_id: Search on External ID *(Optional)*
         :param datetime start_min: Minimum start date *(Optional)*
         :param datetime start_max: Maximum start date *(Optional)*
         :param int duration_min: Minimum duration (seconds) *(Optional)*
@@ -653,7 +758,7 @@ class ItemApi(object):
                  returns the request thread.
         """
 
-        all_params = ['page', 'block_id', 'broadcast_id', 'model_type_id', 'tag_id', 'campaign_id', 'contact_id', 'program_draft_id', 'user_draft_id', 'station_draft_id', 'program_id', 'start_min', 'start_max', 'duration_min', 'duration_max', 'status', 'limit', 'order_by', 'order_direction', 'external_station_id']
+        all_params = ['page', 'block_id', 'broadcast_id', 'model_type_id', 'tag_id', 'campaign_id', 'contact_id', 'program_draft_id', 'user_draft_id', 'station_draft_id', 'program_id', 'external_id', 'start_min', 'start_max', 'duration_min', 'duration_max', 'status', 'limit', 'order_by', 'order_direction', 'external_station_id']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -703,6 +808,8 @@ class ItemApi(object):
             query_params.append(('station_draft_id', params['station_draft_id']))
         if 'program_id' in params:
             query_params.append(('program_id', params['program_id']))
+        if 'external_id' in params:
+            query_params.append(('external_id', params['external_id']))
         if 'start_min' in params:
             query_params.append(('start-min', params['start_min']))
         if 'start_max' in params:
