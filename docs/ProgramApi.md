@@ -18,7 +18,7 @@ Create program.
 
 Create program.
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -27,15 +27,16 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.ProgramApi()
+api_instance = radiomanager_sdk.ProgramApi(radiomanager_sdk.ApiClient(configuration))
 data = radiomanager_sdk.ProgramDataInput() # ProgramDataInput | Data **(Required)**
 
-try: 
+try:
     # Create program.
     api_response = api_instance.create_program(data)
     pprint(api_response)
@@ -71,7 +72,7 @@ Delete program by id
 
 Delete program by id
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -80,15 +81,16 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.ProgramApi()
+api_instance = radiomanager_sdk.ProgramApi(radiomanager_sdk.ApiClient(configuration))
 id = 789 # int | ID of program **(Required)**
 
-try: 
+try:
     # Delete program by id
     api_response = api_instance.delete_program_by_id(id)
     pprint(api_response)
@@ -124,7 +126,7 @@ Get program by id
 
 Get program by id
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -133,16 +135,17 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.ProgramApi()
+api_instance = radiomanager_sdk.ProgramApi(radiomanager_sdk.ApiClient(configuration))
 id = 789 # int | ID of Program **(Required)**
 external_station_id = 789 # int | Query on a different (content providing) station *(Optional)* (optional)
 
-try: 
+try:
     # Get program by id
     api_response = api_instance.get_program_by_id(id, external_station_id=external_station_id)
     pprint(api_response)
@@ -179,7 +182,7 @@ Get all programs.
 
 List all programs.
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -188,12 +191,13 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.ProgramApi()
+api_instance = radiomanager_sdk.ProgramApi(radiomanager_sdk.ApiClient(configuration))
 page = 789 # int | Current page *(Optional)* (optional)
 broadcast_id = 789 # int | Search on Broadcast ID *(Optional)* `(Relation)` (optional)
 model_type_id = 789 # int | Search on ModelType ID *(Optional)* `(Relation)` (optional)
@@ -207,7 +211,7 @@ order_by = 'order_by_example' # str | Field to order the results *(Optional)* (o
 order_direction = 'order_direction_example' # str | Direction of ordering *(Optional)* (optional)
 external_station_id = 789 # int | Query on a different (content providing) station *(Optional)* (optional)
 
-try: 
+try:
     # Get all programs.
     api_response = api_instance.list_programs(page=page, broadcast_id=broadcast_id, model_type_id=model_type_id, tag_id=tag_id, presenter_id=presenter_id, genre_id=genre_id, block_id=block_id, item_id=item_id, limit=limit, order_by=order_by, order_direction=order_direction, external_station_id=external_station_id)
     pprint(api_response)
@@ -254,7 +258,7 @@ Update program by id
 
 Update program by id
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -263,16 +267,17 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.ProgramApi()
+api_instance = radiomanager_sdk.ProgramApi(radiomanager_sdk.ApiClient(configuration))
 id = 789 # int | ID of Program **(Required)**
 data = radiomanager_sdk.ProgramDataInput() # ProgramDataInput | Data *(Optional)* (optional)
 
-try: 
+try:
     # Update program by id
     api_response = api_instance.update_program_by_id(id, data=data)
     pprint(api_response)

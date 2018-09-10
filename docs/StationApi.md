@@ -14,7 +14,7 @@ Get own station only
 
 Get own station only
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -23,14 +23,15 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.StationApi()
+api_instance = radiomanager_sdk.StationApi(radiomanager_sdk.ApiClient(configuration))
 
-try: 
+try:
     # Get own station only
     api_response = api_instance.get_station()
     pprint(api_response)

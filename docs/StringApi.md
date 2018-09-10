@@ -14,7 +14,7 @@ Get Strings (formatted)
 
 Get Strings (formatted)
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -23,16 +23,17 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.StringApi()
+api_instance = radiomanager_sdk.StringApi(radiomanager_sdk.ApiClient(configuration))
 name = 'name_example' # str | Name of Strings **(Required)**
 full_model = true # bool | Full model or content only **(Required)** (default to true)
 
-try: 
+try:
     # Get Strings (formatted)
     api_response = api_instance.get_strings_by_name(name, full_model)
     pprint(api_response)
