@@ -37,7 +37,7 @@ class CampaignOutputOnly(object):
         'updated_at': 'datetime',
         'created_at': 'datetime',
         'deleted_at': 'datetime',
-        'item': 'list[Item]',
+        'item': 'Item',
         'external_station_id': 'int'
     }
 
@@ -168,7 +168,7 @@ class CampaignOutputOnly(object):
 
 
         :return: The item of this CampaignOutputOnly.  # noqa: E501
-        :rtype: list[Item]
+        :rtype: Item
         """
         return self._item
 
@@ -178,7 +178,7 @@ class CampaignOutputOnly(object):
 
 
         :param item: The item of this CampaignOutputOnly.  # noqa: E501
-        :type: list[Item]
+        :type: Item
         """
 
         self._item = item

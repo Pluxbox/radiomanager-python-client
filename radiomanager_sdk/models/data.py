@@ -34,23 +34,28 @@ class Data(object):
     """
     swagger_types = {
         'start': 'datetime',
+        'allow_playlist_past': 'int',
         'items': 'list[ImportItem]'
     }
 
     attribute_map = {
         'start': 'start',
+        'allow_playlist_past': 'allow_playlist_past',
         'items': 'items'
     }
 
-    def __init__(self, start=None, items=None):  # noqa: E501
+    def __init__(self, start=None, allow_playlist_past=None, items=None):  # noqa: E501
         """Data - a model defined in Swagger"""  # noqa: E501
 
         self._start = None
+        self._allow_playlist_past = None
         self._items = None
         self.discriminator = None
 
         if start is not None:
             self.start = start
+        if allow_playlist_past is not None:
+            self.allow_playlist_past = allow_playlist_past
         if items is not None:
             self.items = items
 
@@ -74,6 +79,27 @@ class Data(object):
         """
 
         self._start = start
+
+    @property
+    def allow_playlist_past(self):
+        """Gets the allow_playlist_past of this Data.  # noqa: E501
+
+
+        :return: The allow_playlist_past of this Data.  # noqa: E501
+        :rtype: int
+        """
+        return self._allow_playlist_past
+
+    @allow_playlist_past.setter
+    def allow_playlist_past(self, allow_playlist_past):
+        """Sets the allow_playlist_past of this Data.
+
+
+        :param allow_playlist_past: The allow_playlist_past of this Data.  # noqa: E501
+        :type: int
+        """
+
+        self._allow_playlist_past = allow_playlist_past
 
     @property
     def items(self):

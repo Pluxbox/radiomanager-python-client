@@ -42,7 +42,7 @@ class CampaignResult(object):
         'updated_at': 'datetime',
         'created_at': 'datetime',
         'deleted_at': 'datetime',
-        'item': 'list[Item]',
+        'item': 'Item',
         'external_station_id': 'int',
         'model_type_id': 'int',
         'field_values': 'object',
@@ -215,7 +215,7 @@ class CampaignResult(object):
 
 
         :return: The item of this CampaignResult.  # noqa: E501
-        :rtype: list[Item]
+        :rtype: Item
         """
         return self._item
 
@@ -225,7 +225,7 @@ class CampaignResult(object):
 
 
         :param item: The item of this CampaignResult.  # noqa: E501
-        :type: list[Item]
+        :type: Item
         """
 
         self._item = item

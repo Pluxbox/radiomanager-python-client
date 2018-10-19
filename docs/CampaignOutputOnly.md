@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **updated_at** | **datetime** |  | 
 **created_at** | **datetime** |  | 
 **deleted_at** | **datetime** |  | 
-**item** | [**list[Item]**](Item.md) |  | [optional] 
+**item** | [**Item**](Item.md) |  | [optional] 
 **external_station_id** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

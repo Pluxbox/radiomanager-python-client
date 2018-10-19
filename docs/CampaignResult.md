@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **updated_at** | **datetime** |  | 
 **created_at** | **datetime** |  | 
 **deleted_at** | **datetime** |  | 
-**item** | [**list[Item]**](Item.md) |  | [optional] 
+**item** | [**Item**](Item.md) |  | [optional] 
 **external_station_id** | **int** |  | [optional] 
 **model_type_id** | **int** |  | 
 **field_values** | **object** |  | [optional] 
