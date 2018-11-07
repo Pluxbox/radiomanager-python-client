@@ -21,7 +21,7 @@ from radiomanager_sdk.models.campaign import Campaign  # noqa: F401,E501
 from radiomanager_sdk.models.campaign_output_only import CampaignOutputOnly  # noqa: F401,E501
 from radiomanager_sdk.models.campaign_relations import CampaignRelations  # noqa: F401,E501
 from radiomanager_sdk.models.campaign_relations_items import CampaignRelationsItems  # noqa: F401,E501
-from radiomanager_sdk.models.item import Item  # noqa: F401,E501
+from radiomanager_sdk.models.campaign_template_item import CampaignTemplateItem  # noqa: F401,E501
 
 
 class CampaignResult(object):
@@ -42,7 +42,7 @@ class CampaignResult(object):
         'updated_at': 'datetime',
         'created_at': 'datetime',
         'deleted_at': 'datetime',
-        'item': 'Item',
+        'item': 'CampaignTemplateItem',
         'external_station_id': 'int',
         'model_type_id': 'int',
         'field_values': 'object',
@@ -215,7 +215,7 @@ class CampaignResult(object):
 
 
         :return: The item of this CampaignResult.  # noqa: E501
-        :rtype: Item
+        :rtype: CampaignTemplateItem
         """
         return self._item
 
@@ -225,7 +225,7 @@ class CampaignResult(object):
 
 
         :param item: The item of this CampaignResult.  # noqa: E501
-        :type: Item
+        :type: CampaignTemplateItem
         """
 
         self._item = item

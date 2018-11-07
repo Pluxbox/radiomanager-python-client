@@ -16,7 +16,7 @@ import re  # noqa: F401
 
 import six
 
-from radiomanager_sdk.models.item import Item  # noqa: F401,E501
+from radiomanager_sdk.models.campaign_template_item import CampaignTemplateItem  # noqa: F401,E501
 
 
 class CampaignOutputOnly(object):
@@ -37,7 +37,7 @@ class CampaignOutputOnly(object):
         'updated_at': 'datetime',
         'created_at': 'datetime',
         'deleted_at': 'datetime',
-        'item': 'Item',
+        'item': 'CampaignTemplateItem',
         'external_station_id': 'int'
     }
 
@@ -168,7 +168,7 @@ class CampaignOutputOnly(object):
 
 
         :return: The item of this CampaignOutputOnly.  # noqa: E501
-        :rtype: Item
+        :rtype: CampaignTemplateItem
         """
         return self._item
 
@@ -178,7 +178,7 @@ class CampaignOutputOnly(object):
 
 
         :param item: The item of this CampaignOutputOnly.  # noqa: E501
-        :type: Item
+        :type: CampaignTemplateItem
         """
 
         self._item = item

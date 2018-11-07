@@ -154,6 +154,7 @@ Class | Method | HTTP request | Description
  - [CampaignRelationsItems](docs/CampaignRelationsItems.md)
  - [CampaignRelationsItemsParams](docs/CampaignRelationsItemsParams.md)
  - [CampaignResults](docs/CampaignResults.md)
+ - [CampaignTemplateItem](docs/CampaignTemplateItem.md)
  - [Contact](docs/Contact.md)
  - [ContactOutputOnly](docs/ContactOutputOnly.md)
  - [ContactRelations](docs/ContactRelations.md)

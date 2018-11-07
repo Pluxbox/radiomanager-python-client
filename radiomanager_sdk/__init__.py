@@ -64,6 +64,7 @@ from radiomanager_sdk.models.campaign_relations import CampaignRelations
 from radiomanager_sdk.models.campaign_relations_items import CampaignRelationsItems
 from radiomanager_sdk.models.campaign_relations_items_params import CampaignRelationsItemsParams
 from radiomanager_sdk.models.campaign_results import CampaignResults
+from radiomanager_sdk.models.campaign_template_item import CampaignTemplateItem
 from radiomanager_sdk.models.contact import Contact
 from radiomanager_sdk.models.contact_output_only import ContactOutputOnly
 from radiomanager_sdk.models.contact_relations import ContactRelations
