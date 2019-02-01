@@ -74,6 +74,8 @@ from radiomanager_sdk.models.contact_relations_tags_params import ContactRelatio
 from radiomanager_sdk.models.contact_results import ContactResults
 from radiomanager_sdk.models.data import Data
 from radiomanager_sdk.models.data_1 import Data1
+from radiomanager_sdk.models.data_2 import Data2
+from radiomanager_sdk.models.data_3 import Data3
 from radiomanager_sdk.models.epg_results import EPGResults
 from radiomanager_sdk.models.forbidden import Forbidden
 from radiomanager_sdk.models.genre import Genre

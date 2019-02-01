@@ -800,6 +800,101 @@ class ItemApi(object):
             _request_timeout=params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def playlist_post_merge(self, **kwargs):  # noqa: E501
+        """Post a playlist, do not remove previously imported items  # noqa: E501
+
+        Post a playlist, do not remove previously imported items  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.playlist_post_merge(async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param Data2 data: Data *(Optional)*
+        :return: InlineResponse202
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.playlist_post_merge_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.playlist_post_merge_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def playlist_post_merge_with_http_info(self, **kwargs):  # noqa: E501
+        """Post a playlist, do not remove previously imported items  # noqa: E501
+
+        Post a playlist, do not remove previously imported items  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.playlist_post_merge_with_http_info(async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param Data2 data: Data *(Optional)*
+        :return: InlineResponse202
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['data']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method playlist_post_merge" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'data' in params:
+            body_params = params['data']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['API Key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/items/playlist/merge', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='InlineResponse202',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def playlist_post_structure(self, **kwargs):  # noqa: E501
         """Post a playlist, keep current structure  # noqa: E501
 
@@ -983,6 +1078,101 @@ class ItemApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='InlineResponse202',  # noqa: E501
+            auth_settings=auth_settings,
+            async=params.get('async'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def stop_current_item(self, **kwargs):  # noqa: E501
+        """Stop an Item  # noqa: E501
+
+        Set a current playing or specific item on played  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.stop_current_item(async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param Data3 data: Data *(Optional)*
+        :return: Success
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async'):
+            return self.stop_current_item_with_http_info(**kwargs)  # noqa: E501
+        else:
+            (data) = self.stop_current_item_with_http_info(**kwargs)  # noqa: E501
+            return data
+
+    def stop_current_item_with_http_info(self, **kwargs):  # noqa: E501
+        """Stop an Item  # noqa: E501
+
+        Set a current playing or specific item on played  # noqa: E501
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async=True
+        >>> thread = api.stop_current_item_with_http_info(async=True)
+        >>> result = thread.get()
+
+        :param async bool
+        :param Data3 data: Data *(Optional)*
+        :return: Success
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['data']  # noqa: E501
+        all_params.append('async')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method stop_current_item" % key
+                )
+            params[key] = val
+        del params['kwargs']
+
+        collection_formats = {}
+
+        path_params = {}
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'data' in params:
+            body_params = params['data']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['API Key']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/items/stopcurrent', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='Success',  # noqa: E501
             auth_settings=auth_settings,
             async=params.get('async'),
             _return_http_data_only=params.get('_return_http_data_only'),

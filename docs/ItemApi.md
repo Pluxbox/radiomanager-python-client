@@ -11,8 +11,10 @@ Method | HTTP request | Description
 [**get_current_item**](ItemApi.md#get_current_item) | **GET** /items/current | Get current Item
 [**get_item_by_id**](ItemApi.md#get_item_by_id) | **GET** /items/{id} | Get extended item details by ID.
 [**list_items**](ItemApi.md#list_items) | **GET** /items | Get a list of all the items currently in your station.
+[**playlist_post_merge**](ItemApi.md#playlist_post_merge) | **POST** /items/playlist/merge | Post a playlist, do not remove previously imported items
 [**playlist_post_structure**](ItemApi.md#playlist_post_structure) | **POST** /items/playlist/structure | Post a playlist, keep current structure
 [**playlist_post_timing**](ItemApi.md#playlist_post_timing) | **POST** /items/playlist/timing | Post a playlist
+[**stop_current_item**](ItemApi.md#stop_current_item) | **POST** /items/stopcurrent | Stop an Item
 [**update_item_by_id**](ItemApi.md#update_item_by_id) | **PATCH** /items/{id} | Update extended item details by ID.
 
 
@@ -436,6 +438,60 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **playlist_post_merge**
+> InlineResponse202 playlist_post_merge(data=data)
+
+Post a playlist, do not remove previously imported items
+
+Post a playlist, do not remove previously imported items
+
+### Example
+```python
+from __future__ import print_function
+import time
+import radiomanager_sdk
+from radiomanager_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: API Key
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = radiomanager_sdk.ItemApi(radiomanager_sdk.ApiClient(configuration))
+data = radiomanager_sdk.Data2() # Data2 | Data *(Optional)* (optional)
+
+try:
+    # Post a playlist, do not remove previously imported items
+    api_response = api_instance.playlist_post_merge(data=data)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ItemApi->playlist_post_merge: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **data** | [**Data2**](Data2.md)| Data *(Optional)* | [optional] 
+
+### Return type
+
+[**InlineResponse202**](InlineResponse202.md)
+
+### Authorization
+
+[API Key](../README.md#API Key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **playlist_post_structure**
 > InlineResponse202 playlist_post_structure(data=data)
 
@@ -532,6 +588,60 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**InlineResponse202**](InlineResponse202.md)
+
+### Authorization
+
+[API Key](../README.md#API Key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **stop_current_item**
+> Success stop_current_item(data=data)
+
+Stop an Item
+
+Set a current playing or specific item on played
+
+### Example
+```python
+from __future__ import print_function
+import time
+import radiomanager_sdk
+from radiomanager_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: API Key
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = radiomanager_sdk.ItemApi(radiomanager_sdk.ApiClient(configuration))
+data = radiomanager_sdk.Data3() # Data3 | Data *(Optional)* (optional)
+
+try:
+    # Stop an Item
+    api_response = api_instance.stop_current_item(data=data)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ItemApi->stop_current_item: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **data** | [**Data3**](Data3.md)| Data *(Optional)* | [optional] 
+
+### Return type
+
+[**Success**](Success.md)
 
 ### Authorization
 
