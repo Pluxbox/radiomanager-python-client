@@ -3,7 +3,7 @@
 """
     RadioManager
 
-    RadioManager
+    RadioManager  # noqa: E501
 
     OpenAPI spec version: 2.0
     Contact: support@pluxbox.com
@@ -13,61 +13,54 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import radiomanager_sdk
+from radiomanager_sdk.api.campaign_api import CampaignApi  # noqa: E501
 from radiomanager_sdk.rest import ApiException
-from radiomanager_sdk.apis.campaign_api import CampaignApi
 
 
 class TestCampaignApi(unittest.TestCase):
-    """ CampaignApi unit test stubs """
+    """CampaignApi unit test stubs"""
 
     def setUp(self):
-        self.api = radiomanager_sdk.apis.campaign_api.CampaignApi()
+        self.api = radiomanager_sdk.api.campaign_api.CampaignApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
     def test_create_campaign(self):
-        """
-        Test case for create_campaign
+        """Test case for create_campaign
 
-        Create campaign.
+        Create campaign.  # noqa: E501
         """
         pass
 
     def test_delete_campaign_by_id(self):
-        """
-        Test case for delete_campaign_by_id
+        """Test case for delete_campaign_by_id
 
-        Delete campaign by id
+        Delete campaign by id  # noqa: E501
         """
         pass
 
     def test_get_campaign_by_id(self):
-        """
-        Test case for get_campaign_by_id
+        """Test case for get_campaign_by_id
 
-        Get campaign by id
+        Get campaign by id  # noqa: E501
         """
         pass
 
     def test_list_campaigns(self):
-        """
-        Test case for list_campaigns
+        """Test case for list_campaigns
 
-        Get all campaigns.
+        Get all campaigns.  # noqa: E501
         """
         pass
 
     def test_update_campaign_by_id(self):
-        """
-        Test case for update_campaign_by_id
+        """Test case for update_campaign_by_id
 
-        Update campaign by id
+        Update campaign by id  # noqa: E501
         """
         pass
 

@@ -3,7 +3,7 @@
 """
     RadioManager
 
-    RadioManager
+    RadioManager  # noqa: E501
 
     OpenAPI spec version: 2.0
     Contact: support@pluxbox.com
@@ -13,17 +13,15 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import radiomanager_sdk
+from radiomanager_sdk.models.broadcast_epg_day import BroadcastEPGDay  # noqa: E501
 from radiomanager_sdk.rest import ApiException
-from radiomanager_sdk.models.broadcast_epg_day import BroadcastEPGDay
 
 
 class TestBroadcastEPGDay(unittest.TestCase):
-    """ BroadcastEPGDay unit test stubs """
+    """BroadcastEPGDay unit test stubs"""
 
     def setUp(self):
         pass
@@ -32,11 +30,9 @@ class TestBroadcastEPGDay(unittest.TestCase):
         pass
 
     def testBroadcastEPGDay(self):
-        """
-        Test BroadcastEPGDay
-        """
+        """Test BroadcastEPGDay"""
         # FIXME: construct object with mandatory attributes with example values
-        #model = radiomanager_sdk.models.broadcast_epg_day.BroadcastEPGDay()
+        # model = radiomanager_sdk.models.broadcast_epg_day.BroadcastEPGDay()  # noqa: E501
         pass
 
 

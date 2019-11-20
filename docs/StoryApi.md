@@ -18,7 +18,7 @@ Create story.
 
 Create story.
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -27,15 +27,16 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.StoryApi()
+api_instance = radiomanager_sdk.StoryApi(radiomanager_sdk.ApiClient(configuration))
 data = radiomanager_sdk.StoryDataInput() # StoryDataInput | Data **(Required)**
 
-try: 
+try:
     # Create story.
     api_response = api_instance.create_story(data)
     pprint(api_response)
@@ -71,7 +72,7 @@ Delete story by id
 
 Delete story by id
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -80,15 +81,16 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.StoryApi()
+api_instance = radiomanager_sdk.StoryApi(radiomanager_sdk.ApiClient(configuration))
 id = 789 # int | ID of Story **(Required)**
 
-try: 
+try:
     # Delete story by id
     api_response = api_instance.delete_story_by_id(id)
     pprint(api_response)
@@ -124,7 +126,7 @@ Get story by id
 
 Get story by id
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -133,16 +135,17 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.StoryApi()
+api_instance = radiomanager_sdk.StoryApi(radiomanager_sdk.ApiClient(configuration))
 id = 789 # int | ID of Story **(Required)**
 external_station_id = 789 # int | Query on a different (content providing) station *(Optional)* (optional)
 
-try: 
+try:
     # Get story by id
     api_response = api_instance.get_story_by_id(id, external_station_id=external_station_id)
     pprint(api_response)
@@ -179,7 +182,7 @@ Get all stories.
 
 List all stories.
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -188,12 +191,13 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.StoryApi()
+api_instance = radiomanager_sdk.StoryApi(radiomanager_sdk.ApiClient(configuration))
 page = 1 # int | Current page *(Optional)* (optional) (default to 1)
 item_id = 789 # int | Search on Item ID *(Optional)* `(Relation)` (optional)
 model_type_id = 789 # int | Search on ModelType ID *(Optional)* `(Relation)` (optional)
@@ -203,7 +207,7 @@ order_by = 'order_by_example' # str | Field to order the results *(Optional)* (o
 order_direction = 'order_direction_example' # str | Direction of ordering *(Optional)* (optional)
 external_station_id = 789 # int | Query on a different (content providing) station *(Optional)* (optional)
 
-try: 
+try:
     # Get all stories.
     api_response = api_instance.list_stories(page=page, item_id=item_id, model_type_id=model_type_id, tag_id=tag_id, limit=limit, order_by=order_by, order_direction=order_direction, external_station_id=external_station_id)
     pprint(api_response)
@@ -246,7 +250,7 @@ Update story by id
 
 Update story by id
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -255,16 +259,17 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.StoryApi()
+api_instance = radiomanager_sdk.StoryApi(radiomanager_sdk.ApiClient(configuration))
 id = 789 # int | ID of Story **(Required)**
 data = radiomanager_sdk.StoryDataInput() # StoryDataInput | Data *(Optional)* (optional)
 
-try: 
+try:
     # Update story by id
     api_response = api_instance.update_story_by_id(id, data=data)
     pprint(api_response)

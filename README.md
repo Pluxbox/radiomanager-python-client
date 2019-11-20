@@ -69,7 +69,7 @@ Class | Method | HTTP request | Description
 *BroadcastApi* | [**get_next_broadcast**](docs/BroadcastApi.md#get_next_broadcast) | **GET** /broadcasts/next | Get next Broadcast
 *BroadcastApi* | [**get_weekly_epg**](docs/BroadcastApi.md#get_weekly_epg) | **GET** /broadcasts/epg/weekly | Get weekly EPG
 *BroadcastApi* | [**list_broadcasts**](docs/BroadcastApi.md#list_broadcasts) | **GET** /broadcasts | Get all broadcasts.
-*BroadcastApi* | [**print_broadcast_by_id**](docs/BroadcastApi.md#print_broadcast_by_id) | **GET** /broadcasts/print/{id} | Print Broadcast by id
+*BroadcastApi* | [**print_broadcast_by_id**](docs/BroadcastApi.md#print_broadcast_by_id) | **GET** /broadcasts/print/{id} | Print broadcast by id with template
 *BroadcastApi* | [**update_broadcast_by_id**](docs/BroadcastApi.md#update_broadcast_by_id) | **PATCH** /broadcasts/{id} | Update broadcast by id
 *CampaignApi* | [**create_campaign**](docs/CampaignApi.md#create_campaign) | **POST** /campaigns | Create campaign.
 *CampaignApi* | [**delete_campaign_by_id**](docs/CampaignApi.md#delete_campaign_by_id) | **DELETE** /campaigns/{id} | Delete campaign by id
@@ -90,8 +90,10 @@ Class | Method | HTTP request | Description
 *ItemApi* | [**get_current_item**](docs/ItemApi.md#get_current_item) | **GET** /items/current | Get current Item
 *ItemApi* | [**get_item_by_id**](docs/ItemApi.md#get_item_by_id) | **GET** /items/{id} | Get extended item details by ID.
 *ItemApi* | [**list_items**](docs/ItemApi.md#list_items) | **GET** /items | Get a list of all the items currently in your station.
+*ItemApi* | [**playlist_post_merge**](docs/ItemApi.md#playlist_post_merge) | **POST** /items/playlist/merge | Post a playlist, do not remove previously imported items
 *ItemApi* | [**playlist_post_structure**](docs/ItemApi.md#playlist_post_structure) | **POST** /items/playlist/structure | Post a playlist, keep current structure
 *ItemApi* | [**playlist_post_timing**](docs/ItemApi.md#playlist_post_timing) | **POST** /items/playlist/timing | Post a playlist
+*ItemApi* | [**stop_current_item**](docs/ItemApi.md#stop_current_item) | **POST** /items/stopcurrent | Stop an Item
 *ItemApi* | [**update_item_by_id**](docs/ItemApi.md#update_item_by_id) | **PATCH** /items/{id} | Update extended item details by ID.
 *ModelTypeApi* | [**get_model_type_by_id**](docs/ModelTypeApi.md#get_model_type_by_id) | **GET** /model_types/{id} | Get modelType by id
 *ModelTypeApi* | [**list_model_types**](docs/ModelTypeApi.md#list_model_types) | **GET** /model_types | Get all modelTypes.
@@ -141,6 +143,7 @@ Class | Method | HTTP request | Description
  - [BroadcastOutputOnly](docs/BroadcastOutputOnly.md)
  - [BroadcastRelations](docs/BroadcastRelations.md)
  - [BroadcastRelationsBlocks](docs/BroadcastRelationsBlocks.md)
+ - [BroadcastRelationsGenre](docs/BroadcastRelationsGenre.md)
  - [BroadcastRelationsItems](docs/BroadcastRelationsItems.md)
  - [BroadcastRelationsItemsParams](docs/BroadcastRelationsItemsParams.md)
  - [BroadcastRelationsModelType](docs/BroadcastRelationsModelType.md)
@@ -153,6 +156,7 @@ Class | Method | HTTP request | Description
  - [CampaignRelationsItems](docs/CampaignRelationsItems.md)
  - [CampaignRelationsItemsParams](docs/CampaignRelationsItemsParams.md)
  - [CampaignResults](docs/CampaignResults.md)
+ - [CampaignTemplateItem](docs/CampaignTemplateItem.md)
  - [Contact](docs/Contact.md)
  - [ContactOutputOnly](docs/ContactOutputOnly.md)
  - [ContactRelations](docs/ContactRelations.md)
@@ -162,6 +166,8 @@ Class | Method | HTTP request | Description
  - [ContactResults](docs/ContactResults.md)
  - [Data](docs/Data.md)
  - [Data1](docs/Data1.md)
+ - [Data2](docs/Data2.md)
+ - [Data3](docs/Data3.md)
  - [EPGResults](docs/EPGResults.md)
  - [Forbidden](docs/Forbidden.md)
  - [Genre](docs/Genre.md)
@@ -223,6 +229,7 @@ Class | Method | HTTP request | Description
  - [RelationsPlaceholder](docs/RelationsPlaceholder.md)
  - [StationResult](docs/StationResult.md)
  - [StationResultStation](docs/StationResultStation.md)
+ - [StationResultStationStartDays](docs/StationResultStationStartDays.md)
  - [Story](docs/Story.md)
  - [StoryInputOnly](docs/StoryInputOnly.md)
  - [StoryOutputOnly](docs/StoryOutputOnly.md)

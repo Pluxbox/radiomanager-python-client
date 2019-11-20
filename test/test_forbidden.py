@@ -3,7 +3,7 @@
 """
     RadioManager
 
-    RadioManager
+    RadioManager  # noqa: E501
 
     OpenAPI spec version: 2.0
     Contact: support@pluxbox.com
@@ -13,17 +13,15 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import radiomanager_sdk
+from radiomanager_sdk.models.forbidden import Forbidden  # noqa: E501
 from radiomanager_sdk.rest import ApiException
-from radiomanager_sdk.models.forbidden import Forbidden
 
 
 class TestForbidden(unittest.TestCase):
-    """ Forbidden unit test stubs """
+    """Forbidden unit test stubs"""
 
     def setUp(self):
         pass
@@ -32,11 +30,9 @@ class TestForbidden(unittest.TestCase):
         pass
 
     def testForbidden(self):
-        """
-        Test Forbidden
-        """
+        """Test Forbidden"""
         # FIXME: construct object with mandatory attributes with example values
-        #model = radiomanager_sdk.models.forbidden.Forbidden()
+        # model = radiomanager_sdk.models.forbidden.Forbidden()  # noqa: E501
         pass
 
 

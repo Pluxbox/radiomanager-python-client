@@ -3,7 +3,7 @@
 """
     RadioManager
 
-    RadioManager
+    RadioManager  # noqa: E501
 
     OpenAPI spec version: 2.0
     Contact: support@pluxbox.com
@@ -13,61 +13,54 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import radiomanager_sdk
+from radiomanager_sdk.api.story_api import StoryApi  # noqa: E501
 from radiomanager_sdk.rest import ApiException
-from radiomanager_sdk.apis.story_api import StoryApi
 
 
 class TestStoryApi(unittest.TestCase):
-    """ StoryApi unit test stubs """
+    """StoryApi unit test stubs"""
 
     def setUp(self):
-        self.api = radiomanager_sdk.apis.story_api.StoryApi()
+        self.api = radiomanager_sdk.api.story_api.StoryApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
     def test_create_story(self):
-        """
-        Test case for create_story
+        """Test case for create_story
 
-        Create story.
+        Create story.  # noqa: E501
         """
         pass
 
     def test_delete_story_by_id(self):
-        """
-        Test case for delete_story_by_id
+        """Test case for delete_story_by_id
 
-        Delete story by id
+        Delete story by id  # noqa: E501
         """
         pass
 
     def test_get_story_by_id(self):
-        """
-        Test case for get_story_by_id
+        """Test case for get_story_by_id
 
-        Get story by id
+        Get story by id  # noqa: E501
         """
         pass
 
     def test_list_stories(self):
-        """
-        Test case for list_stories
+        """Test case for list_stories
 
-        Get all stories.
+        Get all stories.  # noqa: E501
         """
         pass
 
     def test_update_story_by_id(self):
-        """
-        Test case for update_story_by_id
+        """Test case for update_story_by_id
 
-        Update story by id
+        Update story by id  # noqa: E501
         """
         pass
 

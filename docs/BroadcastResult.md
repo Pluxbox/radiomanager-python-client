@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **repetition_start** | **datetime** |  | [optional] 
 **repetition_days** | **str** |  | [optional] 
 **pty_code_id** | **int** |  | [optional] 
+**genre** | [**BroadcastRelationsGenre**](BroadcastRelationsGenre.md) |  | [optional] 
 **items** | [**BroadcastRelationsItems**](BroadcastRelationsItems.md) |  | [optional] 
 **blocks** | [**BroadcastRelationsBlocks**](BroadcastRelationsBlocks.md) |  | [optional] 
 **program** | [**BlockRelationsProgram**](BlockRelationsProgram.md) |  | [optional] 

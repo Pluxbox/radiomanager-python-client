@@ -3,7 +3,7 @@
 """
     RadioManager
 
-    RadioManager
+    RadioManager  # noqa: E501
 
     OpenAPI spec version: 2.0
     Contact: support@pluxbox.com
@@ -13,17 +13,15 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import radiomanager_sdk
+from radiomanager_sdk.models.model_type_options import ModelTypeOptions  # noqa: E501
 from radiomanager_sdk.rest import ApiException
-from radiomanager_sdk.models.model_type_options import ModelTypeOptions
 
 
 class TestModelTypeOptions(unittest.TestCase):
-    """ ModelTypeOptions unit test stubs """
+    """ModelTypeOptions unit test stubs"""
 
     def setUp(self):
         pass
@@ -32,11 +30,9 @@ class TestModelTypeOptions(unittest.TestCase):
         pass
 
     def testModelTypeOptions(self):
-        """
-        Test ModelTypeOptions
-        """
+        """Test ModelTypeOptions"""
         # FIXME: construct object with mandatory attributes with example values
-        #model = radiomanager_sdk.models.model_type_options.ModelTypeOptions()
+        # model = radiomanager_sdk.models.model_type_options.ModelTypeOptions()  # noqa: E501
         pass
 
 

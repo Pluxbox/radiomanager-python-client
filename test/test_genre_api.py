@@ -3,7 +3,7 @@
 """
     RadioManager
 
-    RadioManager
+    RadioManager  # noqa: E501
 
     OpenAPI spec version: 2.0
     Contact: support@pluxbox.com
@@ -13,37 +13,33 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import radiomanager_sdk
+from radiomanager_sdk.api.genre_api import GenreApi  # noqa: E501
 from radiomanager_sdk.rest import ApiException
-from radiomanager_sdk.apis.genre_api import GenreApi
 
 
 class TestGenreApi(unittest.TestCase):
-    """ GenreApi unit test stubs """
+    """GenreApi unit test stubs"""
 
     def setUp(self):
-        self.api = radiomanager_sdk.apis.genre_api.GenreApi()
+        self.api = radiomanager_sdk.api.genre_api.GenreApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
     def test_get_genre_by_id(self):
-        """
-        Test case for get_genre_by_id
+        """Test case for get_genre_by_id
 
-        Get genre by id
+        Get genre by id  # noqa: E501
         """
         pass
 
     def test_list_genres(self):
-        """
-        Test case for list_genres
+        """Test case for list_genres
 
-        List all genres.
+        List all genres.  # noqa: E501
         """
         pass
 

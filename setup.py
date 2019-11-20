@@ -3,7 +3,7 @@
 """
     RadioManager
 
-    RadioManager
+    RadioManager  # noqa: E501
 
     OpenAPI spec version: 2.0
     Contact: support@pluxbox.com
@@ -11,11 +11,10 @@
 """
 
 
-import sys
-from setuptools import setup, find_packages
+from setuptools import setup, find_packages  # noqa: H301
 
 NAME = "Pluxbox RadioManager Client"
-VERSION = "1.1.7"
+VERSION = "1.1.12"
 # To install the library, run the following
 #
 # python setup.py install
@@ -33,10 +32,10 @@ setup(
     url="http://pluxbox.com",
     keywords=["pluxbox", "radio", "radiomanager", "sdk", "api", "RadioManager"],
     install_requires=REQUIRES,
-    license='MIT',
     packages=find_packages(),
+    license='MIT',
     include_package_data=True,
     long_description="""\
-    RadioManager
+    RadioManager  # noqa: E501
     """
 )

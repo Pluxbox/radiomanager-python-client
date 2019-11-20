@@ -3,7 +3,7 @@
 """
     RadioManager
 
-    RadioManager
+    RadioManager  # noqa: E501
 
     OpenAPI spec version: 2.0
     Contact: support@pluxbox.com
@@ -13,61 +13,54 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import radiomanager_sdk
+from radiomanager_sdk.api.program_api import ProgramApi  # noqa: E501
 from radiomanager_sdk.rest import ApiException
-from radiomanager_sdk.apis.program_api import ProgramApi
 
 
 class TestProgramApi(unittest.TestCase):
-    """ ProgramApi unit test stubs """
+    """ProgramApi unit test stubs"""
 
     def setUp(self):
-        self.api = radiomanager_sdk.apis.program_api.ProgramApi()
+        self.api = radiomanager_sdk.api.program_api.ProgramApi()  # noqa: E501
 
     def tearDown(self):
         pass
 
     def test_create_program(self):
-        """
-        Test case for create_program
+        """Test case for create_program
 
-        Create program.
+        Create program.  # noqa: E501
         """
         pass
 
     def test_delete_program_by_id(self):
-        """
-        Test case for delete_program_by_id
+        """Test case for delete_program_by_id
 
-        Delete program by id
+        Delete program by id  # noqa: E501
         """
         pass
 
     def test_get_program_by_id(self):
-        """
-        Test case for get_program_by_id
+        """Test case for get_program_by_id
 
-        Get program by id
+        Get program by id  # noqa: E501
         """
         pass
 
     def test_list_programs(self):
-        """
-        Test case for list_programs
+        """Test case for list_programs
 
-        Get all programs.
+        Get all programs.  # noqa: E501
         """
         pass
 
     def test_update_program_by_id(self):
-        """
-        Test case for update_program_by_id
+        """Test case for update_program_by_id
 
-        Update program by id
+        Update program by id  # noqa: E501
         """
         pass
 

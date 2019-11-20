@@ -18,7 +18,7 @@ Create tag.
 
 Create tag.
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -27,15 +27,16 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.TagApi()
+api_instance = radiomanager_sdk.TagApi(radiomanager_sdk.ApiClient(configuration))
 data = radiomanager_sdk.TagDataInput() # TagDataInput | Data **(Required)**
 
-try: 
+try:
     # Create tag.
     api_response = api_instance.create_tag(data)
     pprint(api_response)
@@ -71,7 +72,7 @@ Delete tag by id
 
 Delete tag by id
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -80,15 +81,16 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.TagApi()
+api_instance = radiomanager_sdk.TagApi(radiomanager_sdk.ApiClient(configuration))
 id = 789 # int | ID of Tag **(Required)**
 
-try: 
+try:
     # Delete tag by id
     api_response = api_instance.delete_tag_by_id(id)
     pprint(api_response)
@@ -124,7 +126,7 @@ Get tags by id
 
 Get tags by id
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -133,16 +135,17 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.TagApi()
+api_instance = radiomanager_sdk.TagApi(radiomanager_sdk.ApiClient(configuration))
 id = 789 # int | ID of Tag **(Required)**
 external_station_id = 789 # int | Query on a different (content providing) station *(Optional)* (optional)
 
-try: 
+try:
     # Get tags by id
     api_response = api_instance.get_tag_by_id(id, external_station_id=external_station_id)
     pprint(api_response)
@@ -179,7 +182,7 @@ Get a list of all the tags currently in your station.
 
 Get a list of all the tags currently in your station. This feature supports pagination and will give a maximum results of 50 tags back.
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -188,12 +191,13 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.TagApi()
+api_instance = radiomanager_sdk.TagApi(radiomanager_sdk.ApiClient(configuration))
 page = 789 # int | Current page *(Optional)* (optional)
 program_id = 789 # int | Search on Program ID *(Optional)* `(Relation)` (optional)
 item_id = 789 # int | Search on Item ID *(Optional)* `(Relation)` (optional)
@@ -204,7 +208,7 @@ order_by = 'order_by_example' # str | Field to order the results *(Optional)* (o
 order_direction = 'order_direction_example' # str | Direction of ordering *(Optional)* (optional)
 external_station_id = 789 # int | Query on a different (content providing) station *(Optional)* (optional)
 
-try: 
+try:
     # Get a list of all the tags currently in your station.
     api_response = api_instance.list_tags(page=page, program_id=program_id, item_id=item_id, broadcast_id=broadcast_id, contact_id=contact_id, limit=limit, order_by=order_by, order_direction=order_direction, external_station_id=external_station_id)
     pprint(api_response)
@@ -248,7 +252,7 @@ Update tag by id
 
 Update tag by id
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -257,16 +261,17 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.TagApi()
+api_instance = radiomanager_sdk.TagApi(radiomanager_sdk.ApiClient(configuration))
 id = 789 # int | ID of Tag **(Required)**
 data = radiomanager_sdk.TagDataInput() # TagDataInput | Data *(Optional)* (optional)
 
-try: 
+try:
     # Update tag by id
     api_response = api_instance.update_tag_by_id(id, data=data)
     pprint(api_response)

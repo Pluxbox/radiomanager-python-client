@@ -3,7 +3,7 @@
 """
     RadioManager
 
-    RadioManager
+    RadioManager  # noqa: E501
 
     OpenAPI spec version: 2.0
     Contact: support@pluxbox.com
@@ -13,17 +13,15 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import radiomanager_sdk
+from radiomanager_sdk.models.genre_relations_broadcasts_params import GenreRelationsBroadcastsParams  # noqa: E501
 from radiomanager_sdk.rest import ApiException
-from radiomanager_sdk.models.genre_relations_broadcasts_params import GenreRelationsBroadcastsParams
 
 
 class TestGenreRelationsBroadcastsParams(unittest.TestCase):
-    """ GenreRelationsBroadcastsParams unit test stubs """
+    """GenreRelationsBroadcastsParams unit test stubs"""
 
     def setUp(self):
         pass
@@ -32,11 +30,9 @@ class TestGenreRelationsBroadcastsParams(unittest.TestCase):
         pass
 
     def testGenreRelationsBroadcastsParams(self):
-        """
-        Test GenreRelationsBroadcastsParams
-        """
+        """Test GenreRelationsBroadcastsParams"""
         # FIXME: construct object with mandatory attributes with example values
-        #model = radiomanager_sdk.models.genre_relations_broadcasts_params.GenreRelationsBroadcastsParams()
+        # model = radiomanager_sdk.models.genre_relations_broadcasts_params.GenreRelationsBroadcastsParams()  # noqa: E501
         pass
 
 

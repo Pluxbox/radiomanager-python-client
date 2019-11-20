@@ -3,7 +3,7 @@
 """
     RadioManager
 
-    RadioManager
+    RadioManager  # noqa: E501
 
     OpenAPI spec version: 2.0
     Contact: support@pluxbox.com
@@ -13,17 +13,15 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import radiomanager_sdk
+from radiomanager_sdk.models.user_result_roles import UserResultRoles  # noqa: E501
 from radiomanager_sdk.rest import ApiException
-from radiomanager_sdk.models.user_result_roles import UserResultRoles
 
 
 class TestUserResultRoles(unittest.TestCase):
-    """ UserResultRoles unit test stubs """
+    """UserResultRoles unit test stubs"""
 
     def setUp(self):
         pass
@@ -32,11 +30,9 @@ class TestUserResultRoles(unittest.TestCase):
         pass
 
     def testUserResultRoles(self):
-        """
-        Test UserResultRoles
-        """
+        """Test UserResultRoles"""
         # FIXME: construct object with mandatory attributes with example values
-        #model = radiomanager_sdk.models.user_result_roles.UserResultRoles()
+        # model = radiomanager_sdk.models.user_result_roles.UserResultRoles()  # noqa: E501
         pass
 
 

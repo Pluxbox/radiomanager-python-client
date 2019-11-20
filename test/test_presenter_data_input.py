@@ -3,7 +3,7 @@
 """
     RadioManager
 
-    RadioManager
+    RadioManager  # noqa: E501
 
     OpenAPI spec version: 2.0
     Contact: support@pluxbox.com
@@ -13,17 +13,15 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import radiomanager_sdk
+from radiomanager_sdk.models.presenter_data_input import PresenterDataInput  # noqa: E501
 from radiomanager_sdk.rest import ApiException
-from radiomanager_sdk.models.presenter_data_input import PresenterDataInput
 
 
 class TestPresenterDataInput(unittest.TestCase):
-    """ PresenterDataInput unit test stubs """
+    """PresenterDataInput unit test stubs"""
 
     def setUp(self):
         pass
@@ -32,11 +30,9 @@ class TestPresenterDataInput(unittest.TestCase):
         pass
 
     def testPresenterDataInput(self):
-        """
-        Test PresenterDataInput
-        """
+        """Test PresenterDataInput"""
         # FIXME: construct object with mandatory attributes with example values
-        #model = radiomanager_sdk.models.presenter_data_input.PresenterDataInput()
+        # model = radiomanager_sdk.models.presenter_data_input.PresenterDataInput()  # noqa: E501
         pass
 
 

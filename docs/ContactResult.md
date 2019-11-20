@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **firstname** | **str** |  | 
 **lastname** | **str** |  | 
 **phone** | **str** |  | [optional] 
-**tags** | [**ContactRelationsTags**](ContactRelationsTags.md) |  | [optional] 
+**tags** | [**ContactRelationsTags**](ContactRelationsTags.md) |  | 
 **items** | [**ContactRelationsItems**](ContactRelationsItems.md) |  | [optional] 
 **model_type** | [**BroadcastRelationsModelType**](BroadcastRelationsModelType.md) |  | [optional] 
 

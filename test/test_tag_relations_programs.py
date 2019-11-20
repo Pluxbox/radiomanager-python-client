@@ -3,7 +3,7 @@
 """
     RadioManager
 
-    RadioManager
+    RadioManager  # noqa: E501
 
     OpenAPI spec version: 2.0
     Contact: support@pluxbox.com
@@ -13,17 +13,15 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import radiomanager_sdk
+from radiomanager_sdk.models.tag_relations_programs import TagRelationsPrograms  # noqa: E501
 from radiomanager_sdk.rest import ApiException
-from radiomanager_sdk.models.tag_relations_programs import TagRelationsPrograms
 
 
 class TestTagRelationsPrograms(unittest.TestCase):
-    """ TagRelationsPrograms unit test stubs """
+    """TagRelationsPrograms unit test stubs"""
 
     def setUp(self):
         pass
@@ -32,11 +30,9 @@ class TestTagRelationsPrograms(unittest.TestCase):
         pass
 
     def testTagRelationsPrograms(self):
-        """
-        Test TagRelationsPrograms
-        """
+        """Test TagRelationsPrograms"""
         # FIXME: construct object with mandatory attributes with example values
-        #model = radiomanager_sdk.models.tag_relations_programs.TagRelationsPrograms()
+        # model = radiomanager_sdk.models.tag_relations_programs.TagRelationsPrograms()  # noqa: E501
         pass
 
 

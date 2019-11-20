@@ -3,7 +3,7 @@
 """
     RadioManager
 
-    RadioManager
+    RadioManager  # noqa: E501
 
     OpenAPI spec version: 2.0
     Contact: support@pluxbox.com
@@ -13,17 +13,15 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import radiomanager_sdk
+from radiomanager_sdk.models.invite_user_success import InviteUserSuccess  # noqa: E501
 from radiomanager_sdk.rest import ApiException
-from radiomanager_sdk.models.invite_user_success import InviteUserSuccess
 
 
 class TestInviteUserSuccess(unittest.TestCase):
-    """ InviteUserSuccess unit test stubs """
+    """InviteUserSuccess unit test stubs"""
 
     def setUp(self):
         pass
@@ -32,11 +30,9 @@ class TestInviteUserSuccess(unittest.TestCase):
         pass
 
     def testInviteUserSuccess(self):
-        """
-        Test InviteUserSuccess
-        """
+        """Test InviteUserSuccess"""
         # FIXME: construct object with mandatory attributes with example values
-        #model = radiomanager_sdk.models.invite_user_success.InviteUserSuccess()
+        # model = radiomanager_sdk.models.invite_user_success.InviteUserSuccess()  # noqa: E501
         pass
 
 

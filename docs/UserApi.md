@@ -17,7 +17,7 @@ Remove user from station by Id
 
 Remove user from station by Id
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -26,15 +26,16 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.UserApi()
+api_instance = radiomanager_sdk.UserApi(radiomanager_sdk.ApiClient(configuration))
 id = 789 # int | id of User
 
-try: 
+try:
     # Remove user from station by Id
     api_response = api_instance.delete_user_by_id(id)
     pprint(api_response)
@@ -70,7 +71,7 @@ Get user by id
 
 Get user by id
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -79,15 +80,16 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.UserApi()
+api_instance = radiomanager_sdk.UserApi(radiomanager_sdk.ApiClient(configuration))
 id = 789 # int | id of User
 
-try: 
+try:
     # Get user by id
     api_response = api_instance.get_user_by_id(id)
     pprint(api_response)
@@ -123,7 +125,7 @@ Invite user by mail
 
 Invite user by mail
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -132,15 +134,16 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.UserApi()
+api_instance = radiomanager_sdk.UserApi(radiomanager_sdk.ApiClient(configuration))
 data = radiomanager_sdk.InviteUserData() # InviteUserData | Data **(Required)**
 
-try: 
+try:
     # Invite user by mail
     api_response = api_instance.invite_user_by_mail(data)
     pprint(api_response)
@@ -176,7 +179,7 @@ Get all users.
 
 List all users.
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -185,19 +188,20 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.UserApi()
+api_instance = radiomanager_sdk.UserApi(radiomanager_sdk.ApiClient(configuration))
 page = 1 # int | Current page *(Optional)* (optional) (default to 1)
 role_id = 789 # int | Search on Role ID *(Optional)* (optional)
 limit = 789 # int | Results per page *(Optional)* (optional)
 order_by = 'order_by_example' # str | Field to order the results *(Optional)* (optional)
 order_direction = 'order_direction_example' # str | Direction of ordering *(Optional)* (optional)
 
-try: 
+try:
     # Get all users.
     api_response = api_instance.list_users(page=page, role_id=role_id, limit=limit, order_by=order_by, order_direction=order_direction)
     pprint(api_response)

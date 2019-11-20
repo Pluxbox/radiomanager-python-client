@@ -11,8 +11,10 @@ Method | HTTP request | Description
 [**get_current_item**](ItemApi.md#get_current_item) | **GET** /items/current | Get current Item
 [**get_item_by_id**](ItemApi.md#get_item_by_id) | **GET** /items/{id} | Get extended item details by ID.
 [**list_items**](ItemApi.md#list_items) | **GET** /items | Get a list of all the items currently in your station.
+[**playlist_post_merge**](ItemApi.md#playlist_post_merge) | **POST** /items/playlist/merge | Post a playlist, do not remove previously imported items
 [**playlist_post_structure**](ItemApi.md#playlist_post_structure) | **POST** /items/playlist/structure | Post a playlist, keep current structure
 [**playlist_post_timing**](ItemApi.md#playlist_post_timing) | **POST** /items/playlist/timing | Post a playlist
+[**stop_current_item**](ItemApi.md#stop_current_item) | **POST** /items/stopcurrent | Stop an Item
 [**update_item_by_id**](ItemApi.md#update_item_by_id) | **PATCH** /items/{id} | Update extended item details by ID.
 
 
@@ -23,7 +25,7 @@ Create an new item.
 
 Create item.
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -32,15 +34,16 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.ItemApi()
+api_instance = radiomanager_sdk.ItemApi(radiomanager_sdk.ApiClient(configuration))
 data = radiomanager_sdk.ItemDataInput() # ItemDataInput | Data *(Optional)* (optional)
 
-try: 
+try:
     # Create an new item.
     api_response = api_instance.create_item(data=data)
     pprint(api_response)
@@ -76,7 +79,7 @@ Post a current playing item, keep structure
 
 Post a current playing item, keep structure
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -85,15 +88,16 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.ItemApi()
+api_instance = radiomanager_sdk.ItemApi(radiomanager_sdk.ApiClient(configuration))
 data = radiomanager_sdk.ImportItem() # ImportItem | Data *(Optional)* (optional)
 
-try: 
+try:
     # Post a current playing item, keep structure
     api_response = api_instance.current_item_post_structure(data=data)
     pprint(api_response)
@@ -129,7 +133,7 @@ Post a current playing item
 
 Post a current playing item
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -138,15 +142,16 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.ItemApi()
+api_instance = radiomanager_sdk.ItemApi(radiomanager_sdk.ApiClient(configuration))
 data = radiomanager_sdk.ImportItem() # ImportItem | Data *(Optional)* (optional)
 
-try: 
+try:
     # Post a current playing item
     api_response = api_instance.current_item_post_timing(data=data)
     pprint(api_response)
@@ -182,7 +187,7 @@ Delete item by ID.
 
 Delete item by id.
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -191,15 +196,16 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.ItemApi()
+api_instance = radiomanager_sdk.ItemApi(radiomanager_sdk.ApiClient(configuration))
 id = 789 # int | ID of Item **(Required)**
 
-try: 
+try:
     # Delete item by ID.
     api_response = api_instance.delete_item_by_id(id)
     pprint(api_response)
@@ -235,7 +241,7 @@ Get current Item
 
 Get current Item
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -244,15 +250,16 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.ItemApi()
+api_instance = radiomanager_sdk.ItemApi(radiomanager_sdk.ApiClient(configuration))
 lastplayed = true # bool | Show last played item if there is no current item*(Optional)* (optional)
 
-try: 
+try:
     # Get current Item
     api_response = api_instance.get_current_item(lastplayed=lastplayed)
     pprint(api_response)
@@ -288,7 +295,7 @@ Get extended item details by ID.
 
 Read item by id.
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -297,16 +304,17 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.ItemApi()
+api_instance = radiomanager_sdk.ItemApi(radiomanager_sdk.ApiClient(configuration))
 id = 789 # int | ID of Item **(Required)**
 external_station_id = 789 # int | Query on a different (content providing) station *(Optional)* (optional)
 
-try: 
+try:
     # Get extended item details by ID.
     api_response = api_instance.get_item_by_id(id, external_station_id=external_station_id)
     pprint(api_response)
@@ -343,7 +351,7 @@ Get a list of all the items currently in your station.
 
 Get a list of all the items currently in your station. This feature supports pagination and will give a maximum results of 50 items back.
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -352,12 +360,13 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.ItemApi()
+api_instance = radiomanager_sdk.ItemApi(radiomanager_sdk.ApiClient(configuration))
 page = 789 # int | Current page *(Optional)* (optional)
 block_id = 789 # int | Search on Block ID *(Optional)* `(Relation)` (optional)
 broadcast_id = 789 # int | Search on Broadcast ID *(Optional)* `(Relation)` (optional)
@@ -380,7 +389,7 @@ order_by = 'order_by_example' # str | Field to order the results *(Optional)* (o
 order_direction = 'order_direction_example' # str | Direction of ordering *(Optional)* (optional)
 external_station_id = 789 # int | Query on a different (content providing) station *(Optional)* (optional)
 
-try: 
+try:
     # Get a list of all the items currently in your station.
     api_response = api_instance.list_items(page=page, block_id=block_id, broadcast_id=broadcast_id, model_type_id=model_type_id, tag_id=tag_id, campaign_id=campaign_id, contact_id=contact_id, program_draft_id=program_draft_id, user_draft_id=user_draft_id, station_draft_id=station_draft_id, program_id=program_id, external_id=external_id, start_min=start_min, start_max=start_max, duration_min=duration_min, duration_max=duration_max, status=status, limit=limit, order_by=order_by, order_direction=order_direction, external_station_id=external_station_id)
     pprint(api_response)
@@ -429,14 +438,14 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **playlist_post_structure**
-> InlineResponse202 playlist_post_structure(data=data)
+# **playlist_post_merge**
+> InlineResponse202 playlist_post_merge(data=data)
 
-Post a playlist, keep current structure
+Post a playlist, do not remove previously imported items
 
-Post a playlist, keep current structure
+Post a playlist, do not remove previously imported items
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -445,15 +454,70 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.ItemApi()
+api_instance = radiomanager_sdk.ItemApi(radiomanager_sdk.ApiClient(configuration))
+data = radiomanager_sdk.Data2() # Data2 | Data *(Optional)* (optional)
+
+try:
+    # Post a playlist, do not remove previously imported items
+    api_response = api_instance.playlist_post_merge(data=data)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ItemApi->playlist_post_merge: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **data** | [**Data2**](Data2.md)| Data *(Optional)* | [optional] 
+
+### Return type
+
+[**InlineResponse202**](InlineResponse202.md)
+
+### Authorization
+
+[API Key](../README.md#API Key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **playlist_post_structure**
+> InlineResponse202 playlist_post_structure(data=data)
+
+Post a playlist, keep current structure
+
+Post a playlist, keep current structure
+
+### Example
+```python
+from __future__ import print_function
+import time
+import radiomanager_sdk
+from radiomanager_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: API Key
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = radiomanager_sdk.ItemApi(radiomanager_sdk.ApiClient(configuration))
 data = radiomanager_sdk.Data1() # Data1 | Data *(Optional)* (optional)
 
-try: 
+try:
     # Post a playlist, keep current structure
     api_response = api_instance.playlist_post_structure(data=data)
     pprint(api_response)
@@ -489,7 +553,7 @@ Post a playlist
 
 Post a playlist
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -498,15 +562,16 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.ItemApi()
+api_instance = radiomanager_sdk.ItemApi(radiomanager_sdk.ApiClient(configuration))
 data = radiomanager_sdk.Data() # Data | Data *(Optional)* (optional)
 
-try: 
+try:
     # Post a playlist
     api_response = api_instance.playlist_post_timing(data=data)
     pprint(api_response)
@@ -535,14 +600,14 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_item_by_id**
-> Success update_item_by_id(id, data=data)
+# **stop_current_item**
+> Success stop_current_item(data=data)
 
-Update extended item details by ID.
+Stop an Item
 
-Update item by id.
+Set a current playing or specific item on played
 
-### Example 
+### Example
 ```python
 from __future__ import print_function
 import time
@@ -551,16 +616,71 @@ from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
 # Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
 # create an instance of the API class
-api_instance = radiomanager_sdk.ItemApi()
+api_instance = radiomanager_sdk.ItemApi(radiomanager_sdk.ApiClient(configuration))
+data = radiomanager_sdk.Data3() # Data3 | Data *(Optional)* (optional)
+
+try:
+    # Stop an Item
+    api_response = api_instance.stop_current_item(data=data)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ItemApi->stop_current_item: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **data** | [**Data3**](Data3.md)| Data *(Optional)* | [optional] 
+
+### Return type
+
+[**Success**](Success.md)
+
+### Authorization
+
+[API Key](../README.md#API Key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_item_by_id**
+> Success update_item_by_id(id, data=data)
+
+Update extended item details by ID.
+
+Update item by id.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import radiomanager_sdk
+from radiomanager_sdk.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: API Key
+configuration = radiomanager_sdk.Configuration()
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = radiomanager_sdk.ItemApi(radiomanager_sdk.ApiClient(configuration))
 id = 789 # int | ID of Item **(Required)**
 data = radiomanager_sdk.ItemDataInput() # ItemDataInput | Data *(Optional)* (optional)
 
-try: 
+try:
     # Update extended item details by ID.
     api_response = api_instance.update_item_by_id(id, data=data)
     pprint(api_response)

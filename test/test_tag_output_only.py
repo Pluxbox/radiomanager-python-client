@@ -3,7 +3,7 @@
 """
     RadioManager
 
-    RadioManager
+    RadioManager  # noqa: E501
 
     OpenAPI spec version: 2.0
     Contact: support@pluxbox.com
@@ -13,17 +13,15 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import radiomanager_sdk
+from radiomanager_sdk.models.tag_output_only import TagOutputOnly  # noqa: E501
 from radiomanager_sdk.rest import ApiException
-from radiomanager_sdk.models.tag_output_only import TagOutputOnly
 
 
 class TestTagOutputOnly(unittest.TestCase):
-    """ TagOutputOnly unit test stubs """
+    """TagOutputOnly unit test stubs"""
 
     def setUp(self):
         pass
@@ -32,11 +30,9 @@ class TestTagOutputOnly(unittest.TestCase):
         pass
 
     def testTagOutputOnly(self):
-        """
-        Test TagOutputOnly
-        """
+        """Test TagOutputOnly"""
         # FIXME: construct object with mandatory attributes with example values
-        #model = radiomanager_sdk.models.tag_output_only.TagOutputOnly()
+        # model = radiomanager_sdk.models.tag_output_only.TagOutputOnly()  # noqa: E501
         pass
 
 

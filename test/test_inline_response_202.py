@@ -3,7 +3,7 @@
 """
     RadioManager
 
-    RadioManager
+    RadioManager  # noqa: E501
 
     OpenAPI spec version: 2.0
     Contact: support@pluxbox.com
@@ -13,17 +13,15 @@
 
 from __future__ import absolute_import
 
-import os
-import sys
 import unittest
 
 import radiomanager_sdk
+from radiomanager_sdk.models.inline_response_202 import InlineResponse202  # noqa: E501
 from radiomanager_sdk.rest import ApiException
-from radiomanager_sdk.models.inline_response_202 import InlineResponse202
 
 
 class TestInlineResponse202(unittest.TestCase):
-    """ InlineResponse202 unit test stubs """
+    """InlineResponse202 unit test stubs"""
 
     def setUp(self):
         pass
@@ -32,11 +30,9 @@ class TestInlineResponse202(unittest.TestCase):
         pass
 
     def testInlineResponse202(self):
-        """
-        Test InlineResponse202
-        """
+        """Test InlineResponse202"""
         # FIXME: construct object with mandatory attributes with example values
-        #model = radiomanager_sdk.models.inline_response_202.InlineResponse202()
+        # model = radiomanager_sdk.models.inline_response_202.InlineResponse202()  # noqa: E501
         pass
 
 
