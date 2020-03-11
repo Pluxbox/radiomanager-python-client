@@ -1,6 +1,6 @@
 # radiomanager_sdk.UserApi
 
-All URIs are relative to *https://staging.radiomanager.io/api/v2*
+All URIs are relative to *https://radiomanager.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,36 +18,41 @@ Remove user from station by Id
 Remove user from station by Id
 
 ### Example
+
+* Api Key Authentication (API-Key):
 ```python
 from __future__ import print_function
 import time
 import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: API Key
 configuration = radiomanager_sdk.Configuration()
+# Configure API key authorization: API-Key
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = radiomanager_sdk.UserApi(radiomanager_sdk.ApiClient(configuration))
-id = 789 # int | id of User
+# Defining host is optional and default to https://radiomanager.io/api/v2
+configuration.host = "https://radiomanager.io/api/v2"
+# Enter a context with an instance of the API client
+with radiomanager_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = radiomanager_sdk.UserApi(api_client)
+    id = 0 # int | id of User (default to 0)
 
-try:
-    # Remove user from station by Id
-    api_response = api_instance.delete_user_by_id(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling UserApi->delete_user_by_id: %s\n" % e)
+    try:
+        # Remove user from station by Id
+        api_response = api_instance.delete_user_by_id(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UserApi->delete_user_by_id: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| id of User | 
+ **id** | **int**| id of User | [default to 0]
 
 ### Return type
 
@@ -55,12 +60,20 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully deleted User by id |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**429** | Too Many Requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -72,36 +85,41 @@ Get user by id
 Get user by id
 
 ### Example
+
+* Api Key Authentication (API-Key):
 ```python
 from __future__ import print_function
 import time
 import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: API Key
 configuration = radiomanager_sdk.Configuration()
+# Configure API key authorization: API-Key
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = radiomanager_sdk.UserApi(radiomanager_sdk.ApiClient(configuration))
-id = 789 # int | id of User
+# Defining host is optional and default to https://radiomanager.io/api/v2
+configuration.host = "https://radiomanager.io/api/v2"
+# Enter a context with an instance of the API client
+with radiomanager_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = radiomanager_sdk.UserApi(api_client)
+    id = 0 # int | id of User (default to 0)
 
-try:
-    # Get user by id
-    api_response = api_instance.get_user_by_id(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling UserApi->get_user_by_id: %s\n" % e)
+    try:
+        # Get user by id
+        api_response = api_instance.get_user_by_id(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UserApi->get_user_by_id: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| id of User | 
+ **id** | **int**| id of User | [default to 0]
 
 ### Return type
 
@@ -109,46 +127,59 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully got User by id |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**429** | Too Many Requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **invite_user_by_mail**
-> InviteUserSuccess invite_user_by_mail(data)
+> object invite_user_by_mail(data)
 
 Invite user by mail
 
 Invite user by mail
 
 ### Example
+
+* Api Key Authentication (API-Key):
 ```python
 from __future__ import print_function
 import time
 import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: API Key
 configuration = radiomanager_sdk.Configuration()
+# Configure API key authorization: API-Key
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = radiomanager_sdk.UserApi(radiomanager_sdk.ApiClient(configuration))
-data = radiomanager_sdk.InviteUserData() # InviteUserData | Data **(Required)**
+# Defining host is optional and default to https://radiomanager.io/api/v2
+configuration.host = "https://radiomanager.io/api/v2"
+# Enter a context with an instance of the API client
+with radiomanager_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = radiomanager_sdk.UserApi(api_client)
+    data = radiomanager_sdk.InviteUserData() # InviteUserData | Data **(Required)**
 
-try:
-    # Invite user by mail
-    api_response = api_instance.invite_user_by_mail(data)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling UserApi->invite_user_by_mail: %s\n" % e)
+    try:
+        # Invite user by mail
+        api_response = api_instance.invite_user_by_mail(data)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UserApi->invite_user_by_mail: %s\n" % e)
 ```
 
 ### Parameters
@@ -159,16 +190,25 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InviteUserSuccess**](InviteUserSuccess.md)
+**object**
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully invited User |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**422** | Unprocessable Entity |  -  |
+**429** | Too Many Requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -180,33 +220,38 @@ Get all users.
 List all users.
 
 ### Example
+
+* Api Key Authentication (API-Key):
 ```python
 from __future__ import print_function
 import time
 import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: API Key
 configuration = radiomanager_sdk.Configuration()
+# Configure API key authorization: API-Key
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = radiomanager_sdk.UserApi(radiomanager_sdk.ApiClient(configuration))
-page = 1 # int | Current page *(Optional)* (optional) (default to 1)
-role_id = 789 # int | Search on Role ID *(Optional)* (optional)
-limit = 789 # int | Results per page *(Optional)* (optional)
+# Defining host is optional and default to https://radiomanager.io/api/v2
+configuration.host = "https://radiomanager.io/api/v2"
+# Enter a context with an instance of the API client
+with radiomanager_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = radiomanager_sdk.UserApi(api_client)
+    page = 1 # int | Current page *(Optional)* (optional) (default to 1)
+role_id = 56 # int | Search on Role ID *(Optional)* (optional)
+limit = 56 # int | Results per page *(Optional)* (optional)
 order_by = 'order_by_example' # str | Field to order the results *(Optional)* (optional)
 order_direction = 'order_direction_example' # str | Direction of ordering *(Optional)* (optional)
 
-try:
-    # Get all users.
-    api_response = api_instance.list_users(page=page, role_id=role_id, limit=limit, order_by=order_by, order_direction=order_direction)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling UserApi->list_users: %s\n" % e)
+    try:
+        # Get all users.
+        api_response = api_instance.list_users(page=page, role_id=role_id, limit=limit, order_by=order_by, order_direction=order_direction)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling UserApi->list_users: %s\n" % e)
 ```
 
 ### Parameters
@@ -225,12 +270,20 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully got all users |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**429** | Too Many Requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

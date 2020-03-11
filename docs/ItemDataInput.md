@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 **model_type_id** | **int** |  | 
 **block_id** | **int** |  | [optional] 
 **external_id** | **str** |  | [optional] 
-**field_values** | **object** |  | [optional] 
+**field_values** | [**object**](.md) |  | [optional] 
 **title** | **str** |  | [optional] 
 **duration** | **int** |  | [optional] 
 **start** | **datetime** |  | [optional] 

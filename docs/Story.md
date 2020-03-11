@@ -1,11 +1,12 @@
 # Story
 
+Story
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **model_type_id** | **int** |  | 
 **recommended** | **bool** |  | [optional] 
-**field_values** | **object** |  | [optional] 
+**field_values** | [**object**](.md) |  | [optional] 
 **name** | **str** |  | 
 **description** | **str** |  | [optional] 
 

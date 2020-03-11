@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **item** | [**CampaignTemplateItem**](CampaignTemplateItem.md) |  | [optional] 
 **external_station_id** | **int** |  | [optional] 
 **model_type_id** | **int** |  | 
-**field_values** | **object** |  | [optional] 
+**field_values** | [**object**](.md) |  | [optional] 
 **title** | **str** |  | [optional] 
 **start** | **datetime** |  | 
 **stop** | **datetime** |  | 

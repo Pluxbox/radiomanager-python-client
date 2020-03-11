@@ -1,6 +1,6 @@
 # radiomanager_sdk.BroadcastApi
 
-All URIs are relative to *https://staging.radiomanager.io/api/v2*
+All URIs are relative to *https://radiomanager.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -25,29 +25,34 @@ Create broadcast.
 Create broadcast.
 
 ### Example
+
+* Api Key Authentication (API-Key):
 ```python
 from __future__ import print_function
 import time
 import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: API Key
 configuration = radiomanager_sdk.Configuration()
+# Configure API key authorization: API-Key
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = radiomanager_sdk.BroadcastApi(radiomanager_sdk.ApiClient(configuration))
-data = radiomanager_sdk.BroadcastDataInput() # BroadcastDataInput | Data **(Required)**
+# Defining host is optional and default to https://radiomanager.io/api/v2
+configuration.host = "https://radiomanager.io/api/v2"
+# Enter a context with an instance of the API client
+with radiomanager_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = radiomanager_sdk.BroadcastApi(api_client)
+    data = radiomanager_sdk.BroadcastDataInput() # BroadcastDataInput | Data **(Required)**
 
-try:
-    # Create broadcast.
-    api_response = api_instance.create_broadcast(data)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling BroadcastApi->create_broadcast: %s\n" % e)
+    try:
+        # Create broadcast.
+        api_response = api_instance.create_broadcast(data)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BroadcastApi->create_broadcast: %s\n" % e)
 ```
 
 ### Parameters
@@ -62,12 +67,21 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully created a broadcast |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**422** | Unprocessable Entity |  -  |
+**429** | Too Many Requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -79,36 +93,41 @@ Delete broadcast by id
 Delete broadcast by id
 
 ### Example
+
+* Api Key Authentication (API-Key):
 ```python
 from __future__ import print_function
 import time
 import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: API Key
 configuration = radiomanager_sdk.Configuration()
+# Configure API key authorization: API-Key
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = radiomanager_sdk.BroadcastApi(radiomanager_sdk.ApiClient(configuration))
-id = 789 # int | ID of Broadcast **(Required)**
+# Defining host is optional and default to https://radiomanager.io/api/v2
+configuration.host = "https://radiomanager.io/api/v2"
+# Enter a context with an instance of the API client
+with radiomanager_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = radiomanager_sdk.BroadcastApi(api_client)
+    id = 0 # int | ID of Broadcast **(Required)** (default to 0)
 
-try:
-    # Delete broadcast by id
-    api_response = api_instance.delete_broadcast_by_id(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling BroadcastApi->delete_broadcast_by_id: %s\n" % e)
+    try:
+        # Delete broadcast by id
+        api_response = api_instance.delete_broadcast_by_id(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BroadcastApi->delete_broadcast_by_id: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Broadcast **(Required)** | 
+ **id** | **int**| ID of Broadcast **(Required)** | [default to 0]
 
 ### Return type
 
@@ -116,12 +135,20 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully deleted Broadcast by id |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**429** | Too Many Requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -133,37 +160,42 @@ Get broadcast by id
 Get broadcast by id
 
 ### Example
+
+* Api Key Authentication (API-Key):
 ```python
 from __future__ import print_function
 import time
 import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: API Key
 configuration = radiomanager_sdk.Configuration()
+# Configure API key authorization: API-Key
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = radiomanager_sdk.BroadcastApi(radiomanager_sdk.ApiClient(configuration))
-id = 789 # int | ID of Broadcast **(Required)**
-external_station_id = 789 # int | Query on a different (content providing) station *(Optional)* (optional)
+# Defining host is optional and default to https://radiomanager.io/api/v2
+configuration.host = "https://radiomanager.io/api/v2"
+# Enter a context with an instance of the API client
+with radiomanager_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = radiomanager_sdk.BroadcastApi(api_client)
+    id = 0 # int | ID of Broadcast **(Required)** (default to 0)
+external_station_id = 56 # int | Query on a different (content providing) station *(Optional)* (optional)
 
-try:
-    # Get broadcast by id
-    api_response = api_instance.get_broadcast_by_id(id, external_station_id=external_station_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling BroadcastApi->get_broadcast_by_id: %s\n" % e)
+    try:
+        # Get broadcast by id
+        api_response = api_instance.get_broadcast_by_id(id, external_station_id=external_station_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BroadcastApi->get_broadcast_by_id: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Broadcast **(Required)** | 
+ **id** | **int**| ID of Broadcast **(Required)** | [default to 0]
  **external_station_id** | **int**| Query on a different (content providing) station *(Optional)* | [optional] 
 
 ### Return type
@@ -172,12 +204,20 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully got Broadcast by id |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**429** | Too Many Requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -189,29 +229,34 @@ Get current Broadcast
 Get current Broadcast
 
 ### Example
+
+* Api Key Authentication (API-Key):
 ```python
 from __future__ import print_function
 import time
 import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: API Key
 configuration = radiomanager_sdk.Configuration()
+# Configure API key authorization: API-Key
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = radiomanager_sdk.BroadcastApi(radiomanager_sdk.ApiClient(configuration))
-withunpublished = true # bool | Show Unpublished *(Optional)* (optional)
+# Defining host is optional and default to https://radiomanager.io/api/v2
+configuration.host = "https://radiomanager.io/api/v2"
+# Enter a context with an instance of the API client
+with radiomanager_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = radiomanager_sdk.BroadcastApi(api_client)
+    withunpublished = True # bool | Show Unpublished *(Optional)* (optional)
 
-try:
-    # Get current Broadcast
-    api_response = api_instance.get_current_broadcast(withunpublished=withunpublished)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling BroadcastApi->get_current_broadcast: %s\n" % e)
+    try:
+        # Get current Broadcast
+        api_response = api_instance.get_current_broadcast(withunpublished=withunpublished)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BroadcastApi->get_current_broadcast: %s\n" % e)
 ```
 
 ### Parameters
@@ -226,12 +271,20 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully got current Broadcast |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**429** | Too Many Requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -243,30 +296,35 @@ Get daily EPG
 Get current Broadcast
 
 ### Example
+
+* Api Key Authentication (API-Key):
 ```python
 from __future__ import print_function
 import time
 import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: API Key
 configuration = radiomanager_sdk.Configuration()
+# Configure API key authorization: API-Key
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = radiomanager_sdk.BroadcastApi(radiomanager_sdk.ApiClient(configuration))
-date = '2013-10-20T19:20:30+01:00' # datetime | Date *(Optional)* (optional)
-withunpublished = true # bool | Show Unpublished *(Optional)* (optional)
+# Defining host is optional and default to https://radiomanager.io/api/v2
+configuration.host = "https://radiomanager.io/api/v2"
+# Enter a context with an instance of the API client
+with radiomanager_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = radiomanager_sdk.BroadcastApi(api_client)
+    date = '2013-10-20T19:20:30+01:00' # datetime | Date *(Optional)* (optional)
+withunpublished = True # bool | Show Unpublished *(Optional)* (optional)
 
-try:
-    # Get daily EPG
-    api_response = api_instance.get_daily_epg(date=date, withunpublished=withunpublished)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling BroadcastApi->get_daily_epg: %s\n" % e)
+    try:
+        # Get daily EPG
+        api_response = api_instance.get_daily_epg(date=date, withunpublished=withunpublished)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BroadcastApi->get_daily_epg: %s\n" % e)
 ```
 
 ### Parameters
@@ -282,12 +340,20 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully got EPG by week |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**429** | Too Many Requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -299,30 +365,35 @@ Get EPG by date
 Get EPG by date
 
 ### Example
+
+* Api Key Authentication (API-Key):
 ```python
 from __future__ import print_function
 import time
 import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: API Key
 configuration = radiomanager_sdk.Configuration()
+# Configure API key authorization: API-Key
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = radiomanager_sdk.BroadcastApi(radiomanager_sdk.ApiClient(configuration))
-date = '2013-10-20T19:20:30+01:00' # datetime | Date *(Optional)* (optional)
-withunpublished = true # bool | Show Unpublished *(Optional)* (optional)
+# Defining host is optional and default to https://radiomanager.io/api/v2
+configuration.host = "https://radiomanager.io/api/v2"
+# Enter a context with an instance of the API client
+with radiomanager_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = radiomanager_sdk.BroadcastApi(api_client)
+    date = '2013-10-20T19:20:30+01:00' # datetime | Date *(Optional)* (optional)
+withunpublished = True # bool | Show Unpublished *(Optional)* (optional)
 
-try:
-    # Get EPG by date
-    api_response = api_instance.get_epg_by_date(date=date, withunpublished=withunpublished)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling BroadcastApi->get_epg_by_date: %s\n" % e)
+    try:
+        # Get EPG by date
+        api_response = api_instance.get_epg_by_date(date=date, withunpublished=withunpublished)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BroadcastApi->get_epg_by_date: %s\n" % e)
 ```
 
 ### Parameters
@@ -338,12 +409,20 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully got EPG by week |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**429** | Too Many Requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -355,29 +434,34 @@ Get next Broadcast
 Get next Broadcast
 
 ### Example
+
+* Api Key Authentication (API-Key):
 ```python
 from __future__ import print_function
 import time
 import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: API Key
 configuration = radiomanager_sdk.Configuration()
+# Configure API key authorization: API-Key
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = radiomanager_sdk.BroadcastApi(radiomanager_sdk.ApiClient(configuration))
-withunpublished = true # bool | Show Unpublished *(Optional)* (optional)
+# Defining host is optional and default to https://radiomanager.io/api/v2
+configuration.host = "https://radiomanager.io/api/v2"
+# Enter a context with an instance of the API client
+with radiomanager_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = radiomanager_sdk.BroadcastApi(api_client)
+    withunpublished = True # bool | Show Unpublished *(Optional)* (optional)
 
-try:
-    # Get next Broadcast
-    api_response = api_instance.get_next_broadcast(withunpublished=withunpublished)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling BroadcastApi->get_next_broadcast: %s\n" % e)
+    try:
+        # Get next Broadcast
+        api_response = api_instance.get_next_broadcast(withunpublished=withunpublished)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BroadcastApi->get_next_broadcast: %s\n" % e)
 ```
 
 ### Parameters
@@ -392,12 +476,20 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully got next Broadcast |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**429** | Too Many Requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -409,30 +501,35 @@ Get weekly EPG
 Get weekly EPG
 
 ### Example
+
+* Api Key Authentication (API-Key):
 ```python
 from __future__ import print_function
 import time
 import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: API Key
 configuration = radiomanager_sdk.Configuration()
+# Configure API key authorization: API-Key
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = radiomanager_sdk.BroadcastApi(radiomanager_sdk.ApiClient(configuration))
-date = 'date_example' # str | Date *(Optional)* (optional)
-withunpublished = true # bool | Show Unpublished *(Optional)* (optional)
+# Defining host is optional and default to https://radiomanager.io/api/v2
+configuration.host = "https://radiomanager.io/api/v2"
+# Enter a context with an instance of the API client
+with radiomanager_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = radiomanager_sdk.BroadcastApi(api_client)
+    date = 'date_example' # str | Date *(Optional)* (optional)
+withunpublished = True # bool | Show Unpublished *(Optional)* (optional)
 
-try:
-    # Get weekly EPG
-    api_response = api_instance.get_weekly_epg(date=date, withunpublished=withunpublished)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling BroadcastApi->get_weekly_epg: %s\n" % e)
+    try:
+        # Get weekly EPG
+        api_response = api_instance.get_weekly_epg(date=date, withunpublished=withunpublished)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BroadcastApi->get_weekly_epg: %s\n" % e)
 ```
 
 ### Parameters
@@ -448,12 +545,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully got EPG by week |  -  |
+**403** | Forbidden |  -  |
+**429** | Too Many Requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -465,42 +569,47 @@ Get all broadcasts.
 List all broadcasts.
 
 ### Example
+
+* Api Key Authentication (API-Key):
 ```python
 from __future__ import print_function
 import time
 import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: API Key
 configuration = radiomanager_sdk.Configuration()
+# Configure API key authorization: API-Key
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = radiomanager_sdk.BroadcastApi(radiomanager_sdk.ApiClient(configuration))
-page = 1 # int | Current page *(Optional)* (optional) (default to 1)
-program_id = 789 # int | Search on Program ID *(Optional)* `(Relation)` (optional)
-block_id = 789 # int | Search on Block ID *(Optional)* `(Relation)` (optional)
-model_type_id = 789 # int | Search on ModelType ID *(Optional)* `(Relation)` (optional)
-tag_id = 789 # int | Search on Tag ID *(Optional)* `(Relation)` (optional)
-presenter_id = 789 # int | Search on Presenter ID *(Optional)* `(Relation)` (optional)
-genre_id = 789 # int | Search on Genre ID *(Optional)* `(Relation)` (optional)
-item_id = 789 # int | Search on Item ID *(Optional)* `(Relation)` (optional)
+# Defining host is optional and default to https://radiomanager.io/api/v2
+configuration.host = "https://radiomanager.io/api/v2"
+# Enter a context with an instance of the API client
+with radiomanager_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = radiomanager_sdk.BroadcastApi(api_client)
+    page = 1 # int | Current page *(Optional)* (optional) (default to 1)
+program_id = 56 # int | Search on Program ID *(Optional)* `(Relation)` (optional)
+block_id = 56 # int | Search on Block ID *(Optional)* `(Relation)` (optional)
+model_type_id = 56 # int | Search on ModelType ID *(Optional)* `(Relation)` (optional)
+tag_id = 56 # int | Search on Tag ID *(Optional)* `(Relation)` (optional)
+presenter_id = 56 # int | Search on Presenter ID *(Optional)* `(Relation)` (optional)
+genre_id = 56 # int | Search on Genre ID *(Optional)* `(Relation)` (optional)
+item_id = 56 # int | Search on Item ID *(Optional)* `(Relation)` (optional)
 start_min = '2013-10-20T19:20:30+01:00' # datetime | Minimum start date *(Optional)* (optional)
 start_max = '2013-10-20T19:20:30+01:00' # datetime | Maximum start date *(Optional)* (optional)
-limit = 789 # int | Results per page *(Optional)* (optional)
+limit = 56 # int | Results per page *(Optional)* (optional)
 order_by = 'order_by_example' # str | Field to order the results *(Optional)* (optional)
 order_direction = 'order_direction_example' # str | Direction of ordering *(Optional)* (optional)
-external_station_id = 789 # int | Query on a different (content providing) station *(Optional)* (optional)
+external_station_id = 56 # int | Query on a different (content providing) station *(Optional)* (optional)
 
-try:
-    # Get all broadcasts.
-    api_response = api_instance.list_broadcasts(page=page, program_id=program_id, block_id=block_id, model_type_id=model_type_id, tag_id=tag_id, presenter_id=presenter_id, genre_id=genre_id, item_id=item_id, start_min=start_min, start_max=start_max, limit=limit, order_by=order_by, order_direction=order_direction, external_station_id=external_station_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling BroadcastApi->list_broadcasts: %s\n" % e)
+    try:
+        # Get all broadcasts.
+        api_response = api_instance.list_broadcasts(page=page, program_id=program_id, block_id=block_id, model_type_id=model_type_id, tag_id=tag_id, presenter_id=presenter_id, genre_id=genre_id, item_id=item_id, start_min=start_min, start_max=start_max, limit=limit, order_by=order_by, order_direction=order_direction, external_station_id=external_station_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BroadcastApi->list_broadcasts: %s\n" % e)
 ```
 
 ### Parameters
@@ -528,12 +637,20 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully got all broadcasts |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**429** | Too Many Requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -545,37 +662,42 @@ Print broadcast by id with template
 Print broadcast by id with template
 
 ### Example
+
+* Api Key Authentication (API-Key):
 ```python
 from __future__ import print_function
 import time
 import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: API Key
 configuration = radiomanager_sdk.Configuration()
+# Configure API key authorization: API-Key
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = radiomanager_sdk.BroadcastApi(radiomanager_sdk.ApiClient(configuration))
-id = 789 # int | ID of Broadcast **(Required)**
-template_id = 789 # int | Search on template ID *(Optional)* (optional)
+# Defining host is optional and default to https://radiomanager.io/api/v2
+configuration.host = "https://radiomanager.io/api/v2"
+# Enter a context with an instance of the API client
+with radiomanager_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = radiomanager_sdk.BroadcastApi(api_client)
+    id = 0 # int | ID of Broadcast **(Required)** (default to 0)
+template_id = 56 # int | Search on template ID *(Optional)* (optional)
 
-try:
-    # Print broadcast by id with template
-    api_response = api_instance.print_broadcast_by_id(id, template_id=template_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling BroadcastApi->print_broadcast_by_id: %s\n" % e)
+    try:
+        # Print broadcast by id with template
+        api_response = api_instance.print_broadcast_by_id(id, template_id=template_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BroadcastApi->print_broadcast_by_id: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Broadcast **(Required)** | 
+ **id** | **int**| ID of Broadcast **(Required)** | [default to 0]
  **template_id** | **int**| Search on template ID *(Optional)* | [optional] 
 
 ### Return type
@@ -584,12 +706,20 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully printed Broadcast by id |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**429** | Too Many Requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -601,37 +731,42 @@ Update broadcast by id
 Update broadcast by id
 
 ### Example
+
+* Api Key Authentication (API-Key):
 ```python
 from __future__ import print_function
 import time
 import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: API Key
 configuration = radiomanager_sdk.Configuration()
+# Configure API key authorization: API-Key
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = radiomanager_sdk.BroadcastApi(radiomanager_sdk.ApiClient(configuration))
-id = 789 # int | ID of Broadcast **(Required)**
+# Defining host is optional and default to https://radiomanager.io/api/v2
+configuration.host = "https://radiomanager.io/api/v2"
+# Enter a context with an instance of the API client
+with radiomanager_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = radiomanager_sdk.BroadcastApi(api_client)
+    id = 0 # int | ID of Broadcast **(Required)** (default to 0)
 data = radiomanager_sdk.BroadcastDataInput() # BroadcastDataInput | Data *(Optional)* (optional)
 
-try:
-    # Update broadcast by id
-    api_response = api_instance.update_broadcast_by_id(id, data=data)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling BroadcastApi->update_broadcast_by_id: %s\n" % e)
+    try:
+        # Update broadcast by id
+        api_response = api_instance.update_broadcast_by_id(id, data=data)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BroadcastApi->update_broadcast_by_id: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Broadcast **(Required)** | 
+ **id** | **int**| ID of Broadcast **(Required)** | [default to 0]
  **data** | [**BroadcastDataInput**](BroadcastDataInput.md)| Data *(Optional)* | [optional] 
 
 ### Return type
@@ -640,12 +775,21 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully updated Broadcast by id |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**422** | Unprocessable Entity |  -  |
+**429** | Too Many Requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

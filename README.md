@@ -2,6 +2,7 @@
 RadioManager
 
 - API version: 2.0
+- Build package: org.openapitools.codegen.languages.PythonClientCodegen
 For more information, please visit [https://pluxbox.com](https://pluxbox.com)
 
 ## Requirements.
@@ -10,15 +11,15 @@ Python 2.7 and 3.4+
 
 ## Installation & Usage
 ### pip install
-
 To install the python package, run the following command:
+If the python package is hosted on a repository, you can install directly using:
 
-```sh
 pip install Pluxbox-RadioManager-Python-SDK
-```
+pip install git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git
+
 Then import the package:
 ```python
-import radiomanager_sdk 
+import radiomanager_sdk
 ```
 
 ## Getting Started
@@ -32,27 +33,33 @@ import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
 from pprint import pprint
 
-# Configure API key authorization: API Key
-radiomanager_sdk.configuration.api_key['api-key'] = 'YOUR_API_KEY'
+configuration = radiomanager_sdk.Configuration()
+# Configure API key authorization: API-Key
+configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# radiomanager_sdk.configuration.api_key_prefix['api-key'] = 'Bearer'
-# create an instance of the API class
-api_instance = radiomanager_sdk.BlockApi()
-id = 789 # int | ID of Block **(Required)**
-external_station_id = 789 # int | Query on a different (content providing) station *(Optional)* (optional)
+# configuration.api_key_prefix['api-key'] = 'Bearer'
 
-try:
-    # Get block by id
-    api_response = api_instance.get_block_by_id(id, external_station_id=external_station_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling BlockApi->get_block_by_id: %s\n" % e)
+# Defining host is optional and default to https://radiomanager.io/api/v2
+configuration.host = "https://radiomanager.io/api/v2"
+# Enter a context with an instance of the API client
+with radiomanager_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = radiomanager_sdk.BlockApi(api_client)
+    id = 0 # int | ID of Block **(Required)** (default to 0)
+external_station_id = 56 # int | Query on a different (content providing) station *(Optional)* (optional)
 
+    try:
+        # Get block by id
+        api_response = api_instance.get_block_by_id(id, external_station_id=external_station_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling BlockApi->get_block_by_id: %s\n" % e)
+    
 ```
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://staging.radiomanager.io/api/v2*
+All URIs are relative to *https://radiomanager.io/api/v2*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -135,10 +142,13 @@ Class | Method | HTTP request | Description
  - [BlockRelationsItems](docs/BlockRelationsItems.md)
  - [BlockRelationsItemsParams](docs/BlockRelationsItemsParams.md)
  - [BlockRelationsProgram](docs/BlockRelationsProgram.md)
+ - [BlockResult](docs/BlockResult.md)
  - [BlockResults](docs/BlockResults.md)
  - [Broadcast](docs/Broadcast.md)
+ - [BroadcastDataInput](docs/BroadcastDataInput.md)
  - [BroadcastEPGDay](docs/BroadcastEPGDay.md)
  - [BroadcastEPGRelations](docs/BroadcastEPGRelations.md)
+ - [BroadcastEPGResult](docs/BroadcastEPGResult.md)
  - [BroadcastInputOnly](docs/BroadcastInputOnly.md)
  - [BroadcastOutputOnly](docs/BroadcastOutputOnly.md)
  - [BroadcastRelations](docs/BroadcastRelations.md)
@@ -149,25 +159,27 @@ Class | Method | HTTP request | Description
  - [BroadcastRelationsModelType](docs/BroadcastRelationsModelType.md)
  - [BroadcastRelationsPresenters](docs/BroadcastRelationsPresenters.md)
  - [BroadcastRelationsTags](docs/BroadcastRelationsTags.md)
+ - [BroadcastResult](docs/BroadcastResult.md)
  - [BroadcastResults](docs/BroadcastResults.md)
  - [Campaign](docs/Campaign.md)
+ - [CampaignDataInput](docs/CampaignDataInput.md)
  - [CampaignOutputOnly](docs/CampaignOutputOnly.md)
  - [CampaignRelations](docs/CampaignRelations.md)
  - [CampaignRelationsItems](docs/CampaignRelationsItems.md)
  - [CampaignRelationsItemsParams](docs/CampaignRelationsItemsParams.md)
+ - [CampaignResult](docs/CampaignResult.md)
  - [CampaignResults](docs/CampaignResults.md)
  - [CampaignTemplateItem](docs/CampaignTemplateItem.md)
+ - [CampaignTemplateItemAllOf](docs/CampaignTemplateItemAllOf.md)
  - [Contact](docs/Contact.md)
+ - [ContactDataInput](docs/ContactDataInput.md)
  - [ContactOutputOnly](docs/ContactOutputOnly.md)
  - [ContactRelations](docs/ContactRelations.md)
  - [ContactRelationsItems](docs/ContactRelationsItems.md)
  - [ContactRelationsTags](docs/ContactRelationsTags.md)
  - [ContactRelationsTagsParams](docs/ContactRelationsTagsParams.md)
+ - [ContactResult](docs/ContactResult.md)
  - [ContactResults](docs/ContactResults.md)
- - [Data](docs/Data.md)
- - [Data1](docs/Data1.md)
- - [Data2](docs/Data2.md)
- - [Data3](docs/Data3.md)
  - [EPGResults](docs/EPGResults.md)
  - [Forbidden](docs/Forbidden.md)
  - [Genre](docs/Genre.md)
@@ -176,13 +188,20 @@ Class | Method | HTTP request | Description
  - [GenreRelationsBroadcasts](docs/GenreRelationsBroadcasts.md)
  - [GenreRelationsBroadcastsParams](docs/GenreRelationsBroadcastsParams.md)
  - [GenreRelationsPrograms](docs/GenreRelationsPrograms.md)
+ - [GenreResult](docs/GenreResult.md)
  - [GenreResults](docs/GenreResults.md)
  - [ImportItem](docs/ImportItem.md)
+ - [ImportItemAllOf](docs/ImportItemAllOf.md)
+ - [InlineObject](docs/InlineObject.md)
+ - [InlineObject1](docs/InlineObject1.md)
+ - [InlineObject2](docs/InlineObject2.md)
+ - [InlineObject3](docs/InlineObject3.md)
  - [InlineResponse202](docs/InlineResponse202.md)
  - [InternalServerError](docs/InternalServerError.md)
  - [InviteUserData](docs/InviteUserData.md)
- - [InviteUserSuccess](docs/InviteUserSuccess.md)
  - [Item](docs/Item.md)
+ - [ItemAllOf](docs/ItemAllOf.md)
+ - [ItemDataInput](docs/ItemDataInput.md)
  - [ItemInputOnly](docs/ItemInputOnly.md)
  - [ItemOutputOnly](docs/ItemOutputOnly.md)
  - [ItemRelations](docs/ItemRelations.md)
@@ -192,6 +211,7 @@ Class | Method | HTTP request | Description
  - [ItemRelationsContactsParams](docs/ItemRelationsContactsParams.md)
  - [ItemRelationsProgram](docs/ItemRelationsProgram.md)
  - [ItemRelationsTags](docs/ItemRelationsTags.md)
+ - [ItemResult](docs/ItemResult.md)
  - [ItemResults](docs/ItemResults.md)
  - [ModelType](docs/ModelType.md)
  - [ModelTypeOptions](docs/ModelTypeOptions.md)
@@ -204,18 +224,24 @@ Class | Method | HTTP request | Description
  - [ModelTypeRelationsItems](docs/ModelTypeRelationsItems.md)
  - [ModelTypeRelationsPresenters](docs/ModelTypeRelationsPresenters.md)
  - [ModelTypeRelationsPrograms](docs/ModelTypeRelationsPrograms.md)
+ - [ModelTypeResult](docs/ModelTypeResult.md)
  - [ModelTypeResults](docs/ModelTypeResults.md)
  - [NotFound](docs/NotFound.md)
  - [PostSuccess](docs/PostSuccess.md)
  - [Presenter](docs/Presenter.md)
+ - [PresenterDataInput](docs/PresenterDataInput.md)
+ - [PresenterEPGResult](docs/PresenterEPGResult.md)
  - [PresenterOutputOnly](docs/PresenterOutputOnly.md)
  - [PresenterRelations](docs/PresenterRelations.md)
  - [PresenterRelationsBroadcasts](docs/PresenterRelationsBroadcasts.md)
  - [PresenterRelationsPrograms](docs/PresenterRelationsPrograms.md)
  - [PresenterRelationsProgramsParams](docs/PresenterRelationsProgramsParams.md)
+ - [PresenterResult](docs/PresenterResult.md)
  - [PresenterResults](docs/PresenterResults.md)
  - [Program](docs/Program.md)
+ - [ProgramDataInput](docs/ProgramDataInput.md)
  - [ProgramInputOnly](docs/ProgramInputOnly.md)
+ - [ProgramInputOnlyAllOf](docs/ProgramInputOnlyAllOf.md)
  - [ProgramOutputOnly](docs/ProgramOutputOnly.md)
  - [ProgramRelations](docs/ProgramRelations.md)
  - [ProgramRelationsBlocks](docs/ProgramRelationsBlocks.md)
@@ -224,6 +250,7 @@ Class | Method | HTTP request | Description
  - [ProgramRelationsItemsParams](docs/ProgramRelationsItemsParams.md)
  - [ProgramRelationsPresenters](docs/ProgramRelationsPresenters.md)
  - [ProgramRelationsTags](docs/ProgramRelationsTags.md)
+ - [ProgramResult](docs/ProgramResult.md)
  - [ProgramResults](docs/ProgramResults.md)
  - [ReadOnly](docs/ReadOnly.md)
  - [RelationsPlaceholder](docs/RelationsPlaceholder.md)
@@ -231,15 +258,19 @@ Class | Method | HTTP request | Description
  - [StationResultStation](docs/StationResultStation.md)
  - [StationResultStationStartDays](docs/StationResultStationStartDays.md)
  - [Story](docs/Story.md)
+ - [StoryDataInput](docs/StoryDataInput.md)
  - [StoryInputOnly](docs/StoryInputOnly.md)
+ - [StoryInputOnlyAllOf](docs/StoryInputOnlyAllOf.md)
  - [StoryOutputOnly](docs/StoryOutputOnly.md)
  - [StoryRelations](docs/StoryRelations.md)
  - [StoryRelationsItems](docs/StoryRelationsItems.md)
  - [StoryRelationsTags](docs/StoryRelationsTags.md)
  - [StoryRelationsTagsParams](docs/StoryRelationsTagsParams.md)
+ - [StoryResult](docs/StoryResult.md)
  - [StoryResults](docs/StoryResults.md)
  - [Success](docs/Success.md)
  - [Tag](docs/Tag.md)
+ - [TagDataInput](docs/TagDataInput.md)
  - [TagOutputOnly](docs/TagOutputOnly.md)
  - [TagRelations](docs/TagRelations.md)
  - [TagRelationsBroadcasts](docs/TagRelationsBroadcasts.md)
@@ -247,6 +278,7 @@ Class | Method | HTTP request | Description
  - [TagRelationsContacts](docs/TagRelationsContacts.md)
  - [TagRelationsItems](docs/TagRelationsItems.md)
  - [TagRelationsPrograms](docs/TagRelationsPrograms.md)
+ - [TagResult](docs/TagResult.md)
  - [TagResults](docs/TagResults.md)
  - [TextString](docs/TextString.md)
  - [TooManyRequests](docs/TooManyRequests.md)
@@ -256,33 +288,12 @@ Class | Method | HTTP request | Description
  - [UserResultSettings](docs/UserResultSettings.md)
  - [UserResults](docs/UserResults.md)
  - [VisualResult](docs/VisualResult.md)
- - [BlockResult](docs/BlockResult.md)
- - [BroadcastDataInput](docs/BroadcastDataInput.md)
- - [BroadcastEPGResult](docs/BroadcastEPGResult.md)
- - [BroadcastResult](docs/BroadcastResult.md)
- - [CampaignDataInput](docs/CampaignDataInput.md)
- - [CampaignResult](docs/CampaignResult.md)
- - [ContactDataInput](docs/ContactDataInput.md)
- - [ContactResult](docs/ContactResult.md)
- - [GenreResult](docs/GenreResult.md)
- - [ItemDataInput](docs/ItemDataInput.md)
- - [ItemResult](docs/ItemResult.md)
- - [ModelTypeResult](docs/ModelTypeResult.md)
- - [PresenterDataInput](docs/PresenterDataInput.md)
- - [PresenterEPGResult](docs/PresenterEPGResult.md)
- - [PresenterResult](docs/PresenterResult.md)
- - [ProgramDataInput](docs/ProgramDataInput.md)
- - [ProgramResult](docs/ProgramResult.md)
- - [StoryDataInput](docs/StoryDataInput.md)
- - [StoryResult](docs/StoryResult.md)
- - [TagDataInput](docs/TagDataInput.md)
- - [TagResult](docs/TagResult.md)
 
 
 ## Documentation For Authorization
 
 
-## API Key
+## API-Key
 
 - **Type**: API key
 - **API key parameter name**: api-key
@@ -292,4 +303,5 @@ Class | Method | HTTP request | Description
 ## Author
 
 support@pluxbox.com
+
 

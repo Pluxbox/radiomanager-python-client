@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **external_station_id** | **int** |  | [optional] 
 **model_type_id** | **int** |  | 
 **recommended** | **bool** |  | [optional] 
-**field_values** | **object** |  | [optional] 
+**field_values** | [**object**](.md) |  | [optional] 
 **name** | **str** |  | 
 **description** | **str** |  | [optional] 
 **tags** | [**StoryRelationsTags**](StoryRelationsTags.md) |  | 

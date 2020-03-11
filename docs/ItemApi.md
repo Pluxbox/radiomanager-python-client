@@ -1,6 +1,6 @@
 # radiomanager_sdk.ItemApi
 
-All URIs are relative to *https://staging.radiomanager.io/api/v2*
+All URIs are relative to *https://radiomanager.io/api/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -26,29 +26,34 @@ Create an new item.
 Create item.
 
 ### Example
+
+* Api Key Authentication (API-Key):
 ```python
 from __future__ import print_function
 import time
 import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: API Key
 configuration = radiomanager_sdk.Configuration()
+# Configure API key authorization: API-Key
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = radiomanager_sdk.ItemApi(radiomanager_sdk.ApiClient(configuration))
-data = radiomanager_sdk.ItemDataInput() # ItemDataInput | Data *(Optional)* (optional)
+# Defining host is optional and default to https://radiomanager.io/api/v2
+configuration.host = "https://radiomanager.io/api/v2"
+# Enter a context with an instance of the API client
+with radiomanager_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = radiomanager_sdk.ItemApi(api_client)
+    data = radiomanager_sdk.ItemDataInput() # ItemDataInput | Data *(Optional)* (optional)
 
-try:
-    # Create an new item.
-    api_response = api_instance.create_item(data=data)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ItemApi->create_item: %s\n" % e)
+    try:
+        # Create an new item.
+        api_response = api_instance.create_item(data=data)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ItemApi->create_item: %s\n" % e)
 ```
 
 ### Parameters
@@ -63,12 +68,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully created an item |  -  |
+**422** | Unprocessable Entity |  -  |
+**429** | Too Many Requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -80,29 +92,34 @@ Post a current playing item, keep structure
 Post a current playing item, keep structure
 
 ### Example
+
+* Api Key Authentication (API-Key):
 ```python
 from __future__ import print_function
 import time
 import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: API Key
 configuration = radiomanager_sdk.Configuration()
+# Configure API key authorization: API-Key
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = radiomanager_sdk.ItemApi(radiomanager_sdk.ApiClient(configuration))
-data = radiomanager_sdk.ImportItem() # ImportItem | Data *(Optional)* (optional)
+# Defining host is optional and default to https://radiomanager.io/api/v2
+configuration.host = "https://radiomanager.io/api/v2"
+# Enter a context with an instance of the API client
+with radiomanager_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = radiomanager_sdk.ItemApi(api_client)
+    data = radiomanager_sdk.ImportItem() # ImportItem | Data *(Optional)* (optional)
 
-try:
-    # Post a current playing item, keep structure
-    api_response = api_instance.current_item_post_structure(data=data)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ItemApi->current_item_post_structure: %s\n" % e)
+    try:
+        # Post a current playing item, keep structure
+        api_response = api_instance.current_item_post_structure(data=data)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ItemApi->current_item_post_structure: %s\n" % e)
 ```
 
 ### Parameters
@@ -117,12 +134,20 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully posted current item |  -  |
+**403** | Forbidden |  -  |
+**422** | Unprocessable Entity |  -  |
+**429** | Too Many Requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -134,29 +159,34 @@ Post a current playing item
 Post a current playing item
 
 ### Example
+
+* Api Key Authentication (API-Key):
 ```python
 from __future__ import print_function
 import time
 import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: API Key
 configuration = radiomanager_sdk.Configuration()
+# Configure API key authorization: API-Key
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = radiomanager_sdk.ItemApi(radiomanager_sdk.ApiClient(configuration))
-data = radiomanager_sdk.ImportItem() # ImportItem | Data *(Optional)* (optional)
+# Defining host is optional and default to https://radiomanager.io/api/v2
+configuration.host = "https://radiomanager.io/api/v2"
+# Enter a context with an instance of the API client
+with radiomanager_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = radiomanager_sdk.ItemApi(api_client)
+    data = radiomanager_sdk.ImportItem() # ImportItem | Data *(Optional)* (optional)
 
-try:
-    # Post a current playing item
-    api_response = api_instance.current_item_post_timing(data=data)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ItemApi->current_item_post_timing: %s\n" % e)
+    try:
+        # Post a current playing item
+        api_response = api_instance.current_item_post_timing(data=data)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ItemApi->current_item_post_timing: %s\n" % e)
 ```
 
 ### Parameters
@@ -171,12 +201,20 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully posted current item |  -  |
+**403** | Forbidden |  -  |
+**422** | Unprocessable Entity |  -  |
+**429** | Too Many Requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -188,36 +226,41 @@ Delete item by ID.
 Delete item by id.
 
 ### Example
+
+* Api Key Authentication (API-Key):
 ```python
 from __future__ import print_function
 import time
 import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: API Key
 configuration = radiomanager_sdk.Configuration()
+# Configure API key authorization: API-Key
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = radiomanager_sdk.ItemApi(radiomanager_sdk.ApiClient(configuration))
-id = 789 # int | ID of Item **(Required)**
+# Defining host is optional and default to https://radiomanager.io/api/v2
+configuration.host = "https://radiomanager.io/api/v2"
+# Enter a context with an instance of the API client
+with radiomanager_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = radiomanager_sdk.ItemApi(api_client)
+    id = 0 # int | ID of Item **(Required)** (default to 0)
 
-try:
-    # Delete item by ID.
-    api_response = api_instance.delete_item_by_id(id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ItemApi->delete_item_by_id: %s\n" % e)
+    try:
+        # Delete item by ID.
+        api_response = api_instance.delete_item_by_id(id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ItemApi->delete_item_by_id: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Item **(Required)** | 
+ **id** | **int**| ID of Item **(Required)** | [default to 0]
 
 ### Return type
 
@@ -225,12 +268,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**202** | Item has been marked for deletion |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -242,29 +292,34 @@ Get current Item
 Get current Item
 
 ### Example
+
+* Api Key Authentication (API-Key):
 ```python
 from __future__ import print_function
 import time
 import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: API Key
 configuration = radiomanager_sdk.Configuration()
+# Configure API key authorization: API-Key
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = radiomanager_sdk.ItemApi(radiomanager_sdk.ApiClient(configuration))
-lastplayed = true # bool | Show last played item if there is no current item*(Optional)* (optional)
+# Defining host is optional and default to https://radiomanager.io/api/v2
+configuration.host = "https://radiomanager.io/api/v2"
+# Enter a context with an instance of the API client
+with radiomanager_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = radiomanager_sdk.ItemApi(api_client)
+    lastplayed = True # bool | Show last played item if there is no current item*(Optional)* (optional)
 
-try:
-    # Get current Item
-    api_response = api_instance.get_current_item(lastplayed=lastplayed)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ItemApi->get_current_item: %s\n" % e)
+    try:
+        # Get current Item
+        api_response = api_instance.get_current_item(lastplayed=lastplayed)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ItemApi->get_current_item: %s\n" % e)
 ```
 
 ### Parameters
@@ -279,12 +334,20 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully got current item |  -  |
+**202** | Item has been marked for deletion |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -296,37 +359,42 @@ Get extended item details by ID.
 Read item by id.
 
 ### Example
+
+* Api Key Authentication (API-Key):
 ```python
 from __future__ import print_function
 import time
 import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: API Key
 configuration = radiomanager_sdk.Configuration()
+# Configure API key authorization: API-Key
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = radiomanager_sdk.ItemApi(radiomanager_sdk.ApiClient(configuration))
-id = 789 # int | ID of Item **(Required)**
-external_station_id = 789 # int | Query on a different (content providing) station *(Optional)* (optional)
+# Defining host is optional and default to https://radiomanager.io/api/v2
+configuration.host = "https://radiomanager.io/api/v2"
+# Enter a context with an instance of the API client
+with radiomanager_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = radiomanager_sdk.ItemApi(api_client)
+    id = 0 # int | ID of Item **(Required)** (default to 0)
+external_station_id = 56 # int | Query on a different (content providing) station *(Optional)* (optional)
 
-try:
-    # Get extended item details by ID.
-    api_response = api_instance.get_item_by_id(id, external_station_id=external_station_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ItemApi->get_item_by_id: %s\n" % e)
+    try:
+        # Get extended item details by ID.
+        api_response = api_instance.get_item_by_id(id, external_station_id=external_station_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ItemApi->get_item_by_id: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Item **(Required)** | 
+ **id** | **int**| ID of Item **(Required)** | [default to 0]
  **external_station_id** | **int**| Query on a different (content providing) station *(Optional)* | [optional] 
 
 ### Return type
@@ -335,12 +403,20 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully got an item by id |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**429** | Too Many Requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -352,49 +428,54 @@ Get a list of all the items currently in your station.
 Get a list of all the items currently in your station. This feature supports pagination and will give a maximum results of 50 items back.
 
 ### Example
+
+* Api Key Authentication (API-Key):
 ```python
 from __future__ import print_function
 import time
 import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: API Key
 configuration = radiomanager_sdk.Configuration()
+# Configure API key authorization: API-Key
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = radiomanager_sdk.ItemApi(radiomanager_sdk.ApiClient(configuration))
-page = 789 # int | Current page *(Optional)* (optional)
-block_id = 789 # int | Search on Block ID *(Optional)* `(Relation)` (optional)
-broadcast_id = 789 # int | Search on Broadcast ID *(Optional)* `(Relation)` (optional)
-model_type_id = 789 # int | Search on ModelType ID *(Optional)* `(Relation)` (optional)
-tag_id = 789 # int | Search on Tag ID *(Optional)* `(Relation)` (optional)
-campaign_id = 789 # int | Search on Campaign ID *(Optional)* `(Relation)` (optional)
-contact_id = 789 # int | Search on Contact ID *(Optional)* `(Relation)` (optional)
-program_draft_id = 789 # int | Search on Program Draft ID *(Optional)* (optional)
-user_draft_id = 789 # int | Search on User Draft ID *(Optional)* (optional)
-station_draft_id = 789 # int | Search on Station Draft ID *(Optional)* (optional)
-program_id = 789 # int | Search on Program ID *(Optional)* `(Relation)` (optional)
+# Defining host is optional and default to https://radiomanager.io/api/v2
+configuration.host = "https://radiomanager.io/api/v2"
+# Enter a context with an instance of the API client
+with radiomanager_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = radiomanager_sdk.ItemApi(api_client)
+    page = 56 # int | Current page *(Optional)* (optional)
+block_id = 56 # int | Search on Block ID *(Optional)* `(Relation)` (optional)
+broadcast_id = 56 # int | Search on Broadcast ID *(Optional)* `(Relation)` (optional)
+model_type_id = 56 # int | Search on ModelType ID *(Optional)* `(Relation)` (optional)
+tag_id = 56 # int | Search on Tag ID *(Optional)* `(Relation)` (optional)
+campaign_id = 56 # int | Search on Campaign ID *(Optional)* `(Relation)` (optional)
+contact_id = 56 # int | Search on Contact ID *(Optional)* `(Relation)` (optional)
+program_draft_id = 56 # int | Search on Program Draft ID *(Optional)* (optional)
+user_draft_id = 56 # int | Search on User Draft ID *(Optional)* (optional)
+station_draft_id = 56 # int | Search on Station Draft ID *(Optional)* (optional)
+program_id = 56 # int | Search on Program ID *(Optional)* `(Relation)` (optional)
 external_id = 'external_id_example' # str | Search on External ID *(Optional)* (optional)
 start_min = '2013-10-20T19:20:30+01:00' # datetime | Minimum start date *(Optional)* (optional)
 start_max = '2013-10-20T19:20:30+01:00' # datetime | Maximum start date *(Optional)* (optional)
 duration_min = 56 # int | Minimum duration (seconds) *(Optional)* (optional)
 duration_max = 56 # int | Maximum duration (seconds) *(Optional)* (optional)
 status = 'status_example' # str | Play Status of item *(Optional)* (optional)
-limit = 789 # int | Results per page *(Optional)* (optional)
+limit = 56 # int | Results per page *(Optional)* (optional)
 order_by = 'order_by_example' # str | Field to order the results *(Optional)* (optional)
 order_direction = 'order_direction_example' # str | Direction of ordering *(Optional)* (optional)
-external_station_id = 789 # int | Query on a different (content providing) station *(Optional)* (optional)
+external_station_id = 56 # int | Query on a different (content providing) station *(Optional)* (optional)
 
-try:
-    # Get a list of all the items currently in your station.
-    api_response = api_instance.list_items(page=page, block_id=block_id, broadcast_id=broadcast_id, model_type_id=model_type_id, tag_id=tag_id, campaign_id=campaign_id, contact_id=contact_id, program_draft_id=program_draft_id, user_draft_id=user_draft_id, station_draft_id=station_draft_id, program_id=program_id, external_id=external_id, start_min=start_min, start_max=start_max, duration_min=duration_min, duration_max=duration_max, status=status, limit=limit, order_by=order_by, order_direction=order_direction, external_station_id=external_station_id)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ItemApi->list_items: %s\n" % e)
+    try:
+        # Get a list of all the items currently in your station.
+        api_response = api_instance.list_items(page=page, block_id=block_id, broadcast_id=broadcast_id, model_type_id=model_type_id, tag_id=tag_id, campaign_id=campaign_id, contact_id=contact_id, program_draft_id=program_draft_id, user_draft_id=user_draft_id, station_draft_id=station_draft_id, program_id=program_id, external_id=external_id, start_min=start_min, start_max=start_max, duration_min=duration_min, duration_max=duration_max, status=status, limit=limit, order_by=order_by, order_direction=order_direction, external_station_id=external_station_id)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ItemApi->list_items: %s\n" % e)
 ```
 
 ### Parameters
@@ -429,12 +510,21 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
+ - **Content-Type**: Not defined
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully got all items |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**422** | Unprocessable Entity |  -  |
+**429** | Too Many Requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -446,36 +536,41 @@ Post a playlist, do not remove previously imported items
 Post a playlist, do not remove previously imported items
 
 ### Example
+
+* Api Key Authentication (API-Key):
 ```python
 from __future__ import print_function
 import time
 import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: API Key
 configuration = radiomanager_sdk.Configuration()
+# Configure API key authorization: API-Key
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = radiomanager_sdk.ItemApi(radiomanager_sdk.ApiClient(configuration))
-data = radiomanager_sdk.Data2() # Data2 | Data *(Optional)* (optional)
+# Defining host is optional and default to https://radiomanager.io/api/v2
+configuration.host = "https://radiomanager.io/api/v2"
+# Enter a context with an instance of the API client
+with radiomanager_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = radiomanager_sdk.ItemApi(api_client)
+    data = radiomanager_sdk.InlineObject2() # InlineObject2 |  (optional)
 
-try:
-    # Post a playlist, do not remove previously imported items
-    api_response = api_instance.playlist_post_merge(data=data)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ItemApi->playlist_post_merge: %s\n" % e)
+    try:
+        # Post a playlist, do not remove previously imported items
+        api_response = api_instance.playlist_post_merge(data=data)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ItemApi->playlist_post_merge: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**Data2**](Data2.md)| Data *(Optional)* | [optional] 
+ **data** | [**InlineObject2**](InlineObject2.md)|  | [optional] 
 
 ### Return type
 
@@ -483,12 +578,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**202** | success |  -  |
+**403** | Forbidden |  -  |
+**422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -500,36 +602,41 @@ Post a playlist, keep current structure
 Post a playlist, keep current structure
 
 ### Example
+
+* Api Key Authentication (API-Key):
 ```python
 from __future__ import print_function
 import time
 import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: API Key
 configuration = radiomanager_sdk.Configuration()
+# Configure API key authorization: API-Key
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = radiomanager_sdk.ItemApi(radiomanager_sdk.ApiClient(configuration))
-data = radiomanager_sdk.Data1() # Data1 | Data *(Optional)* (optional)
+# Defining host is optional and default to https://radiomanager.io/api/v2
+configuration.host = "https://radiomanager.io/api/v2"
+# Enter a context with an instance of the API client
+with radiomanager_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = radiomanager_sdk.ItemApi(api_client)
+    data = radiomanager_sdk.InlineObject1() # InlineObject1 |  (optional)
 
-try:
-    # Post a playlist, keep current structure
-    api_response = api_instance.playlist_post_structure(data=data)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ItemApi->playlist_post_structure: %s\n" % e)
+    try:
+        # Post a playlist, keep current structure
+        api_response = api_instance.playlist_post_structure(data=data)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ItemApi->playlist_post_structure: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**Data1**](Data1.md)| Data *(Optional)* | [optional] 
+ **data** | [**InlineObject1**](InlineObject1.md)|  | [optional] 
 
 ### Return type
 
@@ -537,12 +644,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**202** | success |  -  |
+**403** | Forbidden |  -  |
+**422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -554,36 +668,41 @@ Post a playlist
 Post a playlist
 
 ### Example
+
+* Api Key Authentication (API-Key):
 ```python
 from __future__ import print_function
 import time
 import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: API Key
 configuration = radiomanager_sdk.Configuration()
+# Configure API key authorization: API-Key
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = radiomanager_sdk.ItemApi(radiomanager_sdk.ApiClient(configuration))
-data = radiomanager_sdk.Data() # Data | Data *(Optional)* (optional)
+# Defining host is optional and default to https://radiomanager.io/api/v2
+configuration.host = "https://radiomanager.io/api/v2"
+# Enter a context with an instance of the API client
+with radiomanager_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = radiomanager_sdk.ItemApi(api_client)
+    data = radiomanager_sdk.InlineObject() # InlineObject |  (optional)
 
-try:
-    # Post a playlist
-    api_response = api_instance.playlist_post_timing(data=data)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ItemApi->playlist_post_timing: %s\n" % e)
+    try:
+        # Post a playlist
+        api_response = api_instance.playlist_post_timing(data=data)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ItemApi->playlist_post_timing: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**Data**](Data.md)| Data *(Optional)* | [optional] 
+ **data** | [**InlineObject**](InlineObject.md)|  | [optional] 
 
 ### Return type
 
@@ -591,12 +710,19 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**202** | success |  -  |
+**403** | Forbidden |  -  |
+**422** | Unprocessable Entity |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -608,36 +734,41 @@ Stop an Item
 Set a current playing or specific item on played
 
 ### Example
+
+* Api Key Authentication (API-Key):
 ```python
 from __future__ import print_function
 import time
 import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: API Key
 configuration = radiomanager_sdk.Configuration()
+# Configure API key authorization: API-Key
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = radiomanager_sdk.ItemApi(radiomanager_sdk.ApiClient(configuration))
-data = radiomanager_sdk.Data3() # Data3 | Data *(Optional)* (optional)
+# Defining host is optional and default to https://radiomanager.io/api/v2
+configuration.host = "https://radiomanager.io/api/v2"
+# Enter a context with an instance of the API client
+with radiomanager_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = radiomanager_sdk.ItemApi(api_client)
+    data = radiomanager_sdk.InlineObject3() # InlineObject3 |  (optional)
 
-try:
-    # Stop an Item
-    api_response = api_instance.stop_current_item(data=data)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ItemApi->stop_current_item: %s\n" % e)
+    try:
+        # Stop an Item
+        api_response = api_instance.stop_current_item(data=data)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ItemApi->stop_current_item: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **data** | [**Data3**](Data3.md)| Data *(Optional)* | [optional] 
+ **data** | [**InlineObject3**](InlineObject3.md)|  | [optional] 
 
 ### Return type
 
@@ -645,12 +776,21 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully stopped item |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**422** | Unprocessable Entity |  -  |
+**429** | Too Many Requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -662,37 +802,42 @@ Update extended item details by ID.
 Update item by id.
 
 ### Example
+
+* Api Key Authentication (API-Key):
 ```python
 from __future__ import print_function
 import time
 import radiomanager_sdk
 from radiomanager_sdk.rest import ApiException
 from pprint import pprint
-
-# Configure API key authorization: API Key
 configuration = radiomanager_sdk.Configuration()
+# Configure API key authorization: API-Key
 configuration.api_key['api-key'] = 'YOUR_API_KEY'
 # Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
 # configuration.api_key_prefix['api-key'] = 'Bearer'
 
-# create an instance of the API class
-api_instance = radiomanager_sdk.ItemApi(radiomanager_sdk.ApiClient(configuration))
-id = 789 # int | ID of Item **(Required)**
+# Defining host is optional and default to https://radiomanager.io/api/v2
+configuration.host = "https://radiomanager.io/api/v2"
+# Enter a context with an instance of the API client
+with radiomanager_sdk.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = radiomanager_sdk.ItemApi(api_client)
+    id = 0 # int | ID of Item **(Required)** (default to 0)
 data = radiomanager_sdk.ItemDataInput() # ItemDataInput | Data *(Optional)* (optional)
 
-try:
-    # Update extended item details by ID.
-    api_response = api_instance.update_item_by_id(id, data=data)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling ItemApi->update_item_by_id: %s\n" % e)
+    try:
+        # Update extended item details by ID.
+        api_response = api_instance.update_item_by_id(id, data=data)
+        pprint(api_response)
+    except ApiException as e:
+        print("Exception when calling ItemApi->update_item_by_id: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **int**| ID of Item **(Required)** | 
+ **id** | **int**| ID of Item **(Required)** | [default to 0]
  **data** | [**ItemDataInput**](ItemDataInput.md)| Data *(Optional)* | [optional] 
 
 ### Return type
@@ -701,12 +846,21 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[API Key](../README.md#API Key)
+[API-Key](../README.md#API-Key)
 
 ### HTTP request headers
 
  - **Content-Type**: application/json
  - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | Successfully updated an item |  -  |
+**403** | Forbidden |  -  |
+**404** | Not Found |  -  |
+**422** | Unprocessable Entity |  -  |
+**429** | Too Many Requests |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

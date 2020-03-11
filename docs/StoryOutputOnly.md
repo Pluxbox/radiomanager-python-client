@@ -1,5 +1,6 @@
 # StoryOutputOnly
 
+Story
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
