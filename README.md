@@ -1,3 +1,4 @@
+# DEPRICATED
 # Pluxbox RadioManager Client
 RadioManager
 
